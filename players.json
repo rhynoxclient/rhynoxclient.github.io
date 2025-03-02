@@ -1,7 +1,7 @@
 {
     "players": [
         {
-            "name": "niñodown",
+            "name": "odod diblao",
             "goals": 13,
             "assists": 1,
             "points": 49859723,
@@ -13,7 +13,10 @@
             "equipped": {
                 "mastercontrol": true,
                 "ultrapowershot": true
-            }
+            },
+            "victories": 6,
+            "defeats": 2,
+            "draws": 0
         },
         {
             "name": "L-NFERMO",
@@ -25,7 +28,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "غ ف ق ",
@@ -37,7 +43,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Bonjo",
@@ -49,7 +58,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "pol",
@@ -61,7 +73,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "malisimo",
@@ -73,7 +88,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "El Goat",
@@ -85,7 +103,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "MCO",
@@ -97,7 +118,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Quintero",
@@ -109,7 +133,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "𝘼10𝙉𝙎𝙊!",
@@ -121,7 +148,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "MousePad",
@@ -133,7 +163,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "pbcd",
@@ -145,7 +178,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Goyo ogawa",
@@ -157,7 +193,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Pedri",
@@ -169,7 +208,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "N.DE LA CRUZ",
@@ -181,7 +223,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "ñessi",
@@ -193,7 +238,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "el didu 🇦🇷",
@@ -205,7 +253,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "  robinho",
@@ -217,7 +268,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "zz🥶",
@@ -229,7 +283,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": " Oro",
@@ -241,7 +298,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "LEANDRO BREY",
@@ -253,7 +313,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "xt",
@@ -265,7 +328,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Bajo la venda los ojos no",
@@ -277,7 +343,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "mHx !",
@@ -289,7 +358,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "🌩️┋𝒅𝒐𝒔𝒔𝒄𝒖 ",
@@ -301,7 +373,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "bcx''",
@@ -313,7 +388,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "McloVin",
@@ -325,7 +403,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "simo' ",
@@ -337,7 +418,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "b3nja",
@@ -349,7 +433,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "niz 9.",
@@ -361,7 +448,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Joakooown12",
@@ -373,7 +463,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "MCtota",
@@ -385,7 +478,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Nicoo.",
@@ -397,7 +493,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "𝙝𝙖𝙭𝙣𝙤𝙤𝙗|!!",
@@ -409,7 +508,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "     ٿي ڳئين دي م",
@@ -421,7 +523,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "niño rateadas",
@@ -433,7 +538,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Cavagoat ",
@@ -445,7 +553,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Maracaibo",
@@ -457,7 +568,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Moska",
@@ -469,7 +583,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "⚡┆𝘌𝘭𝘨𝘰𝘳𝘥𝘰  𝘁𝗿𝘆",
@@ -481,7 +598,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "🅿🅰🅻🅴",
@@ -493,7 +613,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "𝐓𝐡𝐚𝐫𝐭𝐚𝐫𝐨",
@@ -505,7 +628,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "laguna",
@@ -517,7 +643,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "¡F. colidio!",
@@ -529,7 +658,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "   la vaquita💤💤",
@@ -541,7 +673,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "pupé (yk)",
@@ -553,7 +688,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "tomi",
@@ -565,7 +703,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "RIQUELME ",
@@ -577,7 +718,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "nico\"",
@@ -589,7 +733,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "casla | BAKK",
@@ -601,7 +748,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Maximo",
@@ -613,7 +763,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "𝓐𝓵𝓭𝓲𝓷𝓱𝓸",
@@ -625,7 +778,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "cavani",
@@ -637,7 +793,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": " ",
@@ -649,7 +808,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Z-Z",
@@ -661,7 +823,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "xddd",
@@ -673,7 +838,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "🌩️┇𝓴𝓲𝓵𝓪",
@@ -685,7 +853,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "‎ ‎ ‎ ‎ ɪᴀиᴢɪᴛᴏ‎ ‎ ‎ ‎ ",
@@ -697,7 +868,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "🖕-𝖒𝖙𝖋-🖕",
@@ -709,7 +883,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "NENE",
@@ -721,7 +898,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "g0t4m!",
@@ -733,7 +913,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Musiala",
@@ -745,7 +928,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "dzecko",
@@ -757,7 +943,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "la tiene y se hace famoso",
@@ -769,7 +958,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "🌩️ ┇Pxedriii",
@@ -781,7 +973,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "           ᵁᴿᵁ| ᴅɪᴅᴀ(Ego)",
@@ -793,7 +988,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "sofi_ki",
@@ -805,7 +1003,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Gonxa_.",
@@ -817,7 +1018,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "𝑮𝒂𝒆𝒍",
@@ -829,7 +1033,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "£S ë b a §®7™🌹|§®777™♡",
@@ -841,7 +1048,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Robinho",
@@ -853,7 +1063,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "soy nuevo xdd",
@@ -865,7 +1078,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "             𝓜𝓸𝓷𝓴𝓮𝔂",
@@ -877,7 +1093,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Il Nene De Oro 17",
@@ -889,7 +1108,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽﷽.",
@@ -901,7 +1123,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "WinRar",
@@ -913,7 +1138,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "👤|ʙʀᴀɪᴅɪɴʜᴀ",
@@ -925,7 +1153,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "𝙶𝙻𝚇❗",
@@ -937,7 +1168,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "trivela.",
@@ -949,7 +1183,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "⋆˚࿔nonitooo⋆˚࿔",
@@ -961,7 +1198,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "𝓹𝓪𝓽𝓻𝓸𝓷 𝓭𝓸 𝓶𝓪𝓵",
@@ -973,7 +1213,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Ww",
@@ -985,7 +1228,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Brurdock",
@@ -997,7 +1243,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "alan.25",
@@ -1009,7 +1258,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "kranne #toybot",
@@ -1021,7 +1273,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "mate",
@@ -1033,7 +1288,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Russia // Kamojue1",
@@ -1045,7 +1303,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "bro respeta",
@@ -1057,7 +1318,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "¡ cj !",
@@ -1069,7 +1333,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Lautaro ",
@@ -1081,7 +1348,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "hughez 22 meu vulgo",
@@ -1093,7 +1363,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Chodi",
@@ -1105,7 +1378,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "【ⒼⓞⒹ〗",
@@ -1117,7 +1393,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "ka'1",
@@ -1129,7 +1408,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Trent-Alexander Arnold ",
@@ -1141,7 +1423,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "𝕁𝕒𝕞𝕒𝕝 𝕄𝕦𝕤𝕚𝕒𝕝𝕒",
@@ -1153,7 +1438,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Vicente//DF y MC",
@@ -1165,7 +1453,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "max2025y",
@@ -1177,7 +1468,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "3mateoo #دائStylo32💸",
@@ -1189,7 +1483,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Sakura Miyajima",
@@ -1201,7 +1498,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "plaza.kj",
@@ -1213,7 +1513,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Guts",
@@ -1225,7 +1528,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "𝖬𝗈𝗋𝗂𝖾𝗇𝗍𝖾𝗌",
@@ -1237,7 +1543,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "casimiro un choto",
@@ -1249,7 +1558,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "perrr",
@@ -1263,7 +1575,10 @@
             "ultrapowershot": false,
             "equipped": {
                 "powershot": true
-            }
+            },
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "v31ra.",
@@ -1275,7 +1590,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "★彡[ɢᴀʙʏ]彡★",
@@ -1287,7 +1605,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "me enoje oficial",
@@ -1299,7 +1620,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Panoirdo",
@@ -1311,7 +1635,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "McGinn",
@@ -1323,7 +1650,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "EL ENZOO",
@@ -1335,7 +1665,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": ".wzx",
@@ -1347,7 +1680,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "blonded.",
@@ -1359,7 +1695,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "as dfc",
@@ -1371,7 +1710,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "TDR|!Lxx",
@@ -1383,7 +1725,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "pepe",
@@ -1395,7 +1740,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "cero",
@@ -1407,7 +1755,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "fideo",
@@ -1419,7 +1770,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Lauty🥺👌",
@@ -1431,7 +1785,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Nassa",
@@ -1443,7 +1800,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "messi",
@@ -1455,7 +1815,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "𝐿. 𝒢𝑜𝓃𝒹𝑜𝓊 BVB",
@@ -1467,7 +1830,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Joaco/river",
@@ -1479,7 +1845,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "lomonaco",
@@ -1491,7 +1860,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "𝕽𝕰𝖄.𝕯¡¡¡¡(no prime)",
@@ -1503,7 +1875,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "morales",
@@ -1515,7 +1890,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "phzin",
@@ -1527,7 +1905,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Ꮲʜᴀɴᴛᴏᴍ ×͜×+",
@@ -1539,7 +1920,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "santi caputo",
@@ -1551,7 +1935,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "𓂀 travani 𓂀",
@@ -1563,7 +1950,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "★彡[ʙᴀᴜᴛɪ]彡★",
@@ -1575,7 +1965,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "‎ ‎ shisui ‎ !",
@@ -1587,7 +1980,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "el burro",
@@ -1599,7 +1995,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "𝗧𝗲𝗻𝗻",
@@ -1611,7 +2010,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "frfribu",
@@ -1623,7 +2025,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "ｃｏｌｏ",
@@ -1635,7 +2040,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "CHANCHOPE",
@@ -1647,7 +2055,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "𝖕𝖎𝖘𝖙𝖔𝖑𝖊𝖗𝖔",
@@ -1659,7 +2070,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "  LGM  cosmiksito!!",
@@ -1671,7 +2085,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "la chispa es una, confien",
@@ -1683,7 +2100,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "ᴘᴀʀᴇᴅᴇꜱ",
@@ -1695,7 +2115,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "El rompe abuelas (Prime)",
@@ -1707,7 +2130,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "ᑎᗩ丅ᑌ丅ᗴ",
@@ -1719,7 +2145,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "❗ cee",
@@ -1731,7 +2160,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "🥅𝐎𝐑𝐋𝐀𝐍𝐃𝐎 𝐆𝐈𝐋𝐋",
@@ -1743,7 +2175,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Hatem Ben Arfa🏰",
@@ -1755,7 +2190,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Evill",
@@ -1767,7 +2205,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "MI0 ! ( wos 2018 )",
@@ -1779,7 +2220,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "papu pro",
@@ -1791,7 +2235,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "FAB🙏",
@@ -1803,7 +2250,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Ortigoza",
@@ -1815,7 +2265,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "💥⚽Hansi Flick 🔥👑",
@@ -1827,7 +2280,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "    n",
@@ -1839,7 +2295,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Leno.",
@@ -1851,7 +2310,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "🥐𝙁𝙖𝙘𝙝𝙪𝙭 !",
@@ -1863,7 +2325,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "rami ⁊",
@@ -1875,7 +2340,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "𝕟𝕦𝕓𝕖",
@@ -1887,7 +2355,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "dembele",
@@ -1899,7 +2370,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "⚛𝖊𝖑 𝖕𝖆𝖕𝖚𝖘𝖎𝖓𝖍𝖔⚛",
@@ -1911,7 +2385,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "XXROBLEIXX",
@@ -1923,7 +2400,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "jere´",
@@ -1935,7 +2415,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "pepito",
@@ -1947,7 +2430,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Paolo Maldini",
@@ -1959,7 +2445,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "bL-.",
@@ -1971,7 +2460,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "𝒷𝑒𝓃𝒿𝒶 𝓁 𝓇𝒾𝓋𝑒r🚬",
@@ -1983,7 +2475,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "O rei do Loan Pilchero",
@@ -1995,7 +2490,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "negro",
@@ -2007,7 +2505,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "nicole .",
@@ -2019,7 +2520,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Memo !",
@@ -2031,7 +2535,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "𝘔𝘦𝘻𝘢",
@@ -2043,7 +2550,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "GARNACHO",
@@ -2055,7 +2565,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Panfandemiloj",
@@ -2067,7 +2580,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "♛𝔐𝔞𝔯𝔞𝔡𝔬𝔫𝔞♛",
@@ -2079,7 +2595,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "lk",
@@ -2091,7 +2610,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Cｏｒｔｕａａ",
@@ -2103,7 +2625,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "$ rd kk",
@@ -2115,7 +2640,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "𝔢𝔲 𝔟𝔞𝔱𝔞 𝔢𝔲 𝔟𝔞𝔱",
@@ -2127,7 +2655,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "d.benedetto",
@@ -2139,7 +2670,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "bachira🐝",
@@ -2151,7 +2685,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "NAV GK",
@@ -2163,7 +2700,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "eduardo darias",
@@ -2175,7 +2715,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "pajero extremo",
@@ -2187,7 +2730,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "MKs",
@@ -2199,7 +2745,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Tcb| ",
@@ -2211,7 +2760,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "ピチョ'ンシト🐥",
@@ -2223,7 +2775,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "                   |N!CK|",
@@ -2235,7 +2790,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Jefecito",
@@ -2247,7 +2805,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "🧤ʟᴀ ʙ1ʀʀᴀ ꜰʀɪᴀ🧤",
@@ -2259,7 +2820,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "𝙣𝙨𝙘 𝙞.𝙖!",
@@ -2271,7 +2835,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "soy re malo",
@@ -2283,7 +2850,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "bnznn",
@@ -2295,7 +2865,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "꧁✞☬༒ ᴹᵃˣᶦ༒✞☬꧂",
@@ -2307,7 +2880,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "ㅤᴀᴊᴀx",
@@ -2319,7 +2895,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Ariel",
@@ -2331,7 +2910,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Two!",
@@ -2343,7 +2925,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "lx!",
@@ -2355,7 +2940,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "tx!",
@@ -2367,7 +2955,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "papaoso",
@@ -2379,7 +2970,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Lucifer",
@@ -2391,7 +2985,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "t1son",
@@ -2403,7 +3000,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "ℳ   ҉   ʑ ψ",
@@ -2415,7 +3015,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "El Jordan 23",
@@ -2427,7 +3030,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "MAZZANTTI¹⁰",
@@ -2439,7 +3045,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Alan Pascal ",
@@ -2451,7 +3060,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "merentiel",
@@ -2463,7 +3075,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "el gordo ",
@@ -2475,7 +3090,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Roca sanchez █ {rentagod}",
@@ -2487,7 +3105,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": " ",
@@ -2499,7 +3120,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "vietto",
@@ -2511,7 +3135,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "♔sᴀᴍ™",
@@ -2523,7 +3150,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Williams Alarcón🎩⚽🧠🔥I5",
@@ -2535,7 +3165,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "🌩️┇𝑻𝒉𝒊𝒂𝒈𝒐 𝑱'𝑨",
@@ -2547,7 +3180,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "romaña",
@@ -2559,7 +3195,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "valencasalongue",
@@ -2571,7 +3210,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "fedquy_",
@@ -2583,7 +3225,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "ꜰʟᴏʀɪᴀɴ wirtz ⚡",
@@ -2595,7 +3240,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "sloww !",
@@ -2607,7 +3255,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Yunolf 🍳",
@@ -2619,7 +3270,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "jzz",
@@ -2631,7 +3285,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "jud",
@@ -2643,7 +3300,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "ғʀιʙu",
@@ -2655,7 +3315,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Lionel Messi (2009)",
@@ -2667,7 +3330,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "skibidi",
@@ -2679,7 +3345,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "ander herrera (CelU)",
@@ -2691,7 +3360,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Elnano",
@@ -2703,7 +3375,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "zz7o ⎝ ⛈️イ",
@@ -2715,7 +3390,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "BACHIRA DOWN",
@@ -2727,7 +3405,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "ᴊ.Qᴜɪɴᴛᴇʀᴏ",
@@ -2739,7 +3420,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": " negrito ojos claros",
@@ -2751,7 +3435,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "roman",
@@ -2763,7 +3450,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "RP|ARMANI",
@@ -2775,7 +3465,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "rin│ Shark 亗",
@@ -2787,7 +3480,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "kya",
@@ -2799,7 +3495,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "₳₮⸙ B U F F O N🧤 ",
@@ -2811,7 +3510,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "100pre ando con Jordan   ",
@@ -2823,7 +3525,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "LeoPepssi ",
@@ -2835,7 +3540,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Rosadinha ou  ''",
@@ -2847,7 +3555,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "MxY",
@@ -2859,7 +3570,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Pato",
@@ -2871,7 +3585,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Max my taper",
@@ -2883,7 +3600,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "El pulpo 🐙",
@@ -2895,7 +3615,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "MATETA",
@@ -2907,7 +3630,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Ｐ． Ｆｏｄｅｎ",
@@ -2919,7 +3645,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "𝒄𝒉𝒌𝒆𝒓",
@@ -2931,7 +3660,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "J.C..Portillo",
@@ -2943,7 +3675,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Mique",
@@ -2955,7 +3690,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "Bastian (celular)",
@@ -2967,7 +3705,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         },
         {
             "name": "luger",
@@ -2979,7 +3720,10 @@
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": false,
-            "equipped": {}
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         }
     ]
 }
