@@ -4,23 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sala de DTs X4 - Rhynox Server</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> <!-- Fuente Roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
-            font-family: 'Roboto', Arial, sans-serif; /* Fuente más seria y profesional */
-            background: linear-gradient(135deg, #1a1a1a, #2d2d2d); /* Gradiente oscuro */
+            font-family: 'Roboto', Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
             color: #ffffff;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
         }
-
         header {
             background: linear-gradient(90deg, #000, #1a1a1a);
             padding: 20px 60px;
@@ -30,7 +28,6 @@
             border-bottom: 2px solid rgba(255, 215, 0, 0.3);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
         }
-
         .logo {
             font-size: 32px;
             font-weight: 700;
@@ -38,12 +35,10 @@
             text-shadow: 0 2px 6px rgba(255, 215, 0, 0.8);
             animation: bounce 1.5s infinite ease-in-out;
         }
-
         @keyframes bounce {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-5px); }
         }
-
         nav a {
             color: #fff;
             text-decoration: none;
@@ -52,18 +47,15 @@
             font-weight: 500;
             transition: color 0.3s ease, text-shadow 0.3s ease;
         }
-
         nav a:hover {
             color: #ffd700;
             text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
         }
-
         .search-bar {
             flex-grow: 1;
             margin: 0 40px;
             position: relative;
         }
-
         .search-bar input {
             width: 100%;
             padding: 12px 50px 12px 20px;
@@ -77,12 +69,10 @@
             transition: background 0.3s ease, box-shadow 0.3s ease;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
-
         .search-bar input:focus {
             background: #444;
             box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
         }
-
         .search-results {
             position: absolute;
             top: 100%;
@@ -96,17 +86,14 @@
             display: none;
             z-index: 10;
         }
-
         .search-result {
             padding: 10px 20px;
             cursor: pointer;
             transition: background 0.3s ease;
         }
-
         .search-result:hover {
             background: #444;
         }
-
         .main-content {
             flex: 1;
             display: flex;
@@ -119,7 +106,6 @@
             background-size: cover;
             position: relative;
         }
-
         .main-content::before {
             content: '';
             position: absolute;
@@ -130,12 +116,10 @@
             background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7));
             z-index: 1;
         }
-
         .main-content > * {
             position: relative;
             z-index: 2;
         }
-
         h1 {
             font-size: 72px;
             margin-bottom: 40px;
@@ -144,12 +128,10 @@
             text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
             animation: fadeInSlide 1.5s ease-in-out;
         }
-
         @keyframes fadeInSlide {
             from { opacity: 0; transform: translateY(-30px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
         .features {
             display: flex;
             justify-content: center;
@@ -157,7 +139,6 @@
             margin: 50px 0;
             flex-wrap: wrap;
         }
-
         .feature {
             background: rgba(255, 255, 255, 0.1);
             padding: 30px;
@@ -167,27 +148,23 @@
             transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
             border: 2px solid rgba(255, 215, 0, 0.2);
         }
-
         .feature:hover {
             transform: translateY(-8px);
             box-shadow: 0 12px 30px rgba(255, 215, 0, 0.4);
             background: rgba(255, 255, 255, 0.15);
         }
-
         .feature h3 {
             margin: 0 0 20px 0;
             font-size: 28px;
             color: #ffd700;
             text-shadow: 0 1px 5px rgba(255, 215, 0, 0.7);
         }
-
         .feature p {
             font-size: 18px;
             line-height: 1.6;
             color: #ddd;
             margin-bottom: 25px;
         }
-
         .learn-more-btn {
             background: linear-gradient(45deg, #00aaff, #0077cc);
             padding: 12px 35px;
@@ -201,13 +178,11 @@
             transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
             display: inline-block;
         }
-
         .learn-more-btn:hover {
             transform: translateY(-4px);
             box-shadow: 0 10px 25px rgba(0, 170, 255, 0.5);
             background: linear-gradient(45deg, #0077cc, #00aaff);
         }
-
         .download-btn {
             background: linear-gradient(45deg, #00aaff, #0077cc);
             padding: 15px 50px;
@@ -221,13 +196,11 @@
             transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
             margin-top: 40px;
         }
-
         .download-btn:hover {
             transform: translateY(-5px);
             box-shadow: 0 12px 30px rgba(0, 170, 255, 0.6);
             background: linear-gradient(45deg, #0077cc, #00aaff);
         }
-
         footer {
             background: linear-gradient(to top, #000, #1a1a1a);
             padding: 40px;
@@ -236,14 +209,12 @@
             box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
             margin-top: auto;
         }
-
         .players-online {
             font-size: 18px;
             color: #aaa;
             margin-bottom: 15px;
             animation: pulse 2s infinite;
         }
-
         .stats-btn {
             background: linear-gradient(45deg, #00aaff, #0077cc);
             padding: 12px 35px;
@@ -257,67 +228,27 @@
             transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
             margin-top: 20px;
         }
-
         .stats-btn:hover {
             transform: translateY(-4px);
             box-shadow: 0 10px 25px rgba(0, 170, 255, 0.5);
             background: linear-gradient(45deg, #0077cc, #00aaff);
         }
-
         @keyframes pulse {
             0% { color: #aaa; }
             50% { color: #ffd700; }
             100% { color: #aaa; }
         }
-
         @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                padding: 15px 20px;
-                text-align: center;
-            }
-
-            nav {
-                margin-top: 20px;
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            nav a {
-                margin: 0 15px 15px 15px;
-            }
-
-            .search-bar {
-                margin: 20px 0;
-                width: 90%;
-            }
-
-            .main-content {
-                padding: 60px 10px;
-            }
-
-            h1 {
-                font-size: 48px;
-            }
-
-            .features {
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            .feature {
-                width: 90%;
-                padding: 20px;
-            }
-
-            .learn-more-btn, .download-btn, .stats-btn {
-                padding: 10px 30px;
-                font-size: 18px;
-            }
+            header { flex-direction: column; padding: 15px 20px; text-align: center; }
+            nav { margin-top: 20px; display: flex; flex-wrap: wrap; justify-content: center; }
+            nav a { margin: 0 15px 15px 15px; }
+            .search-bar { margin: 20px 0; width: 90%; }
+            .main-content { padding: 60px 10px; }
+            h1 { font-size: 48px; }
+            .features { flex-direction: column; gap: 20px; }
+            .feature { width: 90%; padding: 20px; }
+            .learn-more-btn, .download-btn, .stats-btn { padding: 10px 30px; font-size: 18px; }
         }
-
-        /* Modal para "Próximamente" */
         .modal {
             display: none;
             position: fixed;
@@ -330,7 +261,6 @@
             justify-content: center;
             align-items: center;
         }
-
         .modal-content {
             background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
             padding: 40px;
@@ -340,26 +270,22 @@
             width: 400px;
             animation: slideIn 0.6s ease-in-out;
         }
-
         @keyframes slideIn {
             from { opacity: 0; transform: scale(0.8); }
             to { opacity: 1; transform: scale(1); }
         }
-
         .modal-content h2 {
             font-size: 32px;
             color: #ffd700;
             margin-bottom: 20px;
             text-shadow: 0 2px 8px rgba(255, 215, 0, 0.8);
         }
-
         .modal-content p {
             font-size: 18px;
             color: #ddd;
             margin-bottom: 30px;
             line-height: 1.6;
         }
-
         .close-btn {
             background: linear-gradient(45deg, #00aaff, #0077cc);
             padding: 12px 35px;
@@ -370,13 +296,10 @@
             cursor: pointer;
             transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
-
         .close-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(0, 170, 255, 0.5);
         }
-
-        /* Modal para estadísticas de todos los jugadores */
         .stats-modal {
             display: none;
             position: fixed;
@@ -389,7 +312,6 @@
             justify-content: center;
             align-items: center;
         }
-
         .stats-modal-content {
             background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
             padding: 40px;
@@ -401,20 +323,17 @@
             overflow-y: auto;
             animation: slideIn 0.6s ease-in-out;
         }
-
         .stats-modal-content h2 {
             font-size: 32px;
             color: #ffd700;
             margin-bottom: 20px;
             text-shadow: 0 2px 8px rgba(255, 215, 0, 0.8);
         }
-
         .player-list {
             list-style: none;
             padding: 0;
             text-align: left;
         }
-
         .player-list li {
             padding: 15px;
             background: rgba(255, 255, 255, 0.05);
@@ -422,16 +341,12 @@
             margin-bottom: 10px;
             transition: background 0.3s ease;
         }
-
         .player-list li:hover {
             background: rgba(255, 255, 255, 0.1);
         }
-
         .player-list strong {
             color: #ffd700;
         }
-
-        /* Modal para estadísticas de un jugador específico (buscador) */
         .player-modal {
             display: none;
             position: fixed;
@@ -444,7 +359,6 @@
             justify-content: center;
             align-items: center;
         }
-
         .player-modal-content {
             background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
             padding: 40px;
@@ -454,64 +368,99 @@
             width: 400px;
             animation: slideIn 0.6s ease-in-out;
         }
-
         .player-modal-content h2 {
             font-size: 32px;
             color: #ffd700;
             margin-bottom: 20px;
             text-shadow: 0 2px 8px rgba(255, 215, 0, 0.8);
         }
-
         .player-modal-content p {
             font-size: 18px;
             color: #ddd;
             margin: 10px 0;
             line-height: 1.6;
         }
-
         .player-modal-content .close-btn {
-            background: linear-gradient(45deg, #00aaff, #0077cc);
-            padding: 12px 35px;
-            border: none;
-            border-radius: 30px;
-            color: #fff;
-            font-size: 18px;
-            cursor: pointer;
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
             margin-top: 20px;
         }
-
-        .player-modal-content .close-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 170, 255, 0.5);
-        }
     </style>
+</head>
+<body>
+    <header>
+        <div class="logo">X4 Haxball</div>
+        <nav>
+            <a href="#client">Client</a>
+            <a href="#discord">Discord</a>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Search Players">
+        </div>
+    </header>
+    <div class="main-content">
+        <h1>Sala de DTs X4 - Rhynox Server</h1>
+        <div class="features">
+            <div class="feature">
+                <h3>Nuestra Sala X4</h3>
+                <p>Experimenta la adrenalina de nuestra sala de Directores Técnicos X4 con un sistema único de habilidades.</p>
+                <a href="#learn-more" class="learn-more-btn">Learn More</a>
+            </div>
+            <div class="feature">
+                <h3>Sala de DTs X4</h3>
+                <p>Únete a la acción con nuestra sala de Directores Técnicos X4 y lidera tu equipo al triunfo.</p>
+                <a href="#learn-more" class="learn-more-btn">Learn More</a>
+            </div>
+        </div>
+        <a href="#download" class="download-btn">Download Client</a>
+    </div>
+    <footer>
+        <p class="players-online">Players Online: 14,8k</p>
+        <p>Test Configuration | Download Client</p>
+        <button class="stats-btn">Ver Estadísticas de Jugadores</button>
+    </footer>
+
+    <!-- Modal para "Próximamente" -->
+    <div class="modal">
+        <div class="modal-content">
+            <h2>Próximamente</h2>
+            <p>Estamos trabajando en nuestro próximo proyecto para X4 Haxball. ¡Mantente atento para más detalles!</p>
+            <button class="close-btn">Cerrar</button>
+        </div>
+    </div>
+
+    <!-- Modal para estadísticas de un jugador específico -->
+    <div class="player-modal">
+        <div class="player-modal-content">
+            <h2>Estadísticas de Jugador</h2>
+            <p><strong>Nombre:</strong> RhynoFake</p>
+            <p><strong>Goles:</strong> 42</p>
+            <p><strong>Asistencias:</strong> 15</p>
+            <p><strong>Puntos:</strong> 1500</p>
+            <p><strong>ELO:</strong> 750</p>
+            <button class="close-btn">Cerrar</button>
+        </div>
+    </div>
+
+    <!-- Modal para estadísticas de todos los jugadores -->
+    <div class="stats-modal">
+        <div class="stats-modal-content">
+            <h2>Estadísticas de Jugadores X4</h2>
+            <ul class="player-list"></ul>
+            <button class="close-btn">Cerrar</button>
+        </div>
+    </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const clientLink = document.querySelector('a[href="#client"]');
-            const modal = document.createElement('div');
-            modal.className = 'modal';
-            modal.innerHTML = `
-                <div class="modal-content">
-                    <h2>Próximamente</h2>
-                    <p>Estamos trabajando en nuestro próximo proyecto para X4 Haxball. ¡Mantente atento para más detalles!</p>
-                    <button class="close-btn">Cerrar</button>
-                </div>
-            `;
-            document.body.appendChild(modal);
-
-            if (clientLink) {
-                clientLink.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    modal.style.display = 'flex';
-                });
-            }
-
+            const modal = document.querySelector('.modal');
+            clientLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                modal.style.display = 'flex';
+            });
             modal.querySelector('.close-btn').addEventListener('click', () => {
                 modal.style.display = 'none';
             });
 
-            // Hacer "Learn More" links funcionales
             const learnMoreButtons = document.querySelectorAll('.learn-more-btn');
             learnMoreButtons.forEach(button => {
                 button.addEventListener('click', (e) => {
@@ -521,16 +470,13 @@
                 });
             });
 
-            // Buscador de jugadores
             const input = document.querySelector('.search-bar input');
             const resultsContainer = document.createElement('div');
             resultsContainer.className = 'search-results';
             document.querySelector('.search-bar').appendChild(resultsContainer);
 
-            // Cargar datos desde la URL remota
-            let jugadores = []; // Inicialmente vacío, se llenará con fetch
-
-            fetch('https://tu-dominio.com/players.json')
+            let jugadores = [];
+            fetch('https://rhynoxclient.github.io/players.json')
                 .then(response => response.json())
                 .then(data => {
                     jugadores = data.players || [];
@@ -575,25 +521,10 @@
                 document.querySelector('.player-modal').style.display = 'none';
             });
 
-            // Botón para ver estadísticas de todos los jugadores
-            const statsBtn = document.createElement('button');
-            statsBtn.className = 'stats-btn';
-            statsBtn.textContent = 'Ver Estadísticas de Jugadores';
-            document.querySelector('footer').appendChild(statsBtn);
-
-            const statsModal = document.createElement('div');
-            statsModal.className = 'stats-modal';
-            statsModal.innerHTML = `
-                <div class="stats-modal-content">
-                    <h2>Estadísticas de Jugadores X4</h2>
-                    <ul class="player-list"></ul>
-                    <button class="close-btn">Cerrar</button>
-                </div>
-            `;
-            document.body.appendChild(statsModal);
-
+            const statsBtn = document.querySelector('.stats-btn');
+            const statsModal = document.querySelector('.stats-modal');
             statsBtn.addEventListener('click', () => {
-                fetch('https://tu-dominio.com/players.json')
+                fetch('https://rhynoxclient.github.io/players.json')
                     .then(response => response.json())
                     .then(data => {
                         const playerList = statsModal.querySelector('.player-list');
@@ -615,7 +546,7 @@
                     })
                     .catch(error => {
                         console.error('Error al cargar los datos:', error);
-                        statsModal.querySelector('.player-list').innerHTML = '<li>Error al cargar las estadísticas. Asegúrate de ejecutar el script de Python.</li>';
+                        statsModal.querySelector('.player-list').innerHTML = '<li>Error al cargar las estadísticas.</li>';
                         statsModal.style.display = 'flex';
                     });
             });
@@ -625,61 +556,5 @@
             });
         });
     </script>
-</head>
-<body>
-    <header>
-        <div class="logo">X4 Haxball</div>
-        <nav>
-            <a href="#client">Client</a>
-            <a href="#discord">Discord</a>
-        </nav>
-        <div class="search-bar">
-            <input type="text" placeholder="Search Players">
-        </div>
-    </header>
-
-    <div class="main-content">
-        <h1>Sala de DTs X4 - Rhynox Server</h1>
-        <div class="features">
-            <div class="feature">
-                <h3>Nuestra Sala X4</h3>
-                <p>Experimenta la adrenalina de nuestra sala de Directores Técnicos X4 con un sistema único de habilidades.</p>
-                <a href="#learn-more" class="learn-more-btn">Learn More</a>
-            </div>
-            <div class="feature">
-                <h3>Sala de DTs X4</h3>
-                <p>Únete a la acción con nuestra sala de Directores Técnicos X4 y lidera tu equipo al triunfo.</p>
-                <a href="#learn-more" class="learn-more-btn">Learn More</a>
-            </div>
-        </div>
-        <a href="#download" class="download-btn">Download Client</a>
-    </div>
-
-    <footer>
-        <p class="players-online">Players Online: 14,8k</p>
-        <p>Test Configuration | Download Client</p>
-    </footer>
-
-    <!-- Modal para estadísticas de un jugador específico (buscador) -->
-    <div class="player-modal">
-        <div class="player-modal-content">
-            <h2>Estadísticas de Jugador</h2>
-            <p><strong>Nombre:</strong> RhynoFake</p>
-            <p><strong>Goles:</strong> 42</p>
-            <p><strong>Asistencias:</strong> 15</p>
-            <p><strong>Puntos:</strong> 1500</p>
-            <p><strong>ELO:</strong> 750</p>
-            <button class="close-btn">Cerrar</button>
-        </div>
-    </div>
-
-    <!-- Modal para estadísticas de todos los jugadores (botón en footer) -->
-    <div class="stats-modal">
-        <div class="stats-modal-content">
-            <h2>Estadísticas de Jugadores X4</h2>
-            <ul class="player-list"></ul>
-            <button class="close-btn">Cerrar</button>
-        </div>
-    </div>
 </body>
 </html>
