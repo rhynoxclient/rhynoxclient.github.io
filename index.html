@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sala de DTs X4 - Rhynox Server</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         * {
             margin: 0;
@@ -27,6 +28,10 @@
             align-items: center;
             border-bottom: 2px solid rgba(255, 215, 0, 0.3);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
         }
         .logo {
             font-size: 32px;
@@ -95,16 +100,16 @@
             background: #444;
         }
         .main-content {
-            flex: 1;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 100px 40px;
+            padding: 120px 40px 100px; /* Más padding para ocupar más pantalla */
             background: url('https://example.com/background.jpg') no-repeat center center fixed;
             background-size: cover;
             position: relative;
+            min-height: 100vh; /* Ocupa toda la pantalla inicial */
         }
         .main-content::before {
             content: '';
@@ -201,37 +206,97 @@
             box-shadow: 0 12px 30px rgba(0, 170, 255, 0.6);
             background: linear-gradient(45deg, #0077cc, #00aaff);
         }
+        .players-section {
+            width: 90%;
+            max-width: 1400px; /* Más ancho para que todo sea más grande */
+            margin: 0 auto;
+            padding: 60px 40px;
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+        }
+        .players-list-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 20px;
+            width: 35%;
+            max-width: 450px; /* Lista más grande */
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(255, 215, 0, 0.2);
+        }
+        .players-list-container h2 {
+            font-size: 28px;
+            color: #ffd700;
+            text-shadow: 0 1px 5px rgba(255, 215, 0, 0.7);
+            margin-bottom: 20px;
+        }
+        .players-list {
+            max-height: 500px; /* Más altura */
+            overflow-y: auto;
+            list-style: none;
+            padding: 0;
+            scrollbar-width: thin;
+            scrollbar-color: #ffd700 #333;
+        }
+        .players-list::-webkit-scrollbar {
+            width: 6px;
+        }
+        .players-list::-webkit-scrollbar-track {
+            background: #333;
+            border-radius: 10px;
+        }
+        .players-list::-webkit-scrollbar-thumb {
+            background: #ffd700;
+            border-radius: 10px;
+        }
+        .players-list::-webkit-scrollbar-thumb:hover {
+            background: #ffea00;
+        }
+        .players-list li {
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            margin-bottom: 10px;
+            transition: background 0.3s ease;
+            font-size: 16px;
+        }
+        .players-list li:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .players-list strong {
+            color: #ffd700;
+        }
+        .chart-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 20px;
+            width: 65%;
+            max-width: 900px; /* Gráfico más grande */
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(255, 215, 0, 0.2);
+        }
+        .chart-container h2 {
+            font-size: 32px;
+            color: #ffd700;
+            text-shadow: 0 1px 5px rgba(255, 215, 0, 0.7);
+            margin-bottom: 20px;
+        }
+        canvas {
+            max-width: 100%;
+        }
         footer {
             background: linear-gradient(to top, #000, #1a1a1a);
             padding: 40px;
             text-align: center;
             border-top: 2px solid rgba(255, 215, 0, 0.3);
             box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
-            margin-top: auto;
         }
         .players-online {
             font-size: 18px;
             color: #aaa;
             margin-bottom: 15px;
             animation: pulse 2s infinite;
-        }
-        .stats-btn {
-            background: linear-gradient(45deg, #00aaff, #0077cc);
-            padding: 12px 35px;
-            border: none;
-            border-radius: 30px;
-            color: #fff;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-            text-decoration: none;
-            transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
-            margin-top: 20px;
-        }
-        .stats-btn:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 25px rgba(0, 170, 255, 0.5);
-            background: linear-gradient(45deg, #0077cc, #00aaff);
         }
         @keyframes pulse {
             0% { color: #aaa; }
@@ -243,11 +308,14 @@
             nav { margin-top: 20px; display: flex; flex-wrap: wrap; justify-content: center; }
             nav a { margin: 0 15px 15px 15px; }
             .search-bar { margin: 20px 0; width: 90%; }
-            .main-content { padding: 60px 10px; }
+            .main-content { padding: 100px 10px 60px; }
             h1 { font-size: 48px; }
             .features { flex-direction: column; gap: 20px; }
             .feature { width: 90%; padding: 20px; }
-            .learn-more-btn, .download-btn, .stats-btn { padding: 10px 30px; font-size: 18px; }
+            .learn-more-btn, .download-btn { padding: 10px 30px; font-size: 18px; }
+            .players-section { flex-direction: column; padding: 40px 10px; }
+            .players-list-container { width: 100%; max-width: 100%; }
+            .chart-container { width: 100%; max-width: 100%; }
         }
         .modal {
             display: none;
@@ -299,53 +367,6 @@
         .close-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(0, 170, 255, 0.5);
-        }
-        .stats-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-        .stats-modal-content {
-            background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
-            padding: 40px;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-            width: 600px;
-            max-height: 80vh;
-            overflow-y: auto;
-            animation: slideIn 0.6s ease-in-out;
-        }
-        .stats-modal-content h2 {
-            font-size: 32px;
-            color: #ffd700;
-            margin-bottom: 20px;
-            text-shadow: 0 2px 8px rgba(255, 215, 0, 0.8);
-        }
-        .player-list {
-            list-style: none;
-            padding: 0;
-            text-align: left;
-        }
-        .player-list li {
-            padding: 15px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-            margin-bottom: 10px;
-            transition: background 0.3s ease;
-        }
-        .player-list li:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
-        .player-list strong {
-            color: #ffd700;
         }
         .player-modal {
             display: none;
@@ -415,8 +436,17 @@
     <footer>
         <p class="players-online">Players Online: 14,8k</p>
         <p>Test Configuration | Download Client</p>
-        <button class="stats-btn">Ver Estadísticas de Jugadores</button>
     </footer>
+    <div class="players-section">
+        <div class="players-list-container">
+            <h2>Lista de Jugadores</h2>
+            <ul class="players-list"></ul>
+        </div>
+        <div class="chart-container">
+            <h2>Top Jugadores por Puntos</h2>
+            <canvas id="pointsChart"></canvas>
+        </div>
+    </div>
 
     <!-- Modal para "Próximamente" -->
     <div class="modal">
@@ -435,16 +465,6 @@
             <p><strong>Goles:</strong> 42</p>
             <p><strong>Asistencias:</strong> 15</p>
             <p><strong>Puntos:</strong> 1500</p>
-            <p><strong>ELO:</strong> 750</p>
-            <button class="close-btn">Cerrar</button>
-        </div>
-    </div>
-
-    <!-- Modal para estadísticas de todos los jugadores -->
-    <div class="stats-modal">
-        <div class="stats-modal-content">
-            <h2>Estadísticas de Jugadores X4</h2>
-            <ul class="player-list"></ul>
             <button class="close-btn">Cerrar</button>
         </div>
     </div>
@@ -480,8 +500,55 @@
                 .then(response => response.json())
                 .then(data => {
                     jugadores = data.players || [];
+                    jugadores.sort((a, b) => (b.points || 0) - (a.points || 0));
+                    actualizarListaJugadores(jugadores);
+                    actualizarGraficoJugadores(jugadores);
                 })
                 .catch(error => console.error('Error al cargar los datos de jugadores:', error));
+
+            function actualizarListaJugadores(jugadores) {
+                const playersList = document.querySelector('.players-list');
+                playersList.innerHTML = '';
+                jugadores.forEach(player => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<strong>${player.name}</strong> - ${player.points || 0} pts`;
+                    playersList.appendChild(li);
+                });
+            }
+
+            function actualizarGraficoJugadores(jugadores) {
+                const topJugadores = jugadores.slice(0, 5);
+                const ctx = document.getElementById('pointsChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: topJugadores.map(j => j.name),
+                        datasets: [{
+                            label: 'Puntos',
+                            data: topJugadores.map(j => j.points || 0),
+                            backgroundColor: 'rgba(255, 215, 0, 0.8)',
+                            borderColor: 'rgba(255, 215, 0, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                ticks: { color: '#fff' },
+                                grid: { color: 'rgba(255, 255, 255, 0.1)' }
+                            },
+                            x: {
+                                ticks: { color: '#fff' },
+                                grid: { display: false }
+                            }
+                        },
+                        plugins: {
+                            legend: { labels: { color: '#fff' } }
+                        }
+                    }
+                });
+            }
 
             input.addEventListener('input', (e) => {
                 const query = e.target.value.toLowerCase();
@@ -512,47 +579,12 @@
                     if (index === 1) p.innerHTML = `<strong>Goles:</strong> ${jugador.goals || 0}`;
                     if (index === 2) p.innerHTML = `<strong>Asistencias:</strong> ${jugador.assists || 0}`;
                     if (index === 3) p.innerHTML = `<strong>Puntos:</strong> ${jugador.points || 0}`;
-                    if (index === 4) p.innerHTML = `<strong>ELO:</strong> ${jugador.elo || 500}`;
                 });
                 playerModal.style.display = 'flex';
             }
 
             document.querySelector('.player-modal .close-btn').addEventListener('click', () => {
                 document.querySelector('.player-modal').style.display = 'none';
-            });
-
-            const statsBtn = document.querySelector('.stats-btn');
-            const statsModal = document.querySelector('.stats-modal');
-            statsBtn.addEventListener('click', () => {
-                fetch('https://rhynoxclient.github.io/players.json')
-                    .then(response => response.json())
-                    .then(data => {
-                        const playerList = statsModal.querySelector('.player-list');
-                        playerList.innerHTML = '';
-                        data.players.forEach(player => {
-                            const li = document.createElement('li');
-                            li.innerHTML = `
-                                <strong>Nombre:</strong> ${player.name}<br>
-                                <strong>Goles:</strong> ${player.goals || 0}<br>
-                                <strong>Asistencias:</strong> ${player.assists || 0}<br>
-                                <strong>Puntos:</strong> ${player.points || 0}<br>
-                                <strong>ELO:</strong> ${player.elo || 500}<br>
-                                <strong>Habilidades:</strong> ${Object.entries(player).filter(([key, value]) => 
-                                    key !== "name" && key !== "goals" && key !== "assists" && key !== "points" && key !== "elo" && value).map(([key]) => key).join(', ') || 'Ninguna'}
-                            `;
-                            playerList.appendChild(li);
-                        });
-                        statsModal.style.display = 'flex';
-                    })
-                    .catch(error => {
-                        console.error('Error al cargar los datos:', error);
-                        statsModal.querySelector('.player-list').innerHTML = '<li>Error al cargar las estadísticas.</li>';
-                        statsModal.style.display = 'flex';
-                    });
-            });
-
-            statsModal.querySelector('.close-btn').addEventListener('click', () => {
-                statsModal.style.display = 'none';
             });
         });
     </script>
