@@ -1,18 +1,20 @@
 {
     "players": [
         {
-            "name": "odod diblao",
+            "name": "Rhyno",
             "goals": 13,
             "assists": 1,
-            "points": 49859723,
+            "points": 4500,
             "elo": 500,
             "powershot": true,
-            "mastercontrol": true,
-            "masterspace": true,
-            "ultrapowershot": true,
+            "mastercontrol": false,
+            "masterspace": false,
+            "ultrapowershot": false,
             "equipped": {
-                "mastercontrol": true,
-                "ultrapowershot": true
+                "mastercontrol": false,
+                "ultrapowershot": false,
+                "phantomstrike": true,
+                "speedboost": true
             },
             "victories": 6,
             "defeats": 2,
