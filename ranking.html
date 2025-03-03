@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranking - Sala de DTs X4 - Rhynox Server</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            background: linear-gradient(90deg, #000, #1a1a1a);
+            padding: 20px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo {
+            font-size: 32px;
+            font-weight: 700;
+            color: #ffd700;
+            text-shadow: 0 2px 6px rgba(255, 215, 0, 0.8);
+            animation: bounce 1.5s infinite ease-in-out;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 18px;
+            font-weight: 500;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+        }
+        nav a:hover {
+            color: #ffd700;
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+        }
+        .ranking-content {
+            padding: 120px 40px 100px;
+            position: relative;
+            min-height: 100vh;
+        }
+        .ranking-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7));
+            z-index: 1;
+        }
+        .ranking-content > * {
+            position: relative;
+            z-index: 2;
+        }
+        h1 {
+            font-size: 72px;
+            margin-bottom: 40px;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+            animation: fadeInSlide 1.5s ease-in-out;
+            text-align: center;
+        }
+        @keyframes fadeInSlide {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .ranking-section {
+            width: 90%;
+            max-width: 1400px;
+            margin: 0 auto 60px auto;
+            padding: 20px 40px;
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+            border-radius: 20px;
+        }
+        .ranking-list-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 20px;
+            width: 35%;
+            max-width: 450px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(255, 215, 0, 0.2);
+        }
+        .ranking-list-container h2 {
+            font-size: 28px;
+            color: #ffd700;
+            text-shadow: 0 1px 5px rgba(255, 215, 0, 0.7);
+            margin-bottom: 20px;
+        }
+        .ranking-list {
+            max-height: 400px;
+            overflow-y: auto;
+            list-style: none;
+            padding: 0;
+            scrollbar-width: thin;
+            scrollbar-color: #ffd700 #333;
+        }
+        .ranking-list::-webkit-scrollbar {
+            width: 6px;
+        }
+        .ranking-list::-webkit-scrollbar-track {
+            background: #333;
+            border-radius: 10px;
+        }
+        .ranking-list::-webkit-scrollbar-thumb {
+            background: #ffd700;
+            border-radius: 10px;
+        }
+        .ranking-list::-webkit-scrollbar-thumb:hover {
+            background: #ffea00;
+        }
+        .ranking-list li {
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            margin-bottom: 10px;
+            transition: background 0.3s ease;
+            font-size: 16px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .ranking-list li:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .ranking-list strong {
+            color: #ffd700;
+        }
+        .chart-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 20px;
+            width: 65%;
+            max-width: 900px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(255, 215, 0, 0.2);
+        }
+        .chart-container h2 {
+            font-size: 32px;
+            color: #ffd700;
+            text-shadow: 0 1px 5px rgba(255, 215, 0, 0.7);
+            margin-bottom: 20px;
+        }
+        canvas {
+            max-width: 100%;
+        }
+        footer {
+            background: linear-gradient(to top, #000, #1a1a1a);
+            padding: 20px;
+            text-align: center;
+            border-top: 2px solid rgba(255, 215, 0, 0.3);
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
+            margin-top: auto;
+        }
+        .footer-text {
+            font-size: 16px;
+            color: #ffd700;
+            text-shadow: 0 1px 5px rgba(255, 215, 0, 0.7);
+            letter-spacing: 1px;
+        }
+        @media (max-width: 768px) {
+            header { flex-direction: column; padding: 15px 20px; text-align: center; }
+            nav { margin-top: 20px; display: flex; flex-wrap: wrap; justify-content: center; }
+            nav a { margin: 0 15px 15px 15px; }
+            .ranking-content { padding: 100px 10px 60px; }
+            h1 { font-size: 48px; }
+            .ranking-section { flex-direction: column; padding: 20px 10px; }
+            .ranking-list-container, .chart-container { width: 100%; max-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">RhynoX</div>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="index.html#client">Client</a>
+            <a href="index.html#discord">Discord</a>
+        </nav>
+    </header>
+    <div class="ranking-content">
+        <h1>Ranking de Jugadores</h1>
+        
+        <!-- Ranking de Puntos -->
+        <div class="ranking-section">
+            <div class="ranking-list-container">
+                <h2>Top Puntos</h2>
+                <ul class="ranking-list" id="pointsList"></ul>
+            </div>
+            <div class="chart-container">
+                <h2>Top 5 Puntos</h2>
+                <canvas id="pointsChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Ranking de Asistencias -->
+        <div class="ranking-section">
+            <div class="ranking-list-container">
+                <h2>Top Asistencias</h2>
+                <ul class="ranking-list" id="assistsList"></ul>
+            </div>
+            <div class="chart-container">
+                <h2>Top 5 Asistencias</h2>
+                <canvas id="assistsChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Ranking de Goles -->
+        <div class="ranking-section">
+            <div class="ranking-list-container">
+                <h2>Top Goles</h2>
+                <ul class="ranking-list" id="goalsList"></ul>
+            </div>
+            <div class="chart-container">
+                <h2>Top 5 Goles</h2>
+                <canvas id="goalsChart"></canvas>
+            </div>
+        
+    </div>
+    <footer>
+        <p class="footer-text">Rhynox Server © 2025</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let jugadores = [];
+            fetch('https://rhynoxclient.github.io/players.json')
+                .then(response => response.json())
+                .then(data => {
+                    jugadores = data.players || [];
+                    console.log('Datos de jugadores cargados:', jugadores);
+                    actualizarRankings(jugadores);
+                })
+                .catch(error => console.error('Error al cargar los datos de jugadores:', error));
+
+            function actualizarRankings(jugadores) {
+                // Ranking de Puntos
+                const pointsList = document.getElementById('pointsList');
+                const sortedByPoints = [...jugadores].sort((a, b) => (b.points || 0) - (a.points || 0));
+                pointsList.innerHTML = '';
+                sortedByPoints.slice(0, 10).forEach((player, index) => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<strong>${index + 1}. ${player.name}</strong> - ${player.points || 0} pts`;
+                    pointsList.appendChild(li);
+                });
+                actualizarGrafico('pointsChart', sortedByPoints, 'points', 'Puntos');
+
+                // Ranking de Asistencias
+                const assistsList = document.getElementById('assistsList');
+                const sortedByAssists = [...jugadores].sort((a, b) => (b.assists || 0) - (a.assists || 0));
+                assistsList.innerHTML = '';
+                sortedByAssists.slice(0, 10).forEach((player, index) => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<strong>${index + 1}. ${player.name}</strong> - ${player.assists || 0} asist`;
+                    assistsList.appendChild(li);
+                });
+                actualizarGrafico('assistsChart', sortedByAssists, 'assists', 'Asistencias');
+
+                // Ranking de Goles
+                const goalsList = document.getElementById('goalsList');
+                const sortedByGoals = [...jugadores].sort((a, b) => (b.goals || 0) - (a.goals || 0));
+                goalsList.innerHTML = '';
+                sortedByGoals.slice(0, 10).forEach((player, index) => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<strong>${index + 1}. ${player.name}</strong> - ${player.goals || 0} goles`;
+                    goalsList.appendChild(li);
+                });
+                actualizarGrafico('goalsChart', sortedByGoals, 'goals', 'Goles');
+
+                // Ranking de Victorias
+                const victoriesList = document.getElementById('victoriesList');
+                const sortedByVictories = [...jugadores].sort((a, b) => (b.victories || 0) - (a.victories || 0));
+                victoriesList.innerHTML = '';
+                sortedByVictories.slice(0, 10).forEach((player, index) => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<strong>${index + 1}. ${player.name}</strong> - ${player.victories || 0} victorias`;
+                    victoriesList.appendChild(li);
+                });
+                actualizarGrafico('victoriesChart', sortedByVictories, 'victories', 'Victorias');
+            }
+
+            function actualizarGrafico(chartId, sortedData, dataKey, label) {
+                const topData = sortedData.slice(0, 5);
+                const ctx = document.getElementById(chartId).getContext('2d');
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: topData.map(j => j.name),
+                        datasets: [{
+                            label: label,
+                            data: topData.map(j => j[dataKey] || 0),
+                            backgroundColor: 'rgba(255, 215, 0, 0.8)',
+                            borderColor: 'rgba(255, 215, 0, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                ticks: { color: '#fff' },
+                                grid: { color: 'rgba(255, 255, 255, 0.1)' }
+                            },
+                            x: {
+                                ticks: { color: '#fff' },
+                                grid: { display: false }
+                            }
+                        },
+                        plugins: {
+                            legend: { labels: { color: '#fff' } }
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
