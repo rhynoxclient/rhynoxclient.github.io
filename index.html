@@ -219,6 +219,12 @@
             text-shadow: 0 1px 5px rgba(255, 215, 0, 0.7);
             letter-spacing: 1px;
         }
+        .match-history-text {
+            font-size: 16px;
+            color: #ddd;
+            margin: 10px 0;
+            line-height: 1.6;
+        }
         @media (max-width: 768px) {
             header { flex-direction: column; padding: 15px 20px; text-align: center; }
             nav { margin-top: 20px; display: flex; flex-wrap: wrap; justify-content: center; }
@@ -266,29 +272,6 @@
             color: #ddd;
             margin-bottom: 10px;
             line-height: 1.6;
-        }
-        /* Estilos para los cuadraditos del historial de partidos (global) */
-        .match-history {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 5px;
-            margin: 10px 0;
-            justify-content: center;
-        }
-        .match-square {
-            width: 20px;
-            height: 20px;
-            border-radius: 4px;
-            border: 1px solid #fff;
-        }
-        .match-square.victory {
-            background-color: #00ff00; /* Verde para victorias */
-        }
-        .match-square.defeat {
-            background-color: #ff0000; /* Rojo para derrotas */
-        }
-        .match-square.draw {
-            background-color: #ffff00; /* Amarillo para empates */
         }
         .close-btn {
             background: linear-gradient(45deg, #00aaff, #0077cc);
@@ -347,7 +330,7 @@
         <div class="logo">RhynoX</div>
         <nav>
             <a href="#client">Cliente</a>
-            <a href="#discord">Discord</a>
+            <a href="https://discord.gg/w94yQZUqQ3" target="_blank">Discord</a>
             <a href="ranking.html">Ranking</a>
         </nav>
         <div class="search-bar">
@@ -389,7 +372,6 @@
             <p><strong>Goles:</strong> 42</p>
             <p><strong>Asistencias:</strong> 15</p>
             <p><strong>Puntos:</strong> 1500</p>
-            <p><strong>Historial de Partidos:</strong></p>
             <div class="match-history"></div>
             <button class="close-btn">Cerrar</button>
         </div>
@@ -465,16 +447,7 @@
                     if (index === 3) p.innerHTML = `<strong>Puntos:</strong> ${jugador.points || 0}`;
                 });
 
-                matchHistoryDiv.innerHTML = '';
-                const matchHistory = Array(jugador.victories || 0).fill('victory')
-                    .concat(Array(jugador.defeats || 0).fill('defeat'))
-                    .concat(Array(jugador.draws || 0).fill('draw'));
-
-                matchHistory.forEach(result => {
-                    const square = document.createElement('div');
-                    square.className = `match-square ${result}`;
-                    matchHistoryDiv.appendChild(square);
-                });
+             
 
                 playerModal.style.display = 'flex';
             }
