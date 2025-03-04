@@ -2,16 +2,16 @@
     "players": [
         {
             "name": "lv!",
-            "goals": 21,
+            "goals": 22,
             "assists": 4,
-            "points": 1900,
+            "points": 2000,
             "elo": 500,
             "powershot": true,
             "mastercontrol": false,
             "masterspace": false,
             "ultrapowershot": true,
             "equipped": {
-                "mastercontrol": false,
+                "mastercontrol": true,
                 "speedboost": true,
                 "highlighted": true,
                 "ultrapowershot": true
@@ -4643,7 +4643,7 @@
             "draws": 0
         },
         {
-            "name": "s. romero",
+            "name": "zeballos",
             "goals": 0,
             "assists": 0,
             "points": 0,
@@ -6099,9 +6099,9 @@
         },
         {
             "name": "ㅤㅤㅤㅤㅤㅤkapa !",
-            "goals": 0,
+            "goals": 2,
             "assists": 0,
-            "points": 0,
+            "points": 100,
             "elo": 500,
             "powershot": false,
             "mastercontrol": false,
@@ -6174,9 +6174,9 @@
         },
         {
             "name": "Villaviolador (2021 2022)",
-            "goals": 0,
+            "goals": 1,
             "assists": 0,
-            "points": 0,
+            "points": 100,
             "elo": 500,
             "powershot": false,
             "mastercontrol": false,
@@ -6218,7 +6218,7 @@
             "draws": 0
         },
         {
-            "name": "Bananirou",
+            "name": "el papu",
             "goals": 0,
             "assists": 0,
             "points": 0,
@@ -6249,6 +6249,21 @@
         },
         {
             "name": "⡷⠂ᴘɪᴛʏ ᴍᴀʀᴛɪɴᴇᴢ⠐⢾",
+            "goals": 2,
+            "assists": 0,
+            "points": 200,
+            "elo": 500,
+            "powershot": false,
+            "mastercontrol": false,
+            "masterspace": false,
+            "ultrapowershot": false,
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
+        },
+        {
+            "name": "mesi",
             "goals": 0,
             "assists": 0,
             "points": 0,
@@ -6263,7 +6278,37 @@
             "draws": 0
         },
         {
-            "name": "mesi",
+            "name": "check",
+            "goals": 0,
+            "assists": 0,
+            "points": 0,
+            "elo": 500,
+            "powershot": false,
+            "mastercontrol": false,
+            "masterspace": false,
+            "ultrapowershot": false,
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
+        },
+        {
+            "name": "Juanilaperla",
+            "goals": 0,
+            "assists": 0,
+            "points": 0,
+            "elo": 500,
+            "powershot": false,
+            "mastercontrol": false,
+            "masterspace": false,
+            "ultrapowershot": false,
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
+        },
+        {
+            "name": "selff",
             "goals": 0,
             "assists": 0,
             "points": 0,
