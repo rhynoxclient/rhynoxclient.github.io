@@ -3,7 +3,7 @@
         {
             "name": "lv!",
             "goals": 22,
-            "assists": 4,
+            "assists": 1,
             "points": 2000,
             "elo": 500,
             "powershot": true,
@@ -3415,8 +3415,8 @@
         {
             "name": "ᴊ.Qᴜɪɴᴛᴇʀᴏ",
             "goals": 4,
-            "assists": 0,
-            "points": 400,
+            "assists": 1,
+            "points": 500,
             "elo": 500,
             "powershot": false,
             "mastercontrol": false,
