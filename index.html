@@ -379,16 +379,20 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const clientLink = document.querySelector('a[href="#client"]');
+            // Modal para "Próximamente"
+            const clientLink = document.querySelector('a[href="download.html"]'); // Corregido el selector
             const modal = document.querySelector('.modal');
-            clientLink.addEventListener('click', (e) => {
-                e.preventDefault();
-                modal.style.display = 'flex';
-            });
+            if (clientLink) { // Verificación para evitar errores si no existe
+                clientLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    modal.style.display = 'flex';
+                });
+            }
             modal.querySelector('.close-btn').addEventListener('click', () => {
                 modal.style.display = 'none';
             });
 
+            // Botones "Ver más"
             const learnMoreButtons = document.querySelectorAll('.learn-more-btn');
             learnMoreButtons.forEach(button => {
                 button.addEventListener('click', (e) => {
@@ -398,20 +402,32 @@
                 });
             });
 
+            // Configuración de la barra de búsqueda
             const input = document.querySelector('.search-bar input');
             const resultsContainer = document.createElement('div');
             resultsContainer.className = 'search-results';
             document.querySelector('.search-bar').appendChild(resultsContainer);
 
-            let jugadores = [];
+            // Datos estáticos por defecto para pruebas
+            let jugadores = [
+                { name: "Jugador1", goals: 10, assists: 5, points: 100 },
+                { name: "Jugador2", goals: 20, assists: 8, points: 150 },
+                { name: "RhynoFake", goals: 42, assists: 15, points: 1500 }
+            ];
+
+            // Intentar cargar datos desde el JSON
             fetch('https://rhynoxclient.github.io/players.json')
-                .then(response => response.json())
+                .then(response => {
+                    if (!response.ok) throw new Error('No se pudo cargar el JSON');
+                    return response.json();
+                })
                 .then(data => {
-                    jugadores = data.players || [];
-                    console.log('Datos de jugadores cargados:', jugadores);
+                    jugadores = data.players || jugadores; // Usa datos del JSON o los estáticos si falla
+                    console.log('Jugadores cargados:', jugadores);
                 })
                 .catch(error => console.error('Error al cargar los datos de jugadores:', error));
 
+            // Evento de búsqueda
             input.addEventListener('input', (e) => {
                 const query = e.target.value.toLowerCase();
                 resultsContainer.innerHTML = '';
@@ -419,6 +435,7 @@
 
                 if (query) {
                     const resultados = jugadores.filter(j => j.name.toLowerCase().includes(query));
+                    console.log('Resultados filtrados:', resultados);
                     resultados.forEach(jugador => {
                         const result = document.createElement('div');
                         result.className = 'search-result';
@@ -433,25 +450,24 @@
                 }
             });
 
+            // Mostrar perfil del jugador en el modal
             function mostrarPerfilJugador(jugador) {
-                console.log('Datos del jugador en modal:', jugador);
+                console.log('Mostrando perfil de:', jugador);
                 const playerModal = document.querySelector('.player-modal');
                 const modalContent = playerModal.querySelector('.player-modal-content');
-                const matchHistoryDiv = modalContent.querySelector('.match-history');
 
-                playerModal.querySelector('h2').textContent = `Estadísticas de ${jugador.name}`;
-                playerModal.querySelectorAll('p').forEach((p, index) => {
+                modalContent.querySelector('h2').textContent = `Estadísticas de ${jugador.name}`;
+                modalContent.querySelectorAll('p').forEach((p, index) => {
                     if (index === 0) p.innerHTML = `<strong>Nombre:</strong> ${jugador.name}`;
                     if (index === 1) p.innerHTML = `<strong>Goles:</strong> ${jugador.goals || 0}`;
                     if (index === 2) p.innerHTML = `<strong>Asistencias:</strong> ${jugador.assists || 0}`;
                     if (index === 3) p.innerHTML = `<strong>Puntos:</strong> ${jugador.points || 0}`;
                 });
 
-             
-
                 playerModal.style.display = 'flex';
             }
 
+            // Cerrar el modal de jugador
             document.querySelector('.player-modal .close-btn').addEventListener('click', () => {
                 document.querySelector('.player-modal').style.display = 'none';
             });
