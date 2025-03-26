@@ -21,7 +21,6 @@
             position: relative;
             overflow-x: hidden;
         }
-        /* Fondo de partículas */
         #particles-js {
             position: fixed;
             top: 0;
@@ -294,7 +293,9 @@
             border-radius: 20px;
             text-align: center;
             box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3), 0 0 15px rgba(0, 170, 255, 0.2);
-            width: 400px;
+            width: 500px;
+            max-height: 80vh;
+            overflow-y: auto;
             border: 2px solid rgba(255, 215, 0, 0.3);
             animation: modalPop 0.6s ease-in-out forwards;
         }
@@ -309,12 +310,97 @@
             margin-bottom: 20px;
             text-shadow: 0 2px 8px rgba(255, 215, 0, 0.5);
         }
-        .modal-content p, .player-modal-content p {
-            font-size: 18px;
+        .player-modal-content .player-circle {
+            width: 80px;
+            height: 80px;
+            background: #ff0000;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+            color: #fff;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+        }
+        .player-modal-content .stats-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        .player-modal-content .stats-grid p {
+            font-size: 16px;
             color: #ddd;
-            margin: 10px 0;
-            line-height: 1.6;
+            margin: 5px 0;
+            line-height: 1.5;
             text-shadow: 0 0 3px rgba(255, 215, 0, 0.2);
+        }
+        .player-modal-content .stats-grid p strong {
+            color: #ffd700;
+        }
+        .player-modal-content .tags {
+            margin-bottom: 20px;
+        }
+        .player-modal-content .tags h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            color: #00aaff;
+            margin-bottom: 10px;
+            text-shadow: 0 1px 5px rgba(0, 170, 255, 0.5);
+        }
+        .player-modal-content .tags .tag {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 14px;
+            color: #ddd;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            display: inline-block;
+        }
+        .player-modal-content .inventory {
+            margin-top: 20px;
+            text-align: left;
+        }
+        .player-modal-content .inventory h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            color: #00aaff;
+            margin-bottom: 15px;
+            text-shadow: 0 1px 5px rgba(0, 170, 255, 0.5);
+        }
+        .player-modal-content .inventory .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .player-modal-content .inventory .skill {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px 12px;
+            border-radius: 10px;
+            font-size: 14px;
+            color: #ddd;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .player-modal-content .inventory .skill.equipped {
+            background: linear-gradient(45deg, #00aaff, #0077cc);
+            color: #fff;
+            border-color: #00aaff;
+            box-shadow: 0 0 10px rgba(0, 170, 255, 0.5);
+        }
+        .player-modal-content .inventory .skill:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+        }
+        .player-modal-content .inventory .skill .emoji {
+            font-size: 16px;
         }
         .close-btn {
             background: linear-gradient(45deg, #00aaff, #0077cc);
@@ -326,6 +412,7 @@
             cursor: pointer;
             transition: all 0.4s ease;
             box-shadow: 0 0 10px rgba(0, 170, 255, 0.3);
+            margin-top: 20px;
         }
         .close-btn:hover {
             transform: translateY(-3px) scale(1.03);
@@ -342,6 +429,7 @@
             .features { flex-direction: column; gap: 20px; }
             .feature { width: 90%; padding: 20px; }
             .learn-more-btn, .download-btn { padding: 10px 30px; font-size: 18px; }
+            .player-modal-content { width: 90%; padding: 20px; }
         }
     </style>
 </head>
@@ -363,7 +451,7 @@
         <div class="features">
             <div class="feature">
                 <h3>Nuestra Sala X4 con DTS</h3>
-                <p>Una sala de Haxball X4 con diferentes tipos de habilidades, y algo mas competitivo...</p>
+                <p>Una sala de Haxball X4 con diferentes tipos de habilidades, y algo más competitivo...</p>
                 <a href="#learn-more" class="learn-more-btn">Ver más</a>
             </div>
             <div class="feature">
@@ -388,12 +476,23 @@
     <!-- Modal para estadísticas de un jugador -->
     <div class="player-modal">
         <div class="player-modal-content">
-            <h2>Estadísticas de Jugador</h2>
-            <p><strong>Nombre:</strong> RhynoFake</p>
-            <p><strong>Goles:</strong> 42</p>
-            <p><strong>Asistencias:</strong> 15</p>
-            <p><strong>Puntos:</strong> 1500</p>
-            <div class="match-history"></div>
+            <h2>Perfil de Jugador</h2>
+            <div class="player-circle"></div>
+            <div class="stats-grid">
+                <p><strong>Nombre:</strong> <span>RhynoFake</span></p>
+                <p><strong>Goles:</strong> <span>42</span></p>
+                <p><strong>Asistencias:</strong> <span>15</span></p>
+                <p><strong>Puntos:</strong> <span>1500</span></p>
+                <p><strong>ELO:</strong> <span>500</span></p>
+            </div>
+            <div class="tags">
+                <h3>Etiquetas</h3>
+                <span class="tag">Jugador</span>
+            </div>
+            <div class="inventory">
+                <h3>Inventario de Habilidades</h3>
+                <div class="skills-list"></div>
+            </div>
             <button class="close-btn">Cerrar</button>
         </div>
     </div>
@@ -472,9 +571,36 @@
 
             // Datos estáticos por defecto para pruebas
             let jugadores = [
-                { name: "Jugador1", goals: 10, assists: 5, points: 100 },
-                { name: "Jugador2", goals: 20, assists: 8, points: 150 },
-                { name: "RhynoFake", goals: 42, assists: 15, points: 1500 }
+                {
+                    name: "Memo !",
+                    goals: 1,
+                    assists: 2,
+                    points: 2340,
+                    elo: 500,
+                    powershot: false,
+                    mastercontrol: false,
+                    masterspace: false,
+                    ultrapowershot: false,
+                    equipped: {},
+                    victories: 0,
+                    defeats: 0,
+                    draws: 0
+                },
+                {
+                    name: "RhynoFake",
+                    goals: 42,
+                    assists: 15,
+                    points: 1500,
+                    elo: 700,
+                    powershot: true,
+                    mastercontrol: true,
+                    masterspace: false,
+                    ultrapowershot: false,
+                    equipped: { powershot: true },
+                    victories: 10,
+                    defeats: 5,
+                    draws: 3
+                }
             ];
 
             // Intentar cargar datos desde el JSON
@@ -518,13 +644,45 @@
                 const playerModal = document.querySelector('.player-modal');
                 const modalContent = playerModal.querySelector('.player-modal-content');
 
-                modalContent.querySelector('h2').textContent = `Estadísticas de ${jugador.name}`;
-                modalContent.querySelectorAll('p').forEach((p, index) => {
-                    if (index === 0) p.innerHTML = `<strong>Nombre:</strong> ${jugador.name}`;
-                    if (index === 1) p.innerHTML = `<strong>Goles:</strong> ${jugador.goals || 0}`;
-                    if (index === 2) p.innerHTML = `<strong>Asistencias:</strong> ${jugador.assists || 0}`;
-                    if (index === 3) p.innerHTML = `<strong>Puntos:</strong> ${jugador.points || 0}`;
+                modalContent.querySelector('h2').textContent = `Perfil de ${jugador.name}`;
+                const playerCircle = modalContent.querySelector('.player-circle');
+                playerCircle.textContent = jugador.name.charAt(0).toUpperCase(); // Mostrar la inicial del nombre
+                const statsGrid = modalContent.querySelector('.stats-grid');
+                statsGrid.innerHTML = `
+                    <p><strong>Nombre:</strong> ${jugador.name}</p>
+                    <p><strong>Goles:</strong> ${jugador.goals || 0}</p>
+                    <p><strong>Asistencias:</strong> ${jugador.assists || 0}</p>
+                    <p><strong>Puntos:</strong> ${jugador.points || 0}</p>
+                    <p><strong>ELO:</strong> ${jugador.elo || 500}</p>
+                `;
+
+                // Inventario de habilidades
+                const skillsList = modalContent.querySelector('.skills-list');
+                skillsList.innerHTML = '';
+                const habilidades = [
+                    { name: 'Powershot', key: 'powershot', emoji: '💪' },
+                    { name: 'Master Control', key: 'mastercontrol', emoji: '🎮' },
+                    { name: 'Master Space', key: 'masterspace', emoji: '🌌' },
+                    { name: 'Ultra Powershot', key: 'ultrapowershot', emoji: '💥' }
+                ];
+
+                habilidades.forEach(habilidad => {
+                    const hasSkill = jugador[habilidad.key];
+                    const isEquipped = jugador.equipped[habilidad.key];
+                    if (hasSkill) {
+                        const skillElement = document.createElement('div');
+                        skillElement.className = `skill ${isEquipped ? 'equipped' : ''}`;
+                        skillElement.innerHTML = `
+                            <span class="emoji">${habilidad.emoji}</span>
+                            <span>${habilidad.name} ${isEquipped ? '(Equipado)' : ''}</span>
+                        `;
+                        skillsList.appendChild(skillElement);
+                    }
                 });
+
+                if (skillsList.children.length === 0) {
+                    skillsList.innerHTML = '<p style="color: #aaa;">No hay habilidades desbloqueadas.</p>';
+                }
 
                 playerModal.style.display = 'flex';
             }
