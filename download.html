@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Descargar Cliente - Rhynox Server</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -18,6 +18,18 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            position: relative;
+            overflow-x: hidden;
+        }
+        /* Fondo de partículas */
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            background: transparent;
         }
         header {
             background: linear-gradient(90deg, #000, #1a1a1a);
@@ -26,17 +38,19 @@
             justify-content: space-between;
             align-items: center;
             border-bottom: 2px solid rgba(255, 215, 0, 0.3);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.2);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
+            backdrop-filter: blur(5px);
         }
         .logo {
+            font-family: 'Montserrat', sans-serif;
             font-size: 32px;
             font-weight: 700;
             color: #ffd700;
-            text-shadow: 0 2px 6px rgba(255, 215, 0, 0.8);
+            text-shadow: 0 2px 6px rgba(255, 215, 0, 0.5), 0 0 10px rgba(255, 215, 0, 0.3);
             animation: bounce 1.5s infinite ease-in-out;
         }
         @keyframes bounce {
@@ -49,11 +63,13 @@
             margin-left: 30px;
             font-size: 18px;
             font-weight: 500;
-            transition: color 0.3s ease, text-shadow 0.3s ease;
+            transition: all 0.4s ease;
+            text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
         }
         nav a:hover {
             color: #ffd700;
-            text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.7), 0 0 15px rgba(255, 215, 0, 0.4);
+            transform: translateY(-2px);
         }
         .main-content {
             display: flex;
@@ -62,10 +78,9 @@
             justify-content: center;
             text-align: center;
             padding: 120px 40px 100px;
-            background: url('https://example.com/minecraft-background.jpg') no-repeat center center fixed;
-            background-size: cover;
             position: relative;
             min-height: 100vh;
+            z-index: 1;
         }
         .main-content::before {
             content: '';
@@ -75,29 +90,30 @@
             width: 100%;
             height: 100%;
             background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7));
-            z-index: 1;
+            z-index: 0;
         }
         .main-content > * {
             position: relative;
             z-index: 2;
         }
         h1 {
+            font-family: 'Montserrat', sans-serif;
             font-size: 72px;
             margin-bottom: 20px;
             font-weight: 700;
             color: #fff;
-            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
-            animation: fadeInSlide 1.5s ease-in-out;
+            text-shadow: 0 4px 10px rgba(255, 215, 0, 0.5), 0 0 15px rgba(255, 215, 0, 0.3);
+            animation: fadeInSlide 1.5s ease-in-out forwards;
         }
         @keyframes fadeInSlide {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
+            0% { opacity: 0; transform: translateY(-30px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
         p {
             font-size: 24px;
             color: #ddd;
             margin-bottom: 40px;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+            text-shadow: 0 2px 5px rgba(255, 215, 0, 0.2);
         }
         .download-btn {
             background: linear-gradient(45deg, #00aaff, #0077cc);
@@ -107,42 +123,90 @@
             color: #fff;
             font-size: 24px;
             font-weight: bold;
+            font-family: 'Montserrat', sans-serif;
             cursor: pointer;
             text-decoration: none;
-            transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+            transition: all 0.5s ease;
             margin-top: 20px;
+            box-shadow: 0 0 15px rgba(0, 170, 255, 0.4);
+            position: relative;
+            overflow: hidden;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .download-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: 0.8s;
+        }
+        .download-btn:hover::before {
+            left: 100%;
         }
         .download-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(0, 170, 255, 0.6);
+            transform: translateY(-5px) scale(1.03);
+            box-shadow: 0 12px 30px rgba(0, 170, 255, 0.6), 0 0 20px rgba(0, 170, 255, 0.5);
             background: linear-gradient(45deg, #0077cc, #00aaff);
         }
+        .download-icon {
+            font-size: 28px;
+        }
         .info-box {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
             padding: 20px 40px;
             border-radius: 20px;
             margin: 20px 0;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.2);
             border: 2px solid rgba(255, 215, 0, 0.2);
             font-size: 18px;
             color: #ddd;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .info-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255, 215, 0, 0.1), rgba(0, 170, 255, 0.1));
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .info-box:hover::before {
+            opacity: 1;
+        }
+        .info-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(255, 215, 0, 0.4), 0 0 15px rgba(0, 170, 255, 0.3);
+            border-color: rgba(255, 215, 0, 0.5);
         }
         .info-box span {
             color: #ffd700;
             font-weight: 500;
+            text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
         }
         footer {
             background: linear-gradient(to top, #000, #1a1a1a);
             padding: 20px;
             text-align: center;
             border-top: 2px solid rgba(255, 215, 0, 0.3);
-            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 -4px 15px rgba(255, 215, 0, 0.2);
             margin-top: auto;
+            z-index: 1;
         }
         .footer-text {
+            font-family: 'Montserrat', sans-serif;
             font-size: 16px;
             color: #ffd700;
-            text-shadow: 0 1px 5px rgba(255, 215, 0, 0.7);
+            text-shadow: 0 1px 5px rgba(255, 215, 0, 0.5);
             letter-spacing: 1px;
         }
         @media (max-width: 768px) {
@@ -153,11 +217,13 @@
             h1 { font-size: 48px; }
             p { font-size: 18px; }
             .download-btn { padding: 10px 30px; font-size: 18px; }
+            .download-icon { font-size: 20px; }
             .info-box { font-size: 16px; padding: 15px 20px; }
         }
     </style>
 </head>
 <body>
+    <div id="particles-js"></div>
     <header>
         <div class="logo">RhynoX</div>
         <nav>
@@ -171,12 +237,57 @@
         <p>Obtén la mejor experiencia de Haxball con nuestro cliente.</p>
         <div class="info-box">
             <p>Compatibilidad: <span>Windows (64-bit)</span></p>
-            <p>Tamaño: <span>140 MB</span></p>
+            <p>Tamaño: <span>150 MB</span></p>
         </div>
-        <a href="https://www.dropbox.com/scl/fi/nwzt9fq2zgq37xzhqgl0r/haxball-app-win32-x64.zip?rlkey=041t16ds2sb8g3uq5dpezys7o&st=a22zer3b&dl=1" download="RhynoXClient.zip" class="download-btn">Descargar Ahora</a>
+        <a href="https://www.dropbox.com/scl/fi/ubkmic94xoy1624ni0tk5/haxball-app-win32-x64.zip?rlkey=evgaccs9qsmsg7ums1znn0eev&st=387vytax&dl=1" download="RhynoXClient.zip" class="download-btn">
+            <span class="download-icon">📥</span> Descargar Ahora
+        </a>
     </div>
     <footer>
         <p class="footer-text">Rhynox Server © 2025</p>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Configuración de Particles.js
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 60, density: { enable: true, value_area: 800 } },
+                color: { value: ['#ffd700', '#00aaff', '#ffffff'] },
+                shape: { type: 'circle' },
+                opacity: { value: 0.4, random: true },
+                size: { value: 3, random: true },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#ffd700',
+                    opacity: 0.3,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 1.5,
+                    direction: 'none',
+                    random: false,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: { enable: true, mode: 'repulse' },
+                    onclick: { enable: true, mode: 'push' },
+                    resize: true
+                },
+                modes: {
+                    repulse: { distance: 100, duration: 0.4 },
+                    push: { particles_nb: 4 }
+                }
+            },
+            retina_detect: true
+        });
+    </script>
 </body>
 </html>
