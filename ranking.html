@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ranking - Sala de DTs X4 - Rhynox Server</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         * {
@@ -14,11 +14,23 @@
         }
         body {
             font-family: 'Roboto', Arial, sans-serif;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            background: linear-gradient(135deg, #1e1e2f 0%, #2d2d2d 100%);
             color: #ffffff;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            position: relative;
+            overflow-x: hidden;
+        }
+        /* Fondo de partículas */
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            background: transparent;
         }
         header {
             background: linear-gradient(90deg, #000, #1a1a1a);
@@ -27,17 +39,19 @@
             justify-content: space-between;
             align-items: center;
             border-bottom: 2px solid rgba(255, 215, 0, 0.3);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.2);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
+            backdrop-filter: blur(5px);
         }
         .logo {
+            font-family: 'Montserrat', sans-serif;
             font-size: 32px;
             font-weight: 700;
             color: #ffd700;
-            text-shadow: 0 2px 6px rgba(255, 215, 0, 0.8);
+            text-shadow: 0 2px 6px rgba(255, 215, 0, 0.5), 0 0 10px rgba(255, 215, 0, 0.3);
             animation: bounce 1.5s infinite ease-in-out;
         }
         @keyframes bounce {
@@ -50,16 +64,19 @@
             margin-left: 30px;
             font-size: 18px;
             font-weight: 500;
-            transition: color 0.3s ease, text-shadow 0.3s ease;
+            transition: all 0.4s ease;
+            text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
         }
         nav a:hover {
             color: #ffd700;
-            text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.7), 0 0 15px rgba(255, 215, 0, 0.4);
+            transform: translateY(-2px);
         }
         .ranking-content {
             padding: 120px 40px 100px;
             position: relative;
             min-height: 100vh;
+            z-index: 1;
         }
         .ranking-content::before {
             content: '';
@@ -69,24 +86,25 @@
             width: 100%;
             height: 100%;
             background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7));
-            z-index: 1;
+            z-index: 0;
         }
         .ranking-content > * {
             position: relative;
             z-index: 2;
         }
         h1 {
+            font-family: 'Montserrat', sans-serif;
             font-size: 72px;
             margin-bottom: 40px;
             font-weight: 700;
             color: #fff;
-            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+            text-shadow: 0 4px 10px rgba(255, 215, 0, 0.5), 0 0 15px rgba(255, 215, 0, 0.3);
             animation: fadeInSlide 1.5s ease-in-out;
             text-align: center;
         }
         @keyframes fadeInSlide {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
+            0% { opacity: 0; transform: translateY(-30px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
         .ranking-section {
             width: 90%;
@@ -98,20 +116,22 @@
             justify-content: center;
             background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
             border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.2);
         }
         .ranking-list-container {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
             padding: 30px;
             border-radius: 20px;
             width: 35%;
             max-width: 450px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.2);
             border: 2px solid rgba(255, 215, 0, 0.2);
         }
         .ranking-list-container h2 {
+            font-family: 'Montserrat', sans-serif;
             font-size: 28px;
             color: #ffd700;
-            text-shadow: 0 1px 5px rgba(255, 215, 0, 0.7);
+            text-shadow: 0 1px 5px rgba(255, 215, 0, 0.5);
             margin-bottom: 20px;
         }
         .ranking-list {
@@ -137,34 +157,59 @@
             background: #ffea00;
         }
         .ranking-list li {
-            padding: 12px;
-            background: rgba(255, 255, 255, 0.05);
+            padding: 12px 20px;
+            background: rgba(0, 0, 0, 0.5);
             border-radius: 8px;
             margin-bottom: 10px;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
             font-size: 16px;
+            font-family: 'Montserrat', sans-serif;
             display: flex;
+            align-items: center;
             justify-content: space-between;
+            border: 1px solid rgba(255, 215, 0, 0.1);
         }
         .ranking-list li:hover {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 215, 0, 0.1);
+            transform: scale(1.02);
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
         }
-        .ranking-list strong {
+        .ranking-list .player-name {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #fff;
+            text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+        }
+        .ranking-list .medal {
+            font-size: 20px;
+            margin-right: 5px;
+        }
+        .ranking-list .points {
+            font-weight: bold;
+        }
+        .ranking-list li:first-child .points {
             color: #ffd700;
+            text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+        }
+        .ranking-list li:nth-child(n+2) .points {
+            color: #00ff00;
+            text-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
         }
         .chart-container {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
             padding: 30px;
             border-radius: 20px;
             width: 65%;
             max-width: 900px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.2);
             border: 2px solid rgba(255, 215, 0, 0.2);
         }
         .chart-container h2 {
+            font-family: 'Montserrat', sans-serif;
             font-size: 32px;
             color: #ffd700;
-            text-shadow: 0 1px 5px rgba(255, 215, 0, 0.7);
+            text-shadow: 0 1px 5px rgba(255, 215, 0, 0.5);
             margin-bottom: 20px;
         }
         canvas {
@@ -175,13 +220,15 @@
             padding: 20px;
             text-align: center;
             border-top: 2px solid rgba(255, 215, 0, 0.3);
-            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 -4px 15px rgba(255, 215, 0, 0.2);
             margin-top: auto;
+            z-index: 1;
         }
         .footer-text {
+            font-family: 'Montserrat', sans-serif;
             font-size: 16px;
             color: #ffd700;
-            text-shadow: 0 1px 5px rgba(255, 215, 0, 0.7);
+            text-shadow: 0 1px 5px rgba(255, 215, 0, 0.5);
             letter-spacing: 1px;
         }
         @media (max-width: 768px) {
@@ -196,11 +243,12 @@
     </style>
 </head>
 <body>
+    <div id="particles-js"></div>
     <header>
         <div class="logo">RhynoX</div>
         <nav>
             <a href="index.html">Inicio</a>
-            <a href="index.html#client">Client</a>
+            <a href="index.html#client">Cliente</a>
             <a href="index.html#discord">Discord</a>
         </nav>
     </header>
@@ -241,13 +289,54 @@
                 <h2>Top 5 Goles</h2>
                 <canvas id="goalsChart"></canvas>
             </div>
-        
+        </div>
     </div>
     <footer>
         <p class="footer-text">Rhynox Server © 2025</p>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
+        // Configuración de Particles.js
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 60, density: { enable: true, value_area: 800 } },
+                color: { value: ['#ffd700', '#00aaff', '#ffffff'] },
+                shape: { type: 'circle' },
+                opacity: { value: 0.4, random: true },
+                size: { value: 3, random: true },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#ffd700',
+                    opacity: 0.3,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 1.5,
+                    direction: 'none',
+                    random: false,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: { enable: true, mode: 'repulse' },
+                    onclick: { enable: true, mode: 'push' },
+                    resize: true
+                },
+                modes: {
+                    repulse: { distance: 100, duration: 0.4 },
+                    push: { particles_nb: 4 }
+                }
+            },
+            retina_detect: true
+        });
+
         document.addEventListener('DOMContentLoaded', () => {
             let jugadores = [];
             fetch('https://rhynoxclient.github.io/players.json')
@@ -257,7 +346,18 @@
                     console.log('Datos de jugadores cargados:', jugadores);
                     actualizarRankings(jugadores);
                 })
-                .catch(error => console.error('Error al cargar los datos de jugadores:', error));
+                .catch(error => {
+                    console.error('Error al cargar los datos de jugadores:', error);
+                    // Datos de prueba en caso de error
+                    jugadores = [
+                        { name: "tsq...", points: 277, assists: 10, goals: 20 },
+                        { name: "Pablo Aimar", points: 256, assists: 15, goals: 18 },
+                        { name: "undefined", points: 247, assists: 12, goals: 22 },
+                        { name: "undefined", points: 217, assists: 8, goals: 15 },
+                        { name: "undefined", points: 205, assists: 5, goals: 10 }
+                    ];
+                    actualizarRankings(jugadores);
+                });
 
             function actualizarRankings(jugadores) {
                 // Ranking de Puntos
@@ -266,7 +366,13 @@
                 pointsList.innerHTML = '';
                 sortedByPoints.slice(0, 10).forEach((player, index) => {
                     const li = document.createElement('li');
-                    li.innerHTML = `<strong>${index + 1}. ${player.name}</strong> - ${player.points || 0} pts`;
+                    const medal = index === 0 ? '👑' : index === 1 ? '🥈' : index === 2 ? '🥉' : '';
+                    li.innerHTML = `
+                        <span class="player-name">
+                            ${medal ? `<span class="medal">${medal}</span>` : `${index + 1}.`} ${player.name}
+                        </span>
+                        <span class="points">${player.points || 0}</span>
+                    `;
                     pointsList.appendChild(li);
                 });
                 actualizarGrafico('pointsChart', sortedByPoints, 'points', 'Puntos');
@@ -277,7 +383,13 @@
                 assistsList.innerHTML = '';
                 sortedByAssists.slice(0, 10).forEach((player, index) => {
                     const li = document.createElement('li');
-                    li.innerHTML = `<strong>${index + 1}. ${player.name}</strong> - ${player.assists || 0} asist`;
+                    const medal = index === 0 ? '👑' : index === 1 ? '🥈' : index === 2 ? '🥉' : '';
+                    li.innerHTML = `
+                        <span class="player-name">
+                            ${medal ? `<span class="medal">${medal}</span>` : `${index + 1}.`} ${player.name}
+                        </span>
+                        <span class="points">${player.assists || 0}</span>
+                    `;
                     assistsList.appendChild(li);
                 });
                 actualizarGrafico('assistsChart', sortedByAssists, 'assists', 'Asistencias');
@@ -288,21 +400,16 @@
                 goalsList.innerHTML = '';
                 sortedByGoals.slice(0, 10).forEach((player, index) => {
                     const li = document.createElement('li');
-                    li.innerHTML = `<strong>${index + 1}. ${player.name}</strong> - ${player.goals || 0} goles`;
+                    const medal = index === 0 ? '👑' : index === 1 ? '🥈' : index === 2 ? '🥉' : '';
+                    li.innerHTML = `
+                        <span class="player-name">
+                            ${medal ? `<span class="medal">${medal}</span>` : `${index + 1}.`} ${player.name}
+                        </span>
+                        <span class="points">${player.goals || 0}</span>
+                    `;
                     goalsList.appendChild(li);
                 });
                 actualizarGrafico('goalsChart', sortedByGoals, 'goals', 'Goles');
-
-                // Ranking de Victorias
-                const victoriesList = document.getElementById('victoriesList');
-                const sortedByVictories = [...jugadores].sort((a, b) => (b.victories || 0) - (a.victories || 0));
-                victoriesList.innerHTML = '';
-                sortedByVictories.slice(0, 10).forEach((player, index) => {
-                    const li = document.createElement('li');
-                    li.innerHTML = `<strong>${index + 1}. ${player.name}</strong> - ${player.victories || 0} victorias`;
-                    victoriesList.appendChild(li);
-                });
-                actualizarGrafico('victoriesChart', sortedByVictories, 'victories', 'Victorias');
             }
 
             function actualizarGrafico(chartId, sortedData, dataKey, label) {
