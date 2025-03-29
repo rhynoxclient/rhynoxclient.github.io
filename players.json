@@ -4271,6 +4271,21 @@
             "victories": 0,
             "defeats": 0,
             "draws": 0
+        },
+        {
+            "name": "Jere recoba",
+            "goals": 0,
+            "assists": 0,
+            "points": 0,
+            "elo": 500,
+            "powershot": false,
+            "mastercontrol": false,
+            "masterspace": false,
+            "ultrapowershot": false,
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0
         }
     ]
 }
