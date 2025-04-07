@@ -13,8 +13,8 @@
         }
         body {
             font-family: 'Roboto', Arial, sans-serif;
-            background: linear-gradient(135deg, #1e1e2f 0%, #2d2d2d 100%);
-            color: #ffffff;
+            background: linear-gradient(135deg, #000000, #0a0a0a); /* Degradado oscuro */
+            color: #b0b0b0; /* Gris oscuro para el texto */
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -32,43 +32,33 @@
             background: transparent;
         }
         header {
-            background: linear-gradient(90deg, #000, #1a1a1a);
+            background: rgba(0, 0, 0, 0.9); /* Fondo oscuro y opaco */
             padding: 20px 60px;
             display: flex;
-            justify-content: space-between;
+            justify-content: center; /* Centrar el nav */
             align-items: center;
-            border-bottom: 2px solid rgba(255, 215, 0, 0.3);
-            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.2);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(5px);
         }
-        .logo {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 32px;
-            font-weight: 700;
-            color: #ffd700;
-            text-shadow: 0 2px 6px rgba(255, 215, 0, 0.5), 0 0 10px rgba(255, 215, 0, 0.3);
-            animation: bounce 1.5s infinite ease-in-out;
-        }
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
+        .logo img {
+            height: 40px; /* Logo pequeño en el header */
+            width: auto;
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
         }
         nav a {
             color: #fff;
             text-decoration: none;
-            margin-left: 30px;
+            margin: 0 30px; /* Ajustar márgenes para centrar mejor los enlaces */
             font-size: 18px;
             font-weight: 500;
             transition: all 0.4s ease;
-            text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
         }
         nav a:hover {
-            color: #ffd700;
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.7), 0 0 15px rgba(255, 215, 0, 0.4);
+            color: #e0e0e0; /* Gris claro al pasar el mouse */
             transform: translateY(-2px);
         }
         .main-content {
@@ -82,27 +72,13 @@
             min-height: 100vh;
             z-index: 1;
         }
-        .main-content::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7));
-            z-index: 0;
-        }
-        .main-content > * {
-            position: relative;
-            z-index: 2;
-        }
         h1 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 72px;
+            font-size: 64px;
             margin-bottom: 20px;
             font-weight: 700;
             color: #fff;
-            text-shadow: 0 4px 10px rgba(255, 215, 0, 0.5), 0 0 15px rgba(255, 215, 0, 0.3);
+            text-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
             animation: fadeInSlide 1.5s ease-in-out forwards;
         }
         @keyframes fadeInSlide {
@@ -110,104 +86,68 @@
             100% { opacity: 1; transform: translateY(0); }
         }
         p {
-            font-size: 24px;
-            color: #ddd;
+            font-size: 20px;
+            color: #b0b0b0; /* Gris oscuro para el texto */
             margin-bottom: 40px;
-            text-shadow: 0 2px 5px rgba(255, 215, 0, 0.2);
+            line-height: 1.6;
         }
         .download-btn {
-            background: linear-gradient(45deg, #00aaff, #0077cc);
-            padding: 15px 50px;
-            border: none;
-            border-radius: 35px;
-            color: #fff;
-            font-size: 24px;
+            padding: 15px 40px;
+            font-size: 18px;
             font-weight: bold;
-            font-family: 'Montserrat', sans-serif;
-            cursor: pointer;
             text-decoration: none;
-            transition: all 0.5s ease;
-            margin-top: 20px;
-            box-shadow: 0 0 15px rgba(0, 170, 255, 0.4);
+            border-radius: 8px;
+            transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: linear-gradient(90deg, #ffffff, #e0e0e0); /* Degradado blanco-gris */
+            color: #000;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
             display: inline-flex;
             align-items: center;
             gap: 10px;
         }
-        .download-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: 0.8s;
-        }
-        .download-btn:hover::before {
-            left: 100%;
-        }
         .download-btn:hover {
-            transform: translateY(-5px) scale(1.03);
-            box-shadow: 0 12px 30px rgba(0, 170, 255, 0.6), 0 0 20px rgba(0, 170, 255, 0.5);
-            background: linear-gradient(45deg, #0077cc, #00aaff);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(255, 255, 255, 0.5);
+            background: linear-gradient(90deg, #e0e0e0, #ffffff);
         }
         .download-icon {
-            font-size: 28px;
+            font-size: 20px;
         }
         .info-box {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.05); /* Fondo semi-transparente */
             padding: 20px 40px;
             border-radius: 20px;
             margin: 20px 0;
-            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.2);
-            border: 2px solid rgba(255, 215, 0, 0.2);
+            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
             font-size: 18px;
-            color: #ddd;
+            color: #b0b0b0;
             transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        .info-box::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, rgba(255, 215, 0, 0.1), rgba(0, 170, 255, 0.1));
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-        .info-box:hover::before {
-            opacity: 1;
         }
         .info-box:hover {
             transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(255, 215, 0, 0.4), 0 0 15px rgba(0, 170, 255, 0.3);
-            border-color: rgba(255, 215, 0, 0.5);
+            box-shadow: 0 12px 30px rgba(255, 255, 255, 0.2);
         }
         .info-box span {
-            color: #ffd700;
+            color: #fff;
             font-weight: 500;
-            text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
         }
         footer {
-            background: linear-gradient(to top, #000, #1a1a1a);
+            background: rgba(0, 0, 0, 0.9);
             padding: 20px;
             text-align: center;
-            border-top: 2px solid rgba(255, 215, 0, 0.3);
-            box-shadow: 0 -4px 15px rgba(255, 215, 0, 0.2);
+            box-shadow: 0 -4px 20px rgba(255, 255, 255, 0.05);
             margin-top: auto;
             z-index: 1;
+            backdrop-filter: blur(5px);
         }
         .footer-text {
             font-family: 'Montserrat', sans-serif;
             font-size: 16px;
-            color: #ffd700;
-            text-shadow: 0 1px 5px rgba(255, 215, 0, 0.5);
-            letter-spacing: 1px;
+            color: #b0b0b0;
         }
         @media (max-width: 768px) {
             header { flex-direction: column; padding: 15px 20px; text-align: center; }
@@ -215,9 +155,9 @@
             nav a { margin: 0 15px 15px 15px; }
             .main-content { padding: 100px 10px 60px; }
             h1 { font-size: 48px; }
-            p { font-size: 18px; }
-            .download-btn { padding: 10px 30px; font-size: 18px; }
-            .download-icon { font-size: 20px; }
+            p { font-size: 16px; }
+            .download-btn { padding: 12px 30px; font-size: 16px; }
+            .download-icon { font-size: 16px; }
             .info-box { font-size: 16px; padding: 15px 20px; }
         }
     </style>
@@ -225,7 +165,6 @@
 <body>
     <div id="particles-js"></div>
     <header>
-        <div class="logo">RhynoX</div>
         <nav>
             <a href="index.html">Inicio</a>
             <a href="https://discord.gg/w94yQZUqQ3" target="_blank">Discord</a>
@@ -233,13 +172,13 @@
         </nav>
     </header>
     <div class="main-content">
-        <h1>Descarga el Cliente RhynoX</h1>
+        <h1>Descarga el Cliente Rhynox</h1>
         <p>Obtén la mejor experiencia de Haxball con nuestro cliente.</p>
         <div class="info-box">
             <p>Compatibilidad: <span>Windows (64-bit)</span></p>
-            <p>Tamaño: <span>130 MB</span></p>
+            <p>Tamaño: <span>144 MB</span></p>
         </div>
-        <a href="https://www.dropbox.com/scl/fi/ubkmic94xoy1624ni0tk5/haxball-app-win32-x64.zip?rlkey=evgaccs9qsmsg7ums1znn0eev&st=387vytax&dl=1" download="RhynoXClient.zip" class="download-btn">
+        <a href="https://www.dropbox.com/scl/fi/nwzt9fq2zgq37xzhqgl0r/haxball-app-win32-x64.zip?rlkey=041t16ds2sb8g3uq5dpezys7o&st=x8f3p3l0&dl=1" download="SaturnClient.zip" class="download-btn">
             <span class="download-icon">📥</span> Descargar Ahora
         </a>
     </div>
@@ -253,15 +192,15 @@
         particlesJS('particles-js', {
             particles: {
                 number: { value: 60, density: { enable: true, value_area: 800 } },
-                color: { value: ['#ffd700', '#00aaff', '#ffffff'] },
+                color: { value: ['#ffffff', '#b0b0b0'] }, /* Colores blanco y gris */
                 shape: { type: 'circle' },
                 opacity: { value: 0.4, random: true },
                 size: { value: 3, random: true },
                 line_linked: {
                     enable: true,
                     distance: 150,
-                    color: '#ffd700',
-                    opacity: 0.3,
+                    color: '#ffffff',
+                    opacity: 0.2,
                     width: 1
                 },
                 move: {
