@@ -61,18 +61,18 @@
             "draws": 0
         },
         {
-            "name": "test",
-            "goals": 48,
+            "name": "haysa1212sasa",
+            "goals": 51,
             "assists": 1,
-            "points": 18170,
+            "points": 11260,
             "elo": 500,
             "powershot": true,
             "mastercontrol": true,
             "masterspace": true,
             "ultrapowershot": true,
             "equipped": {
-                "ultrapowershot": true,
-                "mastercontrol": true
+                "mastercontrol": true,
+                "homingpass": true
             },
             "victories": 0,
             "defeats": 0,
