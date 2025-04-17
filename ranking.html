@@ -610,81 +610,80 @@
             resultsContainer.className = 'search-results';
             document.querySelector('.search-bar').appendChild(resultsContainer);
 
+            // Usar los datos del JSON proporcionado directamente
             let jugadores = [
                 {
-                    name: "Rhyno 2",
-                    goals: 96,
-                    assists: 2,
-                    points: 196475,
-                    elo: 500,
-                    powershot: true,
-                    mastercontrol: true,
-                    masterspace: true,
-                    ultrapowershot: true,
-                    equipped: {
-                        mastercontrol: true,
-                        homingpass: true,
-                        ultrapowershot: true
-                    },
-                    victories: 0,
-                    defeats: 0,
-                    draws: 0,
-                    victories_dt: 0,
-                    defeats_dt: 0,
-                    draws_dt: 1
+                    "name": "viej0",
+                    "goals": 4,
+                    "assists": 5,
+                    "points": 4155,
+                    "elo": 500,
+                    "powershot": false,
+                    "mastercontrol": false,
+                    "masterspace": false,
+                    "ultrapowershot": false,
+                    "equipped": {},
+                    "victories": 0,
+                    "defeats": 0,
+                    "draws": 0,
+                    "victories_dt": 0,
+                    "defeats_dt": 0,
+                    "draws_dt": 0
                 },
                 {
-                    name: "Memo !",
-                    goals: 1,
-                    assists: 2,
-                    points: 2340,
-                    elo: 500,
-                    powershot: false,
-                    mastercontrol: false,
-                    masterspace: false,
-                    ultrapowershot: false,
-                    equipped: {},
-                    victories: 0,
-                    defeats: 0,
-                    draws: 0,
-                    victories_dt: 2,
-                    defeats_dt: 1,
-                    draws_dt: 0
+                    "name": "𝕭𝖊𝖓𝖏𝖆/𝖌𝖐",
+                    "goals": 0,
+                    "assists": 0,
+                    "points": 5860,
+                    "elo": 500,
+                    "powershot": true,
+                    "mastercontrol": false,
+                    "masterspace": false,
+                    "ultrapowershot": false,
+                    "equipped": {},
+                    "victories": 0,
+                    "defeats": 0,
+                    "draws": 0,
+                    "victories_dt": 1,
+                    "defeats_dt": 0,
+                    "draws_dt": 0
                 },
                 {
-                    name: "RhynoFake",
-                    goals: 42,
-                    assists: 15,
-                    points: 1500,
-                    elo: 700,
-                    powershot: true,
-                    mastercontrol: true,
-                    masterspace: false,
-                    ultrapowershot: false,
-                    equipped: { powershot: true },
-                    victories: 10,
-                    defeats: 5,
-                    draws: 3,
-                    victories_dt: 3,
-                    defeats_dt: 2,
-                    draws_dt: 1
+                    "name": "07 ᴘᴏᴛʀᴏ !?",
+                    "goals": 1,
+                    "assists": 0,
+                    "points": 630,
+                    "elo": 500,
+                    "powershot": false,
+                    "mastercontrol": false,
+                    "masterspace": false,
+                    "ultrapowershot": false,
+                    "equipped": {},
+                    "victories": 0,
+                    "defeats": 0,
+                    "draws": 0,
+                    "victories_dt": 0,
+                    "defeats_dt": 0,
+                    "draws_dt": 0
                 }
             ];
 
-            // Intentar cargar datos desde el JSON
+            // Intentar cargar datos desde el JSON remoto
             fetch('https://rhynoxclient.github.io/players.json')
                 .then(response => {
                     if (!response.ok) throw new Error('No se pudo cargar el JSON');
                     return response.json();
                 })
                 .then(data => {
+                    console.log('JSON remoto cargado:', data); // Depuración
                     jugadores = data.players || jugadores;
-                    console.log('Jugadores cargados:', jugadores);
+                    console.log('Jugadores usados:', jugadores); // Depuración
                     actualizarRankings(jugadores);
                     setupCategorySelector(jugadores);
                 })
                 .catch(error => {
-                    console.error('Error al cargar los datos de jugadores:', error);
+                    console.error('Error al cargar el JSON remoto:', error);
+                    console.log('Usando datos locales:', jugadores); // Depuración
                     actualizarRankings(jugadores);
                     setupCategorySelector(jugadores);
                 });
@@ -692,28 +691,32 @@
             // Configurar selector de categoría
             function setupCategorySelector(jugadores) {
                 const categorySelector = document.getElementById('categorySelector');
-                // Cargar la categoría guardada desde LocalStorage, o usar 'victories' por defecto
                 const savedCategory = localStorage.getItem('selectedCategory') || 'victories';
                 categorySelector.value = savedCategory;
 
                 categorySelector.addEventListener('change', (e) => {
                     const selectedCategory = e.target.value;
-                    // Guardar la categoría seleccionada en LocalStorage
+                    console.log('Categoría seleccionada:', selectedCategory); // Depuración
                     localStorage.setItem('selectedCategory', selectedCategory);
+
                     // Ocultar todos los rankings
                     document.querySelectorAll('.ranking-section').forEach(section => {
                         section.classList.remove('active');
                     });
+
                     // Mostrar el ranking seleccionado
                     const selectedRanking = document.getElementById(`${selectedCategory}Ranking`);
                     if (selectedRanking) {
                         selectedRanking.classList.add('active');
+                        console.log('Mostrando contenedor:', selectedRanking.id); // Depuración
+                    } else {
+                        console.error('Contenedor no encontrado para:', selectedCategory);
                     }
-                    // Actualizar el ranking y gráfico para la categoría seleccionada
+
+                    // Actualizar el ranking y gráfico
                     actualizarRankingCategoria(jugadores, selectedCategory);
                 });
 
-                // Disparar el evento 'change' para mostrar la categoría guardada al cargar
                 categorySelector.dispatchEvent(new Event('change'));
             }
 
@@ -725,7 +728,7 @@
 
                 if (query) {
                     const resultados = jugadores.filter(j => j.name.toLowerCase().includes(query));
-                    console.log('Resultados filtrados:', resultados);
+                    console.log('Resultados filtrados:', resultados); // Depuración
                     resultados.forEach(jugador => {
                         const result = document.createElement('div');
                         result.className = 'search-result';
@@ -742,7 +745,7 @@
 
             // Mostrar perfil del jugador en el modal
             function mostrarPerfilJugador(jugador) {
-                console.log('Mostrando perfil de:', jugador);
+                console.log('Mostrando perfil de:', jugador); // Depuración
                 const playerModal = document.querySelector('.player-modal');
                 const modalContent = playerModal.querySelector('.player-modal-content');
 
@@ -813,20 +816,31 @@
                 };
 
                 const { listId, chartId, key, label } = config[categoria];
-                const sortedData = [...jugadores].sort((a, b) => (b[key] || 0) - (a[key] || 0));
+                // Mostrar todos los jugadores, incluso con 0, para depuración
+                const sortedData = [...jugadores]
+                    .filter(player => player[key] !== undefined) // Solo filtrar undefined
+                    .sort((a, b) => (b[key] || 0) - (a[key] || 0));
+
+                console.log(`Datos para ${categoria}:`, sortedData); // Depuración
+
                 const list = document.getElementById(listId);
                 list.innerHTML = '';
-                sortedData.slice(0, 10).forEach((player, index) => {
-                    const li = document.createElement('li');
-                    const medal = index === 0 ? '👑' : index === 1 ? '🥈' : index === 2 ? '🥉' : '';
-                    li.innerHTML = `
-                        <span class="player-name">
-                            ${medal ? `<span class="medal">${medal}</span>` : `${index + 1}.`} ${player.name}
-                        </span>
-                        <span class="points">${player[key] || 0}</span>
-                    `;
-                    list.appendChild(li);
-                });
+
+                if (sortedData.length === 0 || sortedData.every(player => player[key] === 0)) {
+                    list.innerHTML = '<li style="color: #b0b0b0;">No hay datos disponibles para esta categoría.</li>';
+                } else {
+                    sortedData.slice(0, 10).forEach((player, index) => {
+                        const li = document.createElement('li');
+                        const medal = index === 0 ? '👑' : index === 1 ? '🥈' : index === 2 ? '🥉' : '';
+                        li.innerHTML = `
+                            <span class="player-name">
+                                ${medal ? `<span class="medal">${medal}</span>` : `${index + 1}.`} ${player.name}
+                            </span>
+                            <span class="points">${player[key] || 0}</span>
+                        `;
+                        list.appendChild(li);
+                    });
+                }
 
                 actualizarGrafico(chartId, sortedData, key, label);
             }
@@ -842,17 +856,17 @@
             function actualizarGrafico(chartId, sortedData, dataKey, label) {
                 const topData = sortedData.slice(0, 5);
                 const ctx = document.getElementById(chartId).getContext('2d');
-                // Destruir gráfico existente si hay uno
                 if (ctx.chart) {
                     ctx.chart.destroy();
                 }
+
                 ctx.chart = new Chart(ctx, {
                     type: 'bar',
                     data: {
-                        labels: topData.map(j => j.name),
+                        labels: topData.length > 0 ? topData.map(j => j.name) : ['Sin datos'],
                         datasets: [{
                             label: label,
-                            data: topData.map(j => j[dataKey] || 0),
+                            data: topData.length > 0 ? topData.map(j => j[dataKey] || 0) : [0],
                             backgroundColor: 'rgba(255, 255, 255, 0.2)',
                             borderColor: 'rgba(255, 255, 255, 0.5)',
                             borderWidth: 1
