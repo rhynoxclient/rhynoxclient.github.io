@@ -451,8 +451,8 @@
                 <option value="points">Puntos</option>
                 <option value="assists">Asistencias</option>
                 <option value="goals">Goles</option>
-                <option value="victories_dt">Victorias DT</option>
-                <option value="defeats_dt">Derrotas DT</option>
+                <option value="victoriesDt">Victorias DT</option>
+                <option value="defeatsDt">Derrotas DT</option>
             </select>
         </div>
 
@@ -610,7 +610,7 @@
             resultsContainer.className = 'search-results';
             document.querySelector('.search-bar').appendChild(resultsContainer);
 
-            // Usar los datos del JSON proporcionado directamente
+            // Usar los datos del JSON proporcionado directamente como respaldo
             let jugadores = [
                 {
                     "name": "viej0",
@@ -665,6 +665,154 @@
                     "victories_dt": 0,
                     "defeats_dt": 0,
                     "draws_dt": 0
+                },
+                {
+                    "name": "🧤🍺𝐁𝟏𝐫𝐫𝐚𝐅𝐫í𝐚🍺🧤",
+                    "goals": 0,
+                    "assists": 0,
+                    "points": 230,
+                    "elo": 500,
+                    "powershot": false,
+                    "mastercontrol": false,
+                    "masterspace": false,
+                    "ultrapowershot": false,
+                    "equipped": {},
+                    "victories": 0,
+                    "defeats": 0,
+                    "draws": 0,
+                    "victories_dt": 0,
+                    "defeats_dt": 0,
+                    "draws_dt": 0
+                },
+                {
+                    "name": "🦏 » Rhyno",
+                    "goals": 96,
+                    "assists": 2,
+                    "points": 209945,
+                    "elo": 500,
+                    "powershot": true,
+                    "mastercontrol": true,
+                    "masterspace": true,
+                    "ultrapowershot": true,
+                    "equipped": {
+                        "mastercontrol": true,
+                        "homingpass": true,
+                        "ultrapowershot": true
+                    },
+                    "victories": 0,
+                    "defeats": 2,
+                    "draws": 0,
+                    "victories_dt": 1,
+                    "defeats_dt": 0,
+                    "draws_dt": 1
+                },
+                {
+                    "name": "martin palermo",
+                    "goals": 8,
+                    "assists": 1,
+                    "points": 8870,
+                    "elo": 500,
+                    "powershot": false,
+                    "mastercontrol": false,
+                    "masterspace": false,
+                    "ultrapowershot": false,
+                    "equipped": {},
+                    "victories": 0,
+                    "defeats": 0,
+                    "draws": 0,
+                    "victories_dt": 0,
+                    "defeats_dt": 0,
+                    "draws_dt": 0
+                },
+                {
+                    "name": "Noxzin",
+                    "goals": 0,
+                    "assists": 0,
+                    "points": 2200,
+                    "elo": 500,
+                    "powershot": false,
+                    "mastercontrol": false,
+                    "masterspace": false,
+                    "ultrapowershot": false,
+                    "equipped": {},
+                    "victories": 0,
+                    "defeats": 0,
+                    "draws": 0,
+                    "victories_dt": 0,
+                    "defeats_dt": 0,
+                    "draws_dt": 0
+                },
+                {
+                    "name": "𝐏𝐚𝐜𝐨 𝐌𝐞𝐦𝐨🌈™",
+                    "goals": 1,
+                    "assists": 0,
+                    "points": 560,
+                    "elo": 500,
+                    "powershot": false,
+                    "mastercontrol": false,
+                    "masterspace": false,
+                    "ultrapowershot": false,
+                    "equipped": {},
+                    "victories": 0,
+                    "defeats": 0,
+                    "draws": 0,
+                    "victories_dt": 0,
+                    "defeats_dt": 0,
+                    "draws_dt": 0
+                },
+                {
+                    "name": "alekty",
+                    "goals": 0,
+                    "assists": 0,
+                    "points": 670,
+                    "elo": 500,
+                    "powershot": false,
+                    "mastercontrol": false,
+                    "masterspace": false,
+                    "ultrapowershot": false,
+                    "equipped": {},
+                    "victories": 0,
+                    "defeats": 0,
+                    "draws": 0,
+                    "victories_dt": 0,
+                    "defeats_dt": 0,
+                    "draws_dt": 0
+                },
+                {
+                    "name": "wanchope abila",
+                    "goals": 0,
+                    "assists": 1,
+                    "points": 470,
+                    "elo": 500,
+                    "powershot": false,
+                    "mastercontrol": false,
+                    "masterspace": false,
+                    "ultrapowershot": false,
+                    "equipped": {},
+                    "victories": 0,
+                    "defeats": 0,
+                    "draws": 0,
+                    "victories_dt": 0,
+                    "defeats_dt": 0,
+                    "draws_dt": 0
+                },
+                {
+                    "name": "               d!",
+                    "goals": 0,
+                    "assists": 0,
+                    "points": 50,
+                    "elo": 500,
+                    "powershot": false,
+                    "mastercontrol": false,
+                    "masterspace": false,
+                    "ultrapowershot": false,
+                    "equipped": {},
+                    "victories": 0,
+                    "defeats": 0,
+                    "draws": 0,
+                    "victories_dt": 0,
+                    "defeats_dt": 0,
+                    "draws_dt": 0
                 }
             ];
 
@@ -675,15 +823,15 @@
                     return response.json();
                 })
                 .then(data => {
-                    console.log('JSON remoto cargado:', data); // Depuración
+                    console.log('JSON remoto cargado:', data);
                     jugadores = data.players || jugadores;
-                    console.log('Jugadores usados:', jugadores); // Depuración
+                    console.log('Jugadores usados:', jugadores);
                     actualizarRankings(jugadores);
                     setupCategorySelector(jugadores);
                 })
                 .catch(error => {
                     console.error('Error al cargar el JSON remoto:', error);
-                    console.log('Usando datos locales:', jugadores); // Depuración
+                    console.log('Usando datos locales:', jugadores);
                     actualizarRankings(jugadores);
                     setupCategorySelector(jugadores);
                 });
@@ -696,7 +844,7 @@
 
                 categorySelector.addEventListener('change', (e) => {
                     const selectedCategory = e.target.value;
-                    console.log('Categoría seleccionada:', selectedCategory); // Depuración
+                    console.log('Categoría seleccionada:', selectedCategory);
                     localStorage.setItem('selectedCategory', selectedCategory);
 
                     // Ocultar todos los rankings
@@ -708,7 +856,7 @@
                     const selectedRanking = document.getElementById(`${selectedCategory}Ranking`);
                     if (selectedRanking) {
                         selectedRanking.classList.add('active');
-                        console.log('Mostrando contenedor:', selectedRanking.id); // Depuración
+                        console.log('Mostrando contenedor:', selectedRanking.id);
                     } else {
                         console.error('Contenedor no encontrado para:', selectedCategory);
                     }
@@ -728,7 +876,7 @@
 
                 if (query) {
                     const resultados = jugadores.filter(j => j.name.toLowerCase().includes(query));
-                    console.log('Resultados filtrados:', resultados); // Depuración
+                    console.log('Resultados filtrados:', resultados);
                     resultados.forEach(jugador => {
                         const result = document.createElement('div');
                         result.className = 'search-result';
@@ -745,7 +893,7 @@
 
             // Mostrar perfil del jugador en el modal
             function mostrarPerfilJugador(jugador) {
-                console.log('Mostrando perfil de:', jugador); // Depuración
+                console.log('Mostrando perfil de:', jugador);
                 const playerModal = document.querySelector('.player-modal');
                 const modalContent = playerModal.querySelector('.player-modal-content');
 
@@ -811,22 +959,27 @@
                     points: { listId: 'pointsList', chartId: 'pointsChart', key: 'points', label: 'Puntos' },
                     assists: { listId: 'assistsList', chartId: 'assistsChart', key: 'assists', label: 'Asistencias' },
                     goals: { listId: 'goalsList', chartId: 'goalsChart', key: 'goals', label: 'Goles' },
-                    victories_dt: { listId: 'victoriesDtList', chartId: 'victoriesDtChart', key: 'victories_dt', label: 'Victorias DT' },
-                    defeats_dt: { listId: 'defeatsDtList', chartId: 'defeatsDtChart', key: 'defeats_dt', label: 'Derrotas DT' }
+                    victoriesDt: { listId: 'victoriesDtList', chartId: 'victoriesDtChart', key: 'victories_dt', label: 'Victorias DT' },
+                    defeatsDt: { listId: 'defeatsDtList', chartId: 'defeatsDtChart', key: 'defeats_dt', label: 'Derrotas DT' }
                 };
 
                 const { listId, chartId, key, label } = config[categoria];
-                // Mostrar todos los jugadores, incluso con 0, para depuración
+                // Ordenar jugadores de mayor a menor, incluyendo los que tienen 0
                 const sortedData = [...jugadores]
-                    .filter(player => player[key] !== undefined) // Solo filtrar undefined
+                    .filter(player => player[key] !== undefined)
                     .sort((a, b) => (b[key] || 0) - (a[key] || 0));
 
-                console.log(`Datos para ${categoria}:`, sortedData); // Depuración
+                // Depuración: Mostrar los primeros 10 jugadores y sus valores
+                console.log(`Datos para ${categoria}:`, sortedData);
+                console.log(`Primeros 10 jugadores para ${categoria}:`, sortedData.slice(0, 10).map(p => ({
+                    name: p.name,
+                    value: p[key] || 0
+                })));
 
                 const list = document.getElementById(listId);
                 list.innerHTML = '';
 
-                if (sortedData.length === 0 || sortedData.every(player => player[key] === 0)) {
+                if (sortedData.length === 0) {
                     list.innerHTML = '<li style="color: #b0b0b0;">No hay datos disponibles para esta categoría.</li>';
                 } else {
                     sortedData.slice(0, 10).forEach((player, index) => {
@@ -847,7 +1000,7 @@
 
             // Actualizar todos los rankings (para inicialización)
             function actualizarRankings(jugadores) {
-                ['victories', 'defeats', 'points', 'assists', 'goals', 'victories_dt', 'defeats_dt'].forEach(categoria => {
+                ['victories', 'defeats', 'points', 'assists', 'goals', 'victoriesDt', 'defeatsDt'].forEach(categoria => {
                     actualizarRankingCategoria(jugadores, categoria);
                 });
             }
