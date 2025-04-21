@@ -55,20 +55,18 @@
             "draws_dt": 0
         },
         {
-            "name": "ptnaoosdsssdsdsd",
+            "name": "🦏 » Rhyno",
             "goals": 99,
             "assists": 2,
-            "points": 303495,
+            "points": 3495,
             "elo": 500,
             "powershot": true,
             "mastercontrol": true,
             "masterspace": true,
             "ultrapowershot": true,
             "equipped": {
-                "homingpass": true,
-                "ironwall": true,
-                "magnetpulse": true,
-                "ultrapowershot": true
+                "ultrapowershot": true,
+                "voiddash": true
             },
             "victories": 13,
             "defeats": 10,
