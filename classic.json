@@ -1,15 +1,21 @@
 {
     "players": [
         {
-            "name": "feo",
-            "goals": 0,
+            "name": "martaaasa",
+            "goals": 3,
             "assists": 0,
+            "points": 0,
             "elo": 500,
-            "victories": 0,
-            "defeats": 0,
+            "powershot": false,
+            "mastercontrol": false,
+            "masterspace": false,
+            "ultrapowershot": false,
+            "equipped": {},
+            "victories": 1,
+            "defeats": 1,
             "draws": 0,
-            "victories_dt": 0,
-            "defeats_dt": 0,
+            "victories_dt": 1,
+            "defeats_dt": 1,
             "draws_dt": 0
         }
     ]
