@@ -2,9 +2,9 @@
     "players": [
         {
             "name": "viej0",
-            "goals": 13,
+            "goals": 15,
             "assists": 13,
-            "points": 29065,
+            "points": 30190,
             "elo": 500,
             "powershot": false,
             "mastercontrol": false,
@@ -13,7 +13,7 @@
             "equipped": {},
             "victories": 6,
             "defeats": 2,
-            "draws": 1,
+            "draws": 2,
             "victories_dt": 0,
             "defeats_dt": 0,
             "draws_dt": 0
@@ -56,9 +56,9 @@
         },
         {
             "name": "rr",
-            "goals": 135,
+            "goals": 136,
             "assists": 4,
-            "points": 153025,
+            "points": 154075,
             "elo": 500,
             "powershot": true,
             "mastercontrol": true,
@@ -71,7 +71,7 @@
             },
             "victories": 20,
             "defeats": 21,
-            "draws": 15,
+            "draws": 16,
             "victories_dt": 12,
             "defeats_dt": 9,
             "draws_dt": 0
@@ -170,7 +170,7 @@
             "name": "It's Fake!",
             "goals": 17,
             "assists": 11,
-            "points": 46760,
+            "points": 46970,
             "elo": 500,
             "powershot": false,
             "mastercontrol": false,
@@ -222,9 +222,9 @@
         },
         {
             "name": "puntito",
-            "goals": 28,
+            "goals": 29,
             "assists": 9,
-            "points": 15980,
+            "points": 16520,
             "elo": 500,
             "powershot": false,
             "mastercontrol": false,
@@ -233,7 +233,7 @@
             "equipped": {},
             "victories": 2,
             "defeats": 5,
-            "draws": 1,
+            "draws": 2,
             "victories_dt": 0,
             "defeats_dt": 0,
             "draws_dt": 0
@@ -955,7 +955,7 @@
             "equipped": {},
             "victories": 6,
             "defeats": 7,
-            "draws": 0,
+            "draws": 1,
             "victories_dt": 0,
             "defeats_dt": 1,
             "draws_dt": 0
@@ -2630,9 +2630,9 @@
         },
         {
             "name": "amalgo",
-            "goals": 9,
+            "goals": 10,
             "assists": 8,
-            "points": 7730,
+            "points": 7950,
             "elo": 500,
             "powershot": false,
             "mastercontrol": false,
@@ -2641,7 +2641,7 @@
             "equipped": {},
             "victories": 3,
             "defeats": 2,
-            "draws": 1,
+            "draws": 2,
             "victories_dt": 0,
             "defeats_dt": 0,
             "draws_dt": 0
@@ -2942,9 +2942,9 @@
         },
         {
             "name": "VillaPegaMujeres",
-            "goals": 40,
+            "goals": 42,
             "assists": 4,
-            "points": 35310,
+            "points": 35955,
             "elo": 500,
             "powershot": true,
             "mastercontrol": false,
@@ -2955,7 +2955,7 @@
             },
             "victories": 12,
             "defeats": 12,
-            "draws": 4,
+            "draws": 5,
             "victories_dt": 3,
             "defeats_dt": 1,
             "draws_dt": 1
@@ -7243,7 +7243,7 @@
             "equipped": {},
             "victories": 4,
             "defeats": 1,
-            "draws": 0,
+            "draws": 1,
             "victories_dt": 0,
             "defeats_dt": 0,
             "draws_dt": 0
@@ -11744,7 +11744,7 @@
             "name": "ʀᴏɢᴇʀ ᴍᴀʀᴛɪɴᴇᴢ¹⁰",
             "goals": 0,
             "assists": 0,
-            "points": 18360,
+            "points": 18400,
             "elo": 500,
             "powershot": false,
             "mastercontrol": false,
@@ -11753,7 +11753,7 @@
             "equipped": {},
             "victories": 4,
             "defeats": 0,
-            "draws": 0,
+            "draws": 1,
             "victories_dt": 1,
             "defeats_dt": 2,
             "draws_dt": 0
@@ -12299,7 +12299,7 @@
             "draws_dt": 0
         },
         {
-            "name": " [🎮] SeAn FavorEcidos",
+            "name": " [🎮] safe",
             "goals": 0,
             "assists": 0,
             "points": 31130,
@@ -12311,7 +12311,7 @@
             "equipped": {},
             "victories": 1,
             "defeats": 1,
-            "draws": 0,
+            "draws": 1,
             "victories_dt": 3,
             "defeats_dt": 3,
             "draws_dt": 0
@@ -13581,8 +13581,8 @@
         {
             "name": " Hazeer",
             "goals": 1,
-            "assists": 1,
-            "points": 15550,
+            "assists": 2,
+            "points": 15900,
             "elo": 500,
             "powershot": false,
             "mastercontrol": false,
@@ -13591,7 +13591,7 @@
             "equipped": {},
             "victories": 1,
             "defeats": 0,
-            "draws": 0,
+            "draws": 1,
             "victories_dt": 1,
             "defeats_dt": 0,
             "draws_dt": 0
@@ -21961,7 +21961,7 @@
             "equipped": {},
             "victories": 2,
             "defeats": 2,
-            "draws": 0,
+            "draws": 1,
             "victories_dt": 0,
             "defeats_dt": 0,
             "draws_dt": 0
@@ -28117,7 +28117,7 @@
             "equipped": {},
             "victories": 0,
             "defeats": 0,
-            "draws": 0,
+            "draws": 1,
             "victories_dt": 0,
             "defeats_dt": 0,
             "draws_dt": 0
@@ -28855,7 +28855,7 @@
             "equipped": {},
             "victories": 2,
             "defeats": 4,
-            "draws": 1,
+            "draws": 2,
             "victories_dt": 1,
             "defeats_dt": 0,
             "draws_dt": 0
@@ -31312,7 +31312,7 @@
             "name": "𝕽𝖚𝖑𝖆𝖟𝖔𝖘 ♔𝕶𝖎𝖓𝖌♔",
             "goals": 0,
             "assists": 0,
-            "points": 78100,
+            "points": 79900,
             "elo": 500,
             "powershot": false,
             "mastercontrol": false,
@@ -31324,7 +31324,7 @@
             "draws": 0,
             "victories_dt": 6,
             "defeats_dt": 5,
-            "draws_dt": 1
+            "draws_dt": 2
         },
         {
             "name": "𝗯allin'",
@@ -31978,7 +31978,7 @@
             "name": "Trabanight",
             "goals": 0,
             "assists": 0,
-            "points": 1750,
+            "points": 2010,
             "elo": 500,
             "powershot": false,
             "mastercontrol": false,
@@ -31987,7 +31987,7 @@
             "equipped": {},
             "victories": 1,
             "defeats": 0,
-            "draws": 0,
+            "draws": 1,
             "victories_dt": 0,
             "defeats_dt": 0,
             "draws_dt": 0
@@ -32626,7 +32626,7 @@
             "name": "bor4z",
             "goals": 0,
             "assists": 0,
-            "points": 26800,
+            "points": 28600,
             "elo": 500,
             "powershot": false,
             "mastercontrol": false,
@@ -32638,7 +32638,7 @@
             "draws": 0,
             "victories_dt": 1,
             "defeats_dt": 3,
-            "draws_dt": 1
+            "draws_dt": 2
         },
         {
             "name": "Lautaro ",
@@ -34525,7 +34525,7 @@
             "equipped": {},
             "victories": 0,
             "defeats": 2,
-            "draws": 0,
+            "draws": 1,
             "victories_dt": 0,
             "defeats_dt": 0,
             "draws_dt": 0
@@ -35272,7 +35272,7 @@
             "name": "GordoNazi",
             "goals": 0,
             "assists": 0,
-            "points": 1910,
+            "points": 2030,
             "elo": 500,
             "powershot": false,
             "mastercontrol": false,
@@ -35281,7 +35281,7 @@
             "equipped": {},
             "victories": 1,
             "defeats": 0,
-            "draws": 0,
+            "draws": 1,
             "victories_dt": 0,
             "defeats_dt": 0,
             "draws_dt": 0
