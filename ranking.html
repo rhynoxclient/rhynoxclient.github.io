@@ -126,6 +126,91 @@
             0% { opacity: 0; transform: translateY(-30px); }
             100% { opacity: 1; transform: translateY(0); }
         }
+        .mode-selector-container {
+            width: 90%;
+            max-width: 1400px;
+            margin: 20px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+        .mode-selector-container h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+        .mode-selector {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .mode-option {
+            padding: 12px 20px;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            user-select: none;
+            position: relative;
+            z-index: 10;
+        }
+        .mode-option.active {
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+        .mode-option.classic:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        .mode-option.extreme {
+            position: relative;
+            overflow: hidden;
+        }
+        .mode-option.extreme:hover {
+            background: linear-gradient(45deg, #ff4500, #ff0000, #ffa500);
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 69, 0, 0.8), 0 0 30px rgba(255, 165, 0, 0.5);
+            animation: flameFlicker 0.3s ease-in-out infinite alternate;
+        }
+        @keyframes flameFlicker {
+            0% {
+                box-shadow: 0 0 20px rgba(255, 69, 0, 0.8), 0 0 30px rgba(255, 165, 0, 0.5);
+                background: linear-gradient(45deg, #ff4500, #ff0000, #ffa500);
+            }
+            100% {
+                box-shadow: 0 0 25px rgba(255, 69, 0, 1), 0 0 35px rgba(255, 165, 0, 0.7);
+                background: linear-gradient(45deg, #ff0000, #ffa500, #ff4500);
+            }
+        }
+        .mode-option.extreme::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 165, 0, 0.3) 10%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.5s ease;
+            transform: scale(0.5);
+        }
+        .mode-option.extreme:hover::before {
+            opacity: 1;
+            transform: scale(1);
+            animation: flamePulse 1s ease-in-out infinite;
+        }
+        @keyframes flamePulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
         .selector-container {
             width: 90%;
             max-width: 1400px;
@@ -153,6 +238,10 @@
             width: 300px;
             max-width: 100%;
             cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .selector-container select:hover {
+            background: rgba(255, 255, 255, 0.2);
         }
         .selector-container select option {
             background: #333;
@@ -169,9 +258,19 @@
             background: rgba(255, 255, 255, 0.05);
             border-radius: 20px;
             box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
+            opacity: 0;
+            transform: scale(0.98);
+            transition: opacity 0.5s ease, transform 0.5s ease;
         }
         .ranking-section.active {
             display: flex;
+            opacity: 1;
+            transform: scale(1);
+            animation: rankingFadeIn 0.5s ease forwards;
+        }
+        @keyframes rankingFadeIn {
+            0% { opacity: 0; transform: scale(0.98) translateY(10px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
         }
         .ranking-list-container {
             padding: 30px;
@@ -220,6 +319,7 @@
             align-items: center;
             justify-content: space-between;
             border: 1px solid rgba(255, 255, 255, 0.1);
+            cursor: pointer;
         }
         .ranking-list li:hover {
             background: rgba(255, 255, 255, 0.1);
@@ -421,6 +521,8 @@
             .ranking-list-container, .chart-container { width: 100%; max-width: 100%; }
             .player-modal-content { width: 90%; padding: 20px; }
             .selector-container select { width: 100%; }
+            .mode-selector { flex-direction: column; gap: 10px; }
+            .mode-option { width: 100%; }
         }
     </style>
 </head>
@@ -437,23 +539,25 @@
         </nav>
         <div class="search-bar">
             <input type="text" placeholder="Buscar Jugadores">
+            <div class="search-results"></div>
         </div>
     </header>
     <div class="ranking-content">
         <h1>Ranking de Jugadores</h1>
 
+        <!-- Selector de Modalidad -->
+        <div class="mode-selector-container">
+            <h2>Seleccionar Modalidad</h2>
+            <div class="mode-selector">
+                <div class="mode-option classic active" data-mode="classic">Classic</div>
+                <div class="mode-option extreme" data-mode="extreme">Extreme</div>
+            </div>
+        </div>
+
         <!-- Selector de Categoría -->
         <div class="selector-container">
             <h2>Seleccionar Categoría</h2>
-            <select id="categorySelector">
-                <option value="victories">Victorias</option>
-                <option value="defeats">Derrotas</option>
-                <option value="points">Puntos</option>
-                <option value="assists">Asistencias</option>
-                <option value="goals">Goles</option>
-                <option value="victoriesDt">Victorias DT</option>
-                <option value="defeatsDt">Derrotas DT</option>
-            </select>
+            <select id="categorySelector"></select>
         </div>
 
         <!-- Rankings -->
@@ -543,13 +647,7 @@
         <div class="player-modal-content">
             <h2>Perfil de Jugador</h2>
             <div class="player-circle"></div>
-            <div class="stats-grid">
-                <p><strong>Nombre:</strong> <span>RhynoFake</span></p>
-                <p><strong>Goles:</strong> <span>42</span></p>
-                <p><strong>Asistencias:</strong> <span>15</span></p>
-                <p><strong>Puntos:</strong> <span>1500</span></p>
-                <p><strong>ELO:</strong> <span>500</span></p>
-            </div>
+            <div class="stats-grid"></div>
             <div class="tags">
                 <h3>Etiquetas</h3>
                 <span class="tag">Jugador</span>
@@ -606,350 +704,284 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             const input = document.querySelector('.search-bar input');
-            const resultsContainer = document.createElement('div');
-            resultsContainer.className = 'search-results';
-            document.querySelector('.search-bar').appendChild(resultsContainer);
+            const resultsContainer = document.querySelector('.search-results');
+            let currentJugadores = [];
+            let currentMode = localStorage.getItem('selectedMode') || 'classic';
 
-            // Usar los datos del JSON proporcionado directamente como respaldo
-            let jugadores = [
+            // Datos locales de respaldo
+            const jugadoresClassic = [
                 {
-                    "name": "viej0",
-                    "goals": 4,
-                    "assists": 5,
-                    "points": 4155,
-                    "elo": 500,
-                    "powershot": false,
-                    "mastercontrol": false,
-                    "masterspace": false,
-                    "ultrapowershot": false,
-                    "equipped": {},
-                    "victories": 0,
-                    "defeats": 0,
-                    "draws": 0,
-                    "victories_dt": 0,
-                    "defeats_dt": 0,
-                    "draws_dt": 0
-                },
-                {
-                    "name": "𝕭𝖊𝖓𝖏𝖆/𝖌𝖐",
-                    "goals": 0,
-                    "assists": 0,
-                    "points": 5860,
-                    "elo": 500,
-                    "powershot": true,
-                    "mastercontrol": false,
-                    "masterspace": false,
-                    "ultrapowershot": false,
-                    "equipped": {},
-                    "victories": 0,
-                    "defeats": 0,
-                    "draws": 0,
-                    "victories_dt": 1,
-                    "defeats_dt": 0,
-                    "draws_dt": 0
-                },
-                {
-                    "name": "07 ᴘᴏᴛʀᴏ !?",
-                    "goals": 1,
-                    "assists": 0,
-                    "points": 630,
-                    "elo": 500,
-                    "powershot": false,
-                    "mastercontrol": false,
-                    "masterspace": false,
-                    "ultrapowershot": false,
-                    "equipped": {},
-                    "victories": 0,
-                    "defeats": 0,
-                    "draws": 0,
-                    "victories_dt": 0,
-                    "defeats_dt": 0,
-                    "draws_dt": 0
-                },
-                {
-                    "name": "🧤🍺𝐁𝟏𝐫𝐫𝐚𝐅𝐫í𝐚🍺🧤",
-                    "goals": 0,
-                    "assists": 0,
-                    "points": 230,
-                    "elo": 500,
-                    "powershot": false,
-                    "mastercontrol": false,
-                    "masterspace": false,
-                    "ultrapowershot": false,
-                    "equipped": {},
-                    "victories": 0,
-                    "defeats": 0,
-                    "draws": 0,
-                    "victories_dt": 0,
-                    "defeats_dt": 0,
-                    "draws_dt": 0
-                },
-                {
-                    "name": "🦏 » Rhyno",
-                    "goals": 96,
-                    "assists": 2,
-                    "points": 209945,
-                    "elo": 500,
-                    "powershot": true,
-                    "mastercontrol": true,
-                    "masterspace": true,
-                    "ultrapowershot": true,
-                    "equipped": {
-                        "mastercontrol": true,
-                        "homingpass": true,
-                        "ultrapowershot": true
-                    },
-                    "victories": 0,
-                    "defeats": 2,
-                    "draws": 0,
-                    "victories_dt": 1,
-                    "defeats_dt": 0,
-                    "draws_dt": 1
-                },
-                {
-                    "name": "martin palermo",
-                    "goals": 8,
-                    "assists": 1,
-                    "points": 8870,
-                    "elo": 500,
-                    "powershot": false,
-                    "mastercontrol": false,
-                    "masterspace": false,
-                    "ultrapowershot": false,
-                    "equipped": {},
-                    "victories": 0,
-                    "defeats": 0,
-                    "draws": 0,
-                    "victories_dt": 0,
-                    "defeats_dt": 0,
-                    "draws_dt": 0
-                },
-                {
-                    "name": "Noxzin",
-                    "goals": 0,
-                    "assists": 0,
-                    "points": 2200,
-                    "elo": 500,
-                    "powershot": false,
-                    "mastercontrol": false,
-                    "masterspace": false,
-                    "ultrapowershot": false,
-                    "equipped": {},
-                    "victories": 0,
-                    "defeats": 0,
-                    "draws": 0,
-                    "victories_dt": 0,
-                    "defeats_dt": 0,
-                    "draws_dt": 0
-                },
-                {
-                    "name": "𝐏𝐚𝐜𝐨 𝐌𝐞𝐦𝐨🌈™",
-                    "goals": 1,
-                    "assists": 0,
-                    "points": 560,
-                    "elo": 500,
-                    "powershot": false,
-                    "mastercontrol": false,
-                    "masterspace": false,
-                    "ultrapowershot": false,
-                    "equipped": {},
-                    "victories": 0,
-                    "defeats": 0,
-                    "draws": 0,
-                    "victories_dt": 0,
-                    "defeats_dt": 0,
-                    "draws_dt": 0
-                },
-                {
-                    "name": "alekty",
-                    "goals": 0,
-                    "assists": 0,
-                    "points": 670,
-                    "elo": 500,
-                    "powershot": false,
-                    "mastercontrol": false,
-                    "masterspace": false,
-                    "ultrapowershot": false,
-                    "equipped": {},
-                    "victories": 0,
-                    "defeats": 0,
-                    "draws": 0,
-                    "victories_dt": 0,
-                    "defeats_dt": 0,
-                    "draws_dt": 0
-                },
-                {
-                    "name": "wanchope abila",
-                    "goals": 0,
-                    "assists": 1,
-                    "points": 470,
-                    "elo": 500,
-                    "powershot": false,
-                    "mastercontrol": false,
-                    "masterspace": false,
-                    "ultrapowershot": false,
-                    "equipped": {},
-                    "victories": 0,
-                    "defeats": 0,
-                    "draws": 0,
-                    "victories_dt": 0,
-                    "defeats_dt": 0,
-                    "draws_dt": 0
-                },
-                {
-                    "name": "               d!",
-                    "goals": 0,
-                    "assists": 0,
-                    "points": 50,
-                    "elo": 500,
-                    "powershot": false,
-                    "mastercontrol": false,
-                    "masterspace": false,
-                    "ultrapowershot": false,
-                    "equipped": {},
-                    "victories": 0,
-                    "defeats": 0,
-                    "draws": 0,
-                    "victories_dt": 0,
-                    "defeats_dt": 0,
-                    "draws_dt": 0
+                    name: "feo",
+                    goals: 0,
+                    assists: 0,
+                    elo: 500,
+                    victories: 0,
+                    defeats: 0,
+                    draws: 0,
+                    victories_dt: 0,
+                    defeats_dt: 0,
+                    draws_dt: 0
                 }
             ];
 
-            // Intentar cargar datos desde el JSON remoto
-            fetch('https://rhynoxclient.github.io/players.json')
-                .then(response => {
-                    if (!response.ok) throw new Error('No se pudo cargar el JSON');
-                    return response.json();
-                })
-                .then(data => {
-                    console.log('JSON remoto cargado:', data);
-                    jugadores = data.players || jugadores;
-                    console.log('Jugadores usados:', jugadores);
-                    actualizarRankings(jugadores);
-                    setupCategorySelector(jugadores);
-                })
-                .catch(error => {
-                    console.error('Error al cargar el JSON remoto:', error);
-                    console.log('Usando datos locales:', jugadores);
-                    actualizarRankings(jugadores);
-                    setupCategorySelector(jugadores);
-                });
+            const jugadoresExtreme = [
+                {
+                    name: "viej0",
+                    goals: 4,
+                    assists: 5,
+                    points: 4155,
+                    elo: 500,
+                    powershot: false,
+                    mastercontrol: false,
+                    masterspace: false,
+                    ultrapowershot: false,
+                    equipped: {},
+                    victories: 0,
+                    defeats: 0,
+                    draws: 0,
+                    victories_dt: 0,
+                    defeats_dt: 0,
+                    draws_dt: 0
+                },
+                {
+                    name: "𝕭𝖊𝖓𝖏𝖆/𝖌𝖐",
+                    goals: 0,
+                    assists: 0,
+                    points: 5860,
+                    elo: 500,
+                    powershot: true,
+                    mastercontrol: false,
+                    masterspace: false,
+                    ultrapowershot: false,
+                    equipped: {},
+                    victories: 0,
+                    defeats: 0,
+                    draws: 0,
+                    victories_dt: 1,
+                    defeats_dt: 0,
+                    draws_dt: 0
+                },
+                {
+                    name: "07 ᴘᴏᴛʀᴏ !?",
+                    goals: 1,
+                    assists: 0,
+                    points: 630,
+                    elo: 500,
+                    powershot: false,
+                    mastercontrol: false,
+                    masterspace: false,
+                    ultrapowershot: false,
+                    equipped: {},
+                    victories: 0,
+                    defeats: 0,
+                    draws: 0,
+                    victories_dt: 0,
+                    defeats_dt: 0,
+                    draws_dt: 0
+                },
+                {
+                    name: "🧤🍺𝐁𝟏𝐫𝐫𝐚𝐅𝐫í𝐚🍺🧤",
+                    goals: 0,
+                    assists: 0,
+                    points: 230,
+                    elo: 500,
+                    powershot: false,
+                    mastercontrol: false,
+                    masterspace: false,
+                    ultrapowershot: false,
+                    equipped: {},
+                    victories: 0,
+                    defeats: 0,
+                    draws: 0,
+                    victories_dt: 0,
+                    defeats_dt: 0,
+                    draws_dt: 0
+                },
+                {
+                    name: "🦏 » Rhyno",
+                    goals: 96,
+                    assists: 2,
+                    points: 209945,
+                    elo: 500,
+                    powershot: true,
+                    mastercontrol: true,
+                    masterspace: true,
+                    ultrapowershot: true,
+                    equipped: {
+                        mastercontrol: true,
+                        homingpass: true,
+                        ultrapowershot: true
+                    },
+                    victories: 0,
+                    defeats: 2,
+                    draws: 0,
+                    victories_dt: 1,
+                    defeats_dt: 0,
+                    draws_dt: 1
+                },
+                {
+                    name: "martin palermo",
+                    goals: 8,
+                    assists: 1,
+                    points: 8870,
+                    elo: 500,
+                    powershot: false,
+                    mastercontrol: false,
+                    masterspace: false,
+                    ultrapowershot: false,
+                    equipped: {},
+                    victories: 0,
+                    defeats: 0,
+                    draws: 0,
+                    victories_dt: 0,
+                    defeats_dt: 0,
+                    draws_dt: 0
+                },
+                {
+                    name: "Noxzin",
+                    goals: 0,
+                    assists: 0,
+                    points: 2200,
+                    elo: 500,
+                    powershot: false,
+                    mastercontrol: false,
+                    masterspace: false,
+                    ultrapowershot: false,
+                    equipped: {},
+                    victories: 0,
+                    defeats: 0,
+                    draws: 0,
+                    victories_dt: 0,
+                    defeats_dt: 0,
+                    draws_dt: 0
+                },
+                {
+                    name: "𝐏𝐚𝐜𝐨 𝐌𝐞𝐦𝐨🌈™",
+                    goals: 1,
+                    assists: 0,
+                    points: 560,
+                    elo: 500,
+                    powershot: false,
+                    mastercontrol: false,
+                    masterspace: false,
+                    ultrapowershot: false,
+                    equipped: {},
+                    victories: 0,
+                    defeats: 0,
+                    draws: 0,
+                    victories_dt: 0,
+                    defeats_dt: 0,
+                    draws_dt: 0
+                },
+                {
+                    name: "alekty",
+                    goals: 0,
+                    assists: 0,
+                    points: 670,
+                    elo: 500,
+                    powershot: false,
+                    mastercontrol: false,
+                    masterspace: false,
+                    ultrapowershot: false,
+                    equipped: {},
+                    victories: 0,
+                    defeats: 0,
+                    draws: 0,
+                    victories_dt: 0,
+                    defeats_dt: 0,
+                    draws_dt: 0
+                },
+                {
+                    name: "wanchope abila",
+                    goals: 0,
+                    assists: 1,
+                    points: 470,
+                    elo: 500,
+                    powershot: false,
+                    mastercontrol: false,
+                    masterspace: false,
+                    ultrapowershot: false,
+                    equipped: {},
+                    victories: 0,
+                    defeats: 0,
+                    draws: 0,
+                    victories_dt: 0,
+                    defeats_dt: 0,
+                    draws_dt: 0
+                },
+                {
+                    name: "               d!",
+                    goals: 0,
+                    assists: 0,
+                    points: 50,
+                    elo: 500,
+                    powershot: false,
+                    mastercontrol: false,
+                    masterspace: false,
+                    ultrapowershot: false,
+                    equipped: {},
+                    victories: 0,
+                    defeats: 0,
+                    draws: 0,
+                    victories_dt: 0,
+                    defeats_dt: 0,
+                    draws_dt: 0
+                }
+            ];
 
-            // Configurar selector de categoría
-            function setupCategorySelector(jugadores) {
+            // Cargar datos según la modalidad
+            async function cargarDatosModalidad(modalidad) {
+                const url = modalidad === 'classic' 
+                    ? 'https://rhynoxclient.github.io/classic.json' 
+                    : 'https://rhynoxclient.github.io/players.json';
+                
+                try {
+                    const response = await fetch(url);
+                    if (!response.ok) throw new Error(`No se pudo cargar ${url}`);
+                    const data = await response.json();
+                    console.log(`JSON ${modalidad} cargado:`, data);
+                    return data.players || [];
+                } catch (error) {
+                    console.error(`Error al cargar ${url}:`, error);
+                    return modalidad === 'classic' ? jugadoresClassic : jugadoresExtreme;
+                }
+            }
+
+            // Actualizar opciones del selector de categoría
+            function updateCategorySelector() {
                 const categorySelector = document.getElementById('categorySelector');
                 const savedCategory = localStorage.getItem('selectedCategory') || 'victories';
-                categorySelector.value = savedCategory;
-
-                categorySelector.addEventListener('change', (e) => {
-                    const selectedCategory = e.target.value;
-                    console.log('Categoría seleccionada:', selectedCategory);
-                    localStorage.setItem('selectedCategory', selectedCategory);
-
-                    // Ocultar todos los rankings
-                    document.querySelectorAll('.ranking-section').forEach(section => {
-                        section.classList.remove('active');
-                    });
-
-                    // Mostrar el ranking seleccionado
-                    const selectedRanking = document.getElementById(`${selectedCategory}Ranking`);
-                    if (selectedRanking) {
-                        selectedRanking.classList.add('active');
-                        console.log('Mostrando contenedor:', selectedRanking.id);
-                    } else {
-                        console.error('Contenedor no encontrado para:', selectedCategory);
-                    }
-
-                    // Actualizar el ranking y gráfico
-                    actualizarRankingCategoria(jugadores, selectedCategory);
-                });
-
-                categorySelector.dispatchEvent(new Event('change'));
-            }
-
-            // Evento de búsqueda
-            input.addEventListener('input', (e) => {
-                const query = e.target.value.toLowerCase();
-                resultsContainer.innerHTML = '';
-                resultsContainer.style.display = query ? 'block' : 'none';
-
-                if (query) {
-                    const resultados = jugadores.filter(j => j.name.toLowerCase().includes(query));
-                    console.log('Resultados filtrados:', resultados);
-                    resultados.forEach(jugador => {
-                        const result = document.createElement('div');
-                        result.className = 'search-result';
-                        result.textContent = jugador.name;
-                        result.addEventListener('click', () => {
-                            mostrarPerfilJugador(jugador);
-                            resultsContainer.style.display = 'none';
-                            input.value = '';
-                        });
-                        resultsContainer.appendChild(result);
-                    });
-                }
-            });
-
-            // Mostrar perfil del jugador en el modal
-            function mostrarPerfilJugador(jugador) {
-                console.log('Mostrando perfil de:', jugador);
-                const playerModal = document.querySelector('.player-modal');
-                const modalContent = playerModal.querySelector('.player-modal-content');
-
-                modalContent.querySelector('h2').textContent = `Perfil de ${jugador.name}`;
-                const playerCircle = modalContent.querySelector('.player-circle');
-                playerCircle.textContent = jugador.name.charAt(0).toUpperCase();
-                const statsGrid = modalContent.querySelector('.stats-grid');
-                statsGrid.innerHTML = `
-                    <p><strong>Nombre:</strong> ${jugador.name}</p>
-                    <p><strong>Goles:</strong> ${jugador.goals || 0}</p>
-                    <p><strong>Asistencias:</strong> ${jugador.assists || 0}</p>
-                    <p><strong>Puntos:</strong> ${jugador.points || 0}</p>
-                    <p><strong>ELO:</strong> ${jugador.elo || 500}</p>
-                    <p><strong>Victorias:</strong> ${jugador.victories || 0}</p>
-                    <p><strong>Derrotas:</strong> ${jugador.defeats || 0}</p>
-                    <p><strong>Empates:</strong> ${jugador.draws || 0}</p>
-                    <p><strong>Victorias DT:</strong> ${jugador.victories_dt || 0}</p>
-                    <p><strong>Derrotas DT:</strong> ${jugador.defeats_dt || 0}</p>
-                    <p><strong>Empates DT:</strong> ${jugador.draws_dt || 0}</p>
-                `;
-
-                const skillsList = modalContent.querySelector('.skills-list');
-                skillsList.innerHTML = '';
-                const habilidades = [
-                    { name: 'Powershot', key: 'powershot', emoji: '💪' },
-                    { name: 'Master Control', key: 'mastercontrol', emoji: '🎮' },
-                    { name: 'Master Space', key: 'masterspace', emoji: '🌌' },
-                    { name: 'Ultra Powershot', key: 'ultrapowershot', emoji: '💥' },
-                    { name: 'Homing Pass', key: 'homingpass', emoji: '🎯' }
+                
+                const classicOptions = [
+                    { value: 'victories', text: 'Victorias' },
+                    { value: 'defeats', text: 'Derrotas' },
+                    { value: 'assists', text: 'Asistencias' },
+                    { value: 'goals', text: 'Goles' },
+                    { value: 'victoriesDt', text: 'Victorias DT' },
+                    { value: 'defeatsDt', text: 'Derrotas DT' }
                 ];
 
-                habilidades.forEach(habilidad => {
-                    const hasSkill = jugador[habilidad.key];
-                    const isEquipped = jugador.equipped && jugador.equipped[habilidad.key];
-                    if (hasSkill) {
-                        const skillElement = document.createElement('div');
-                        skillElement.className = `skill ${isEquipped ? 'equipped' : ''}`;
-                        skillElement.innerHTML = `
-                            <span class="emoji">${habilidad.emoji}</span>
-                            <span>${habilidad.name} ${isEquipped ? '(Equipado)' : ''}</span>
-                        `;
-                        skillsList.appendChild(skillElement);
-                    }
-                });
+                const extremeOptions = [
+                    { value: 'victories', text: 'Victorias' },
+                    { value: 'defeats', text: 'Derrotas' },
+                    { value: 'points', text: 'Puntos' },
+                    { value: 'assists', text: 'Asistencias' },
+                    { value: 'goals', text: 'Goles' },
+                    { value: 'victoriesDt', text: 'Victorias DT' },
+                    { value: 'defeatsDt', text: 'Derrotas DT' }
+                ];
 
-                if (skillsList.children.length === 0) {
-                    skillsList.innerHTML = '<p style="color: #b0b0b0;">No hay habilidades desbloqueadas.</p>';
+                const options = currentMode === 'classic' ? classicOptions : extremeOptions;
+                categorySelector.innerHTML = options.map(opt => 
+                    `<option value="${opt.value}" ${opt.value === savedCategory ? 'selected' : ''}>${opt.text}</option>`
+                ).join('');
+
+                // Validar si la categoría guardada es válida
+                if (!options.some(opt => opt.value === savedCategory)) {
+                    categorySelector.value = options[0].value;
+                    localStorage.setItem('selectedCategory', options[0].value);
                 }
-
-                playerModal.style.display = 'flex';
             }
-
-            // Cerrar el modal
-            document.querySelector('.player-modal .close-btn').addEventListener('click', () => {
-                document.querySelector('.player-modal').style.display = 'none';
-            });
 
             // Actualizar ranking para una categoría específica
             function actualizarRankingCategoria(jugadores, categoria) {
@@ -964,25 +996,23 @@
                 };
 
                 const { listId, chartId, key, label } = config[categoria];
-                // Ordenar jugadores de mayor a menor, incluyendo los que tienen 0
-                const sortedData = [...jugadores]
-                    .filter(player => player[key] !== undefined)
-                    .sort((a, b) => (b[key] || 0) - (a[key] || 0));
-
-                // Depuración: Mostrar los primeros 10 jugadores y sus valores
-                console.log(`Datos para ${categoria}:`, sortedData);
-                console.log(`Primeros 10 jugadores para ${categoria}:`, sortedData.slice(0, 10).map(p => ({
-                    name: p.name,
-                    value: p[key] || 0
-                })));
-
                 const list = document.getElementById(listId);
                 list.innerHTML = '';
 
+                if (currentMode === 'classic' && categoria === 'points') {
+                    list.innerHTML = '<li style="color: #b0b0b0; padding: 12px 20px;">No hay datos de puntos en modo Classic.</li>';
+                    actualizarGrafico(chartId, [], key, label);
+                    return;
+                }
+
+                const sortedData = [...jugadores].sort((a, b) => (b[key] || 0) - (a[key] || 0));
+                console.log(`Datos para ${categoria}:`, sortedData);
+
                 if (sortedData.length === 0) {
-                    list.innerHTML = '<li style="color: #b0b0b0;">No hay datos disponibles para esta categoría.</li>';
+                    list.innerHTML = '<li style="color: #b0b0b0; padding: 12px 20px;">No hay datos disponibles.</li>';
+                    actualizarGrafico(chartId, [], key, label);
                 } else {
-                    sortedData.slice(0, 10).forEach((player, index) => {
+                    sortedData.forEach((player, index) => {
                         const li = document.createElement('li');
                         const medal = index === 0 ? '👑' : index === 1 ? '🥈' : index === 2 ? '🥉' : '';
                         li.innerHTML = `
@@ -991,6 +1021,7 @@
                             </span>
                             <span class="points">${player[key] || 0}</span>
                         `;
+                        li.addEventListener('click', () => mostrarPerfilJugador(player));
                         list.appendChild(li);
                     });
                 }
@@ -998,11 +1029,29 @@
                 actualizarGrafico(chartId, sortedData, key, label);
             }
 
-            // Actualizar todos los rankings (para inicialización)
+            // Actualizar todos los rankings
             function actualizarRankings(jugadores) {
-                ['victories', 'defeats', 'points', 'assists', 'goals', 'victoriesDt', 'defeatsDt'].forEach(categoria => {
+                const categories = currentMode === 'classic' 
+                    ? ['victories', 'defeats', 'assists', 'goals', 'victoriesDt', 'defeatsDt']
+                    : ['victories', 'defeats', 'points', 'assists', 'goals', 'victoriesDt', 'defeatsDt'];
+                
+                categories.forEach(categoria => {
                     actualizarRankingCategoria(jugadores, categoria);
                 });
+
+                // Mostrar la categoría seleccionada con transición
+                const selectedCategory = document.getElementById('categorySelector').value;
+                document.querySelectorAll('.ranking-section').forEach(section => {
+                    section.classList.remove('active');
+                    section.style.opacity = '0';
+                    section.style.transform = 'scale(0.98)';
+                });
+                const selectedRanking = document.getElementById(`${selectedCategory}Ranking`);
+                if (selectedRanking) {
+                    setTimeout(() => {
+                        selectedRanking.classList.add('active');
+                    }, 50); // Pequeño retraso para permitir la transición
+                }
             }
 
             // Actualizar gráfico
@@ -1043,6 +1092,177 @@
                     }
                 });
             }
+
+            // Configurar selector de modalidad
+            async function setupModeSelector() {
+                const modeOptions = document.querySelectorAll('.mode-option');
+                
+                // Establecer el modo inicial
+                modeOptions.forEach(option => {
+                    option.classList.remove('active');
+                    if (option.dataset.mode === currentMode) {
+                        option.classList.add('active');
+                    }
+                });
+
+                // Cargar datos iniciales
+                currentJugadores = await cargarDatosModalidad(currentMode);
+                updateCategorySelector();
+                actualizarRankings(currentJugadores);
+                setupCategorySelector();
+
+                modeOptions.forEach(option => {
+                    option.addEventListener('click', async () => {
+                        if (option.dataset.mode === currentMode) return;
+
+                        modeOptions.forEach(opt => opt.classList.remove('active'));
+                        option.classList.add('active');
+                        
+                        currentMode = option.dataset.mode;
+                        localStorage.setItem('selectedMode', currentMode);
+                        console.log('Modalidad seleccionada:', currentMode);
+
+                        // Cargar datos y actualizar con transición
+                        document.querySelectorAll('.ranking-section').forEach(section => {
+                            section.classList.remove('active');
+                            section.style.opacity = '0';
+                            section.style.transform = 'scale(0.98)';
+                        });
+
+                        currentJugadores = await cargarDatosModalidad(currentMode);
+                        updateCategorySelector();
+                        actualizarRankings(currentJugadores);
+                        document.getElementById('categorySelector').dispatchEvent(new Event('change'));
+                    });
+                });
+            }
+
+            // Configurar selector de categoría
+            function setupCategorySelector() {
+                const categorySelector = document.getElementById('categorySelector');
+                categorySelector.addEventListener('change', (e) => {
+                    const selectedCategory = e.target.value;
+                    console.log('Categoría seleccionada:', selectedCategory);
+                    localStorage.setItem('selectedCategory', selectedCategory);
+
+                    // Aplicar transición al cambiar categoría
+                    document.querySelectorAll('.ranking-section').forEach(section => {
+                        section.classList.remove('active');
+                        section.style.opacity = '0';
+                        section.style.transform = 'scale(0.98)';
+                    });
+
+                    const selectedRanking = document.getElementById(`${selectedCategory}Ranking`);
+                    if (selectedRanking) {
+                        setTimeout(() => {
+                            selectedRanking.classList.add('active');
+                        }, 50); // Pequeño retraso para permitir la transición
+                        console.log('Mostrando contenedor:', selectedRanking.id);
+                    }
+
+                    actualizarRankingCategoria(currentJugadores, selectedCategory);
+                });
+            }
+
+            // Evento de búsqueda
+            input.addEventListener('input', (e) => {
+                const query = e.target.value.toLowerCase();
+                resultsContainer.innerHTML = '';
+                resultsContainer.style.display = query ? 'block' : 'none';
+
+                if (query) {
+                    const resultados = currentJugadores.filter(j => j.name.toLowerCase().includes(query));
+                    resultados.forEach(jugador => {
+                        const result = document.createElement('div');
+                        result.className = 'search-result';
+                        result.textContent = jugador.name;
+                        result.addEventListener('click', () => {
+                            mostrarPerfilJugador(jugador);
+                            resultsContainer.style.display = 'none';
+                            input.value = '';
+                        });
+                        resultsContainer.appendChild(result);
+                    });
+                }
+            });
+
+            // Mostrar perfil del jugador en el modal
+            function mostrarPerfilJugador(jugador) {
+                const playerModal = document.querySelector('.player-modal');
+                const modalContent = playerModal.querySelector('.player-modal-content');
+
+                modalContent.querySelector('h2').textContent = `Perfil de ${jugador.name}`;
+                const playerCircle = modalContent.querySelector('.player-circle');
+                playerCircle.textContent = jugador.name.charAt(0).toUpperCase();
+                const statsGrid = modalContent.querySelector('.stats-grid');
+                
+                let statsHTML = `
+                    <p><strong>Nombre:</strong> ${jugador.name}</p>
+                    <p><strong>Goles:</strong> ${jugador.goals || 0}</p>
+                    <p><strong>Asistencias:</strong> ${jugador.assists || 0}</p>
+                    <p><strong>ELO:</strong> ${jugador.elo || 500}</p>
+                    <p><strong>Victorias:</strong> ${jugador.victories || 0}</p>
+                    <p><strong>Derrotas:</strong> ${jugador.defeats || 0}</p>
+                    <p><strong>Empates:</strong> ${jugador.draws || 0}</p>
+                    <p><strong>Victorias DT:</strong> ${jugador.victories_dt || 0}</p>
+                    <p><strong>Derrotas DT:</strong> ${jugador.defeats_dt || 0}</p>
+                    <p><strong>Empates DT:</strong> ${jugador.draws_dt || 0}</p>
+                `;
+
+                if (currentMode === 'extreme') {
+                    statsHTML = statsHTML.replace(
+                        '<p><strong>ELO:</strong>',
+                        `<p><strong>Puntos:</strong> ${jugador.points || 0}</p><p><strong>ELO:</strong>`
+                    );
+                }
+
+                statsGrid.innerHTML = statsHTML;
+
+                const skillsList = modalContent.querySelector('.skills-list');
+                skillsList.innerHTML = '';
+                if (currentMode === 'extreme') {
+                    const habilidades = [
+                        { name: 'Powershot', key: 'powershot', emoji: '💪' },
+                        { name: 'Master Control', key: 'mastercontrol', emoji: '🎮' },
+                        { name: 'Master Space', key: 'masterspace', emoji: '🌌' },
+                        { name: 'Ultra Powershot', key: 'ultrapowershot', emoji: '💥' },
+                        { name: 'Homing Pass', key: 'homingpass', emoji: '🎯' }
+                    ];
+
+                    habilidades.forEach(habilidad => {
+                        const hasSkill = jugador[habilidad.key];
+                        const isEquipped = jugador.equipped && jugador.equipped[habilidad.key];
+                        if (hasSkill) {
+                            const skillElement = document.createElement('div');
+                            skillElement.className = `skill ${isEquipped ? 'equipped' : ''}`;
+                            skillElement.innerHTML = `
+                                <span class="emoji">${habilidad.emoji}</span>
+                                <span>${habilidad.name} ${isEquipped ? '(Equipado)' : ''}</span>
+                            `;
+                            skillsList.appendChild(skillElement);
+                        }
+                    });
+
+                    if (skillsList.children.length === 0) {
+                        skillsList.innerHTML = '<p style="color: #b0b0b0;">No hay habilidades desbloqueadas.</p>';
+                    }
+                } else {
+                    skillsList.innerHTML = '<p style="color: #b0b0b0;">No hay habilidades en modo Classic.</p>';
+                }
+
+                const inventorySection = modalContent.querySelector('.inventory');
+                inventorySection.style.display = currentMode === 'extreme' ? 'block' : 'none';
+
+                playerModal.style.display = 'flex';
+            }
+
+            // Cerrar el modal
+            document.querySelector('.player-modal .close-btn').addEventListener('click', () => {
+                document.querySelector('.player-modal').style.display = 'none';
+            });
+
+            // Inicializar
+            setupModeSelector();
         });
     </script>
 </body>
