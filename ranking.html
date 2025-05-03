@@ -65,49 +65,113 @@
             flex-grow: 1;
             margin: 0 40px;
             position: relative;
+            display: flex;
+            align-items: center;
         }
         .search-bar input {
             width: 100%;
-            padding: 12px 20px;
+            padding: 14px 20px;
             border: none;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.08);
             color: #fff;
             font-size: 16px;
             font-weight: 400;
             border-radius: 25px;
             outline: none;
-            transition: all 0.4s ease;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .search-bar input::placeholder {
+            color: #888;
+            font-style: italic;
         }
         .search-bar input:focus {
-            background: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            transform: scale(1.02);
         }
         .search-results {
             position: absolute;
             top: 100%;
             left: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 0 0 15px 15px;
+            background: rgba(0, 0, 0, 0.95);
+            border-radius: 10px;
             box-shadow: 0 5px 20px rgba(255, 255, 255, 0.05);
-            max-height: 200px;
+            max-height: 300px;
             overflow-y: auto;
             display: none;
             z-index: 10;
+            backdrop-filter: blur(5px);
+            margin-top: 10px;
+            padding: 10px;
         }
         .search-result {
-            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            padding: 15px;
             cursor: pointer;
             color: #fff;
+            background: rgba(255, 255, 255, 0.05);
+            margin: 8px;
+            border-radius: 10px;
             transition: all 0.3s ease;
+            opacity: 0;
+            animation: fadeInResult 0.3s ease forwards;
         }
         .search-result:hover {
-            background: #333333;
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+        }
+        .search-result .avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, #333, #555);
             color: #fff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            margin-right: 15px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+        .search-result .avatar.bronze { background: linear-gradient(45deg, #cd7f32, #8b5a2b); }
+        .search-result .avatar.silver { background: linear-gradient(45deg, #c0c0c0, #808080); }
+        .search-result .avatar.gold { 
+            background: linear-gradient(45deg, #ffd700, #b8860b); 
+            animation: glowPulse 2s ease-in-out infinite;
+        }
+        .search-result .avatar.diamond { 
+            background: linear-gradient(45deg, #b9f2ff, #4682b4); 
+            animation: glowPulse 2s ease-in-out infinite;
+        }
+        .search-result .avatar:hover { transform: scale(1.1); }
+        .search-result .player-info {
+            flex-grow: 1;
+        }
+        .search-result .player-info .name {
+            font-size: 18px;
+            font-weight: 500;
+        }
+        .search-result .player-info .stats {
+            font-size: 14px;
+            color: #b0b0b0;
+        }
+        @keyframes fadeInResult {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes glowPulse {
+            0% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.2); }
+            50% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); }
+            100% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.2); }
         }
         .ranking-content {
-            padding: 120px 40px 100px;
+            padding: 140px 40px 100px;
             position: relative;
             min-height: 100vh;
             z-index: 1;
@@ -129,8 +193,8 @@
         .mode-selector-container {
             width: 90%;
             max-width: 1400px;
-            margin: 20px auto;
-            padding: 20px;
+            margin: 30px auto;
+            padding: 25px;
             background: rgba(255, 255, 255, 0.05);
             border-radius: 20px;
             box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
@@ -214,8 +278,8 @@
         .selector-container {
             width: 90%;
             max-width: 1400px;
-            margin: 20px auto;
-            padding: 20px;
+            margin: 30px auto;
+            padding: 25px;
             background: rgba(255, 255, 255, 0.05);
             border-radius: 20px;
             box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
@@ -251,7 +315,7 @@
             width: 90%;
             max-width: 1400px;
             margin: 0 auto 60px auto;
-            padding: 20px 40px;
+            padding: 25px 40px;
             display: none;
             gap: 40px;
             justify-content: center;
@@ -381,117 +445,217 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.95);
+            background: rgba(0, 0, 0, 0.95);
             z-index: 1000;
             justify-content: center;
             align-items: center;
+            overflow-y: auto;
+            padding: 20px;
         }
         .player-modal-content {
-            background: #0a0a0a;
-            padding: 40px;
+            background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
+            padding: 30px;
             text-align: center;
             box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
             width: 500px;
+            max-width: 90%;
             max-height: 80vh;
-            overflow-y: auto;
-            border-radius: 15px;
+            border-radius: 20px;
+            position: relative;
             animation: modalPop 0.6s ease-in-out forwards;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: #b0b0b0 #333;
+        }
+        .player-modal-content::-webkit-scrollbar {
+            width: 6px;
+        }
+        .player-modal-content::-webkit-scrollbar-track {
+            background: #333;
+            border-radius: 10px;
+        }
+        .player-modal-content::-webkit-scrollbar-thumb {
+            background: #b0b0b0;
+            border-radius: 10px;
+        }
+        .player-modal-content::-webkit-scrollbar-thumb:hover {
+            background: #e0e0e0;
+        }
+        .player-modal-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+            opacity: 0.5;
+            z-index: 0;
+        }
+        #modal-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        .player-modal-content > * {
+            position: relative;
+            z-index: 1;
         }
         @keyframes modalPop {
             0% { opacity: 0; transform: scale(0.8) rotate(-3deg); }
             100% { opacity: 1; transform: scale(1) rotate(0deg); }
         }
+        @keyframes sectionFadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
         .player-modal-content h2 {
             font-family: 'Montserrat', sans-serif;
             font-size: 32px;
             color: #fff;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             text-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+            animation: sectionFadeIn 0.5s ease forwards;
         }
         .player-modal-content .player-circle {
-            width: 80px;
-            height: 80px;
-            background: #ffffff;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(45deg, #333, #555);
             border-radius: 50%;
-            margin: 0 auto 20px;
+            margin: 0 auto 25px;
             display: flex;
             justify-content: center;
             align-items: center;
             font-size: 40px;
-            color: #000;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            color: #fff;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+            transition: transform 0.3s ease;
+            animation: sectionFadeIn 0.6s ease forwards;
+        }
+        .player-modal-content .player-circle.bronze { background: linear-gradient(45deg, #cd7f32, #8b5a2b); }
+        .player-modal-content .player-circle.silver { background: linear-gradient(45deg, #c0c0c0, #808080); }
+        .player-modal-content .player-circle.gold { 
+            background: linear-gradient(45deg, #ffd700, #b8860b); 
+            animation: glowPulse 2s ease-in-out infinite;
+        }
+        .player-modal-content .player-circle.diamond { 
+            background: linear-gradient(45deg, #b9f2ff, #4682b4); 
+            animation: glowPulse 2s ease-in-out infinite;
+        }
+        .player-modal-content .player-circle:hover {
+            transform: scale(1.1);
         }
         .player-modal-content .stats-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
             margin-bottom: 30px;
             text-align: left;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: sectionFadeIn 0.7s ease forwards;
         }
         .player-modal-content .stats-grid p {
-            font-size: 16px;
+            font-size: 15px;
             color: #b0b0b0;
-            margin: 5px 0;
-            line-height: 1.5;
+            margin: 6px 0;
+            line-height: 1.6;
         }
         .player-modal-content .stats-grid p strong {
             color: #fff;
+            font-weight: 500;
+        }
+        .player-modal-content .stats-grid .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+            margin-top: 5px;
+        }
+        .player-modal-content .stats-grid .progress-bar div {
+            height: 100%;
+            background: linear-gradient(90deg, #ff4500, #ffa500);
+            transition: width 0.5s ease;
         }
         .player-modal-content .tags {
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: sectionFadeIn 0.8s ease forwards;
         }
         .player-modal-content .tags h3 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 20px;
+            font-size: 18px;
             color: #fff;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
         .player-modal-content .tags .tag {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 5px 15px;
-            border-radius: 10px;
+            background: linear-gradient(45deg, #ff4500, #ffa500);
+            padding: 8px 15px;
+            border-radius: 15px;
             font-size: 14px;
-            color: #b0b0b0;
+            color: #fff;
             display: inline-block;
+            margin: 8px;
+            box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .player-modal-content .tags .tag:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 0 15px rgba(255, 165, 0, 0.8);
         }
         .player-modal-content .inventory {
             margin-top: 20px;
             text-align: left;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: sectionFadeIn 0.9s ease forwards;
         }
         .player-modal-content .inventory h3 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 20px;
+            font-size: 18px;
             color: #fff;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
         .player-modal-content .inventory .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 12px;
         }
         .player-modal-content .inventory .skill {
             background: rgba(255, 255, 255, 0.05);
-            padding: 8px 12px;
-            border-radius: 8px;
+            padding: 12px;
+            border-radius: 10px;
             font-size: 14px;
             color: #b0b0b0;
             transition: all 0.3s ease;
-            position: relative;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         .player-modal-content .inventory .skill.equipped {
-            background: #ffffff;
+            background: linear-gradient(45deg, #ffffff, #e0e0e0);
             color: #000;
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
         }
         .player-modal-content .inventory .skill:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+            transform: scale(1.05) rotate(3deg);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
         }
         .player-modal-content .inventory .skill .emoji {
-            font-size: 16px;
+            font-size: 20px;
         }
         .close-btn {
             background: linear-gradient(90deg, #ffffff, #e0e0e0);
@@ -502,8 +666,9 @@
             border-radius: 10px;
             transition: all 0.4s ease;
             box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-            margin-top: 20px;
+            margin-top: 25px;
             border: none;
+            animation: sectionFadeIn 1s ease forwards;
         }
         .close-btn:hover {
             transform: translateY(-3px);
@@ -515,11 +680,19 @@
             nav { margin-top: 20px; display: flex; flex-wrap: wrap; justify-content: center; }
             nav a { margin: 0 15px 15px 15px; }
             .search-bar { margin: 20px 0; width: 90%; }
-            .ranking-content { padding: 100px 10px 60px; }
+            .search-bar input { font-size: 14px; padding: 12px 15px; }
+            .search-result { flex-direction: column; align-items: flex-start; padding: 12px; }
+            .search-result .avatar { width: 40px; height: 40px; font-size: 20px; }
+            .ranking-content { padding: 120px 10px 60px; }
             h1 { font-size: 48px; }
             .ranking-section { flex-direction: column; padding: 20px 10px; }
             .ranking-list-container, .chart-container { width: 100%; max-width: 100%; }
-            .player-modal-content { width: 90%; padding: 20px; }
+            .player-modal-content { width: 95%; padding: 20px; max-height: 85vh; }
+            .player-modal-content h2 { font-size: 26px; }
+            .player-modal-content .player-circle { width: 80px; height: 80px; font-size: 32px; }
+            .player-modal-content .stats-grid { grid-template-columns: 1fr; }
+            .player-modal-content .stats-grid p { font-size: 14px; }
+            .player-modal-content .inventory .skills-list { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
             .selector-container select { width: 100%; }
             .mode-selector { flex-direction: column; gap: 10px; }
             .mode-option { width: 100%; }
@@ -538,7 +711,7 @@
             <a href="index.html#discord">Discord</a>
         </nav>
         <div class="search-bar">
-            <input type="text" placeholder="Buscar Jugadores">
+            <input type="text" placeholder="Buscar Jugadores...">
             <div class="search-results"></div>
         </div>
     </header>
@@ -645,6 +818,7 @@
     <!-- Modal para estadísticas de un jugador -->
     <div class="player-modal">
         <div class="player-modal-content">
+            <div id="modal-particles"></div>
             <h2>Perfil de Jugador</h2>
             <div class="player-circle"></div>
             <div class="stats-grid"></div>
@@ -662,7 +836,7 @@
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        // Configuración de Particles.js
+        // Configuración de Particles.js (fondo principal)
         particlesJS('particles-js', {
             particles: {
                 number: { value: 60, density: { enable: true, value_area: 800 } },
@@ -708,13 +882,46 @@
             let currentJugadores = [];
             let currentMode = localStorage.getItem('selectedMode') || 'classic';
 
+            // Configuración de Particles.js para el modal
+            function initModalParticles() {
+                particlesJS('modal-particles', {
+                    particles: {
+                        number: { value: 30, density: { enable: true, value_area: 800 } },
+                        color: { value: ['#ff4500', '#ffa500'] },
+                        shape: { type: 'circle' },
+                        opacity: { value: 0.3, random: true },
+                        size: { value: 2, random: true },
+                        line_linked: {
+                            enable: false
+                        },
+                        move: {
+                            enable: true,
+                            speed: 1,
+                            direction: 'none',
+                            random: true,
+                            straight: false,
+                            out_mode: 'out',
+                            bounce: false
+                        }
+                    },
+                    interactivity: {
+                        detect_on: 'canvas',
+                        events: {
+                            onhover: { enable: false },
+                            onclick: { enable: false },
+                            resize: true
+                        }
+                    },
+                    retina_detect: true
+                });
+            }
+
             // Datos locales de respaldo
             const jugadoresClassic = [
                 {
                     name: "feo",
                     goals: 0,
                     assists: 0,
-                    elo: 500,
                     victories: 0,
                     defeats: 0,
                     draws: 0,
@@ -726,15 +933,45 @@
 
             const jugadoresExtreme = [
                 {
+                    name: "Rhyno 2",
+                    goals: 141,
+                    assists: 5,
+                    points: 235745,
+                    powershot: true,
+                    mastercontrol: true,
+                    masterspace: true,
+                    ultrapowershot: true,
+                    phantomstrike: true,
+                    upgrade1: true,
+                    upgrade2: true,
+                    upgrade3: true,
+                    voiddash: true,
+                    equipped: {
+                        voiddash: true,
+                        mastercontrol: true,
+                        ultrapowershot: true
+                    },
+                    victories: 27,
+                    defeats: 24,
+                    draws: 19,
+                    victories_dt: 14,
+                    defeats_dt: 11,
+                    draws_dt: 1
+                },
+                {
                     name: "viej0",
                     goals: 4,
                     assists: 5,
                     points: 4155,
-                    elo: 500,
                     powershot: false,
                     mastercontrol: false,
                     masterspace: false,
                     ultrapowershot: false,
+                    phantomstrike: false,
+                    upgrade1: false,
+                    upgrade2: false,
+                    upgrade3: false,
+                    voiddash: false,
                     equipped: {},
                     victories: 0,
                     defeats: 0,
@@ -748,11 +985,15 @@
                     goals: 0,
                     assists: 0,
                     points: 5860,
-                    elo: 500,
                     powershot: true,
                     mastercontrol: false,
                     masterspace: false,
                     ultrapowershot: false,
+                    phantomstrike: false,
+                    upgrade1: false,
+                    upgrade2: false,
+                    upgrade3: false,
+                    voiddash: false,
                     equipped: {},
                     victories: 0,
                     defeats: 0,
@@ -766,11 +1007,15 @@
                     goals: 1,
                     assists: 0,
                     points: 630,
-                    elo: 500,
                     powershot: false,
                     mastercontrol: false,
                     masterspace: false,
                     ultrapowershot: false,
+                    phantomstrike: false,
+                    upgrade1: false,
+                    upgrade2: false,
+                    upgrade3: false,
+                    voiddash: false,
                     equipped: {},
                     victories: 0,
                     defeats: 0,
@@ -784,11 +1029,15 @@
                     goals: 0,
                     assists: 0,
                     points: 230,
-                    elo: 500,
                     powershot: false,
                     mastercontrol: false,
                     masterspace: false,
                     ultrapowershot: false,
+                    phantomstrike: false,
+                    upgrade1: false,
+                    upgrade2: false,
+                    upgrade3: false,
+                    voiddash: false,
                     equipped: {},
                     victories: 0,
                     defeats: 0,
@@ -802,11 +1051,15 @@
                     goals: 96,
                     assists: 2,
                     points: 209945,
-                    elo: 500,
                     powershot: true,
                     mastercontrol: true,
                     masterspace: true,
                     ultrapowershot: true,
+                    phantomstrike: false,
+                    upgrade1: false,
+                    upgrade2: false,
+                    upgrade3: false,
+                    voiddash: false,
                     equipped: {
                         mastercontrol: true,
                         homingpass: true,
@@ -824,11 +1077,15 @@
                     goals: 8,
                     assists: 1,
                     points: 8870,
-                    elo: 500,
                     powershot: false,
                     mastercontrol: false,
                     masterspace: false,
                     ultrapowershot: false,
+                    phantomstrike: false,
+                    upgrade1: false,
+                    upgrade2: false,
+                    upgrade3: false,
+                    voiddash: false,
                     equipped: {},
                     victories: 0,
                     defeats: 0,
@@ -842,11 +1099,15 @@
                     goals: 0,
                     assists: 0,
                     points: 2200,
-                    elo: 500,
                     powershot: false,
                     mastercontrol: false,
                     masterspace: false,
                     ultrapowershot: false,
+                    phantomstrike: false,
+                    upgrade1: false,
+                    upgrade2: false,
+                    upgrade3: false,
+                    voiddash: false,
                     equipped: {},
                     victories: 0,
                     defeats: 0,
@@ -860,11 +1121,15 @@
                     goals: 1,
                     assists: 0,
                     points: 560,
-                    elo: 500,
                     powershot: false,
                     mastercontrol: false,
                     masterspace: false,
                     ultrapowershot: false,
+                    phantomstrike: false,
+                    upgrade1: false,
+                    upgrade2: false,
+                    upgrade3: false,
+                    voiddash: false,
                     equipped: {},
                     victories: 0,
                     defeats: 0,
@@ -878,11 +1143,15 @@
                     goals: 0,
                     assists: 0,
                     points: 670,
-                    elo: 500,
                     powershot: false,
                     mastercontrol: false,
                     masterspace: false,
                     ultrapowershot: false,
+                    phantomstrike: false,
+                    upgrade1: false,
+                    upgrade2: false,
+                    upgrade3: false,
+                    voiddash: false,
                     equipped: {},
                     victories: 0,
                     defeats: 0,
@@ -896,11 +1165,15 @@
                     goals: 0,
                     assists: 1,
                     points: 470,
-                    elo: 500,
                     powershot: false,
                     mastercontrol: false,
                     masterspace: false,
                     ultrapowershot: false,
+                    phantomstrike: false,
+                    upgrade1: false,
+                    upgrade2: false,
+                    upgrade3: false,
+                    voiddash: false,
                     equipped: {},
                     victories: 0,
                     defeats: 0,
@@ -914,11 +1187,15 @@
                     goals: 0,
                     assists: 0,
                     points: 50,
-                    elo: 500,
                     powershot: false,
                     mastercontrol: false,
                     masterspace: false,
                     ultrapowershot: false,
+                    phantomstrike: false,
+                    upgrade1: false,
+                    upgrade2: false,
+                    upgrade3: false,
+                    voiddash: false,
                     equipped: {},
                     victories: 0,
                     defeats: 0,
@@ -928,6 +1205,33 @@
                     draws_dt: 0
                 }
             ];
+
+            // Determinar cosmetic para avatar según puntos (Extreme) o goles (Classic)
+            function getCosmetic(jugador, mode) {
+                const value = mode === 'extreme' ? (jugador.points || 0) : (jugador.goals || 0);
+                let cosmetic = { emoji: '🏐', class: '' }; // Default
+
+                if (mode === 'extreme') {
+                    if (value >= 100000) {
+                        cosmetic = { emoji: '💎', class: 'diamond' }; // Diamond
+                    } else if (value >= 50000) {
+                        cosmetic = { emoji: '🏆', class: 'gold' }; // Gold
+                    } else if (value >= 10000) {
+                        cosmetic = { emoji: '🥈', class: 'silver' }; // Silver
+                    } else if (value >= 1000) {
+                        cosmetic = { emoji: '🥉', class: 'bronze' }; // Bronze
+                    }
+                } else {
+                    if (value >= 50) {
+                        cosmetic = { emoji: '⚽', class: 'gold' }; // Gold
+                    } else if (value >= 20) {
+                        cosmetic = { emoji: '🥅', class: 'silver' }; // Silver
+                    } else if (value >= 5) {
+                        cosmetic = { emoji: '🏀', class: 'bronze' }; // Bronze
+                    }
+                }
+                return cosmetic;
+            }
 
             // Cargar datos según la modalidad
             async function cargarDatosModalidad(modalidad) {
@@ -976,7 +1280,6 @@
                     `<option value="${opt.value}" ${opt.value === savedCategory ? 'selected' : ''}>${opt.text}</option>`
                 ).join('');
 
-                // Validar si la categoría guardada es válida
                 if (!options.some(opt => opt.value === savedCategory)) {
                     categorySelector.value = options[0].value;
                     localStorage.setItem('selectedCategory', options[0].value);
@@ -1039,7 +1342,6 @@
                     actualizarRankingCategoria(jugadores, categoria);
                 });
 
-                // Mostrar la categoría seleccionada con transición
                 const selectedCategory = document.getElementById('categorySelector').value;
                 document.querySelectorAll('.ranking-section').forEach(section => {
                     section.classList.remove('active');
@@ -1050,7 +1352,7 @@
                 if (selectedRanking) {
                     setTimeout(() => {
                         selectedRanking.classList.add('active');
-                    }, 50); // Pequeño retraso para permitir la transición
+                    }, 50);
                 }
             }
 
@@ -1097,7 +1399,6 @@
             async function setupModeSelector() {
                 const modeOptions = document.querySelectorAll('.mode-option');
                 
-                // Establecer el modo inicial
                 modeOptions.forEach(option => {
                     option.classList.remove('active');
                     if (option.dataset.mode === currentMode) {
@@ -1105,11 +1406,11 @@
                     }
                 });
 
-                // Cargar datos iniciales
                 currentJugadores = await cargarDatosModalidad(currentMode);
                 updateCategorySelector();
                 actualizarRankings(currentJugadores);
                 setupCategorySelector();
+                initModalParticles(); // Inicializar partículas del modal
 
                 modeOptions.forEach(option => {
                     option.addEventListener('click', async () => {
@@ -1122,7 +1423,6 @@
                         localStorage.setItem('selectedMode', currentMode);
                         console.log('Modalidad seleccionada:', currentMode);
 
-                        // Cargar datos y actualizar con transición
                         document.querySelectorAll('.ranking-section').forEach(section => {
                             section.classList.remove('active');
                             section.style.opacity = '0';
@@ -1145,7 +1445,6 @@
                     console.log('Categoría seleccionada:', selectedCategory);
                     localStorage.setItem('selectedCategory', selectedCategory);
 
-                    // Aplicar transición al cambiar categoría
                     document.querySelectorAll('.ranking-section').forEach(section => {
                         section.classList.remove('active');
                         section.style.opacity = '0';
@@ -1156,7 +1455,7 @@
                     if (selectedRanking) {
                         setTimeout(() => {
                             selectedRanking.classList.add('active');
-                        }, 50); // Pequeño retraso para permitir la transición
+                        }, 50);
                         console.log('Mostrando contenedor:', selectedRanking.id);
                     }
 
@@ -1172,10 +1471,19 @@
 
                 if (query) {
                     const resultados = currentJugadores.filter(j => j.name.toLowerCase().includes(query));
-                    resultados.forEach(jugador => {
+                    resultados.forEach((jugador, index) => {
                         const result = document.createElement('div');
                         result.className = 'search-result';
-                        result.textContent = jugador.name;
+                        result.style.animationDelay = `${index * 0.05}s`;
+                        const keyStat = currentMode === 'extreme' ? `Puntos: ${jugador.points || 0}` : `Goles: ${jugador.goals || 0}`;
+                        const cosmetic = getCosmetic(jugador, currentMode);
+                        result.innerHTML = `
+                            <div class="avatar ${cosmetic.class}">${cosmetic.emoji}</div>
+                            <div class="player-info">
+                                <div class="name">${jugador.name}</div>
+                                <div class="stats">${keyStat}</div>
+                            </div>
+                        `;
                         result.addEventListener('click', () => {
                             mostrarPerfilJugador(jugador);
                             resultsContainer.style.display = 'none';
@@ -1193,14 +1501,19 @@
 
                 modalContent.querySelector('h2').textContent = `Perfil de ${jugador.name}`;
                 const playerCircle = modalContent.querySelector('.player-circle');
-                playerCircle.textContent = jugador.name.charAt(0).toUpperCase();
+                const cosmetic = getCosmetic(jugador, currentMode);
+                playerCircle.className = `player-circle ${cosmetic.class}`;
+                playerCircle.textContent = cosmetic.emoji;
                 const statsGrid = modalContent.querySelector('.stats-grid');
                 
+                const maxPoints = currentMode === 'extreme' ? 300000 : 0;
+                const maxGoals = 100;
                 let statsHTML = `
                     <p><strong>Nombre:</strong> ${jugador.name}</p>
-                    <p><strong>Goles:</strong> ${jugador.goals || 0}</p>
+                    <p><strong>Goles:</strong> ${jugador.goals || 0}
+                        <div class="progress-bar"><div style="width: ${(jugador.goals / maxGoals) * 100}%"></div></div>
+                    </p>
                     <p><strong>Asistencias:</strong> ${jugador.assists || 0}</p>
-                    <p><strong>ELO:</strong> ${jugador.elo || 500}</p>
                     <p><strong>Victorias:</strong> ${jugador.victories || 0}</p>
                     <p><strong>Derrotas:</strong> ${jugador.defeats || 0}</p>
                     <p><strong>Empates:</strong> ${jugador.draws || 0}</p>
@@ -1210,10 +1523,10 @@
                 `;
 
                 if (currentMode === 'extreme') {
-                    statsHTML = statsHTML.replace(
-                        '<p><strong>ELO:</strong>',
-                        `<p><strong>Puntos:</strong> ${jugador.points || 0}</p><p><strong>ELO:</strong>`
-                    );
+                    statsHTML = `<p><strong>Nombre:</strong> ${jugador.name}</p>
+                        <p><strong>Puntos:</strong> ${jugador.points || 0}
+                            <div class="progress-bar"><div style="width: ${(jugador.points / maxPoints) * 100}%"></div></div>
+                        </p>` + statsHTML;
                 }
 
                 statsGrid.innerHTML = statsHTML;
@@ -1226,7 +1539,12 @@
                         { name: 'Master Control', key: 'mastercontrol', emoji: '🎮' },
                         { name: 'Master Space', key: 'masterspace', emoji: '🌌' },
                         { name: 'Ultra Powershot', key: 'ultrapowershot', emoji: '💥' },
-                        { name: 'Homing Pass', key: 'homingpass', emoji: '🎯' }
+                        { name: 'Homing Pass', key: 'homingpass', emoji: '🎯' },
+                        { name: 'Phantom Strike', key: 'phantomstrike', emoji: '👻' },
+                        { name: 'Upgrade 1', key: 'upgrade1', emoji: '⬆️' },
+                        { name: 'Upgrade 2', key: 'upgrade2', emoji: '🔝' },
+                        { name: 'Upgrade 3', key: 'upgrade3', emoji: '🌟' },
+                        { name: 'Void Dash', key: 'voiddash', emoji: '💨' }
                     ];
 
                     habilidades.forEach(habilidad => {
@@ -1252,6 +1570,19 @@
 
                 const inventorySection = modalContent.querySelector('.inventory');
                 inventorySection.style.display = currentMode === 'extreme' ? 'block' : 'none';
+
+                const tagsContainer = modalContent.querySelector('.tags');
+                tagsContainer.innerHTML = '<h3>Etiquetas</h3>';
+                const tags = ['Jugador'];
+                if (jugador.victories_dt > 0) tags.push('DT Ganador');
+                if (jugador.goals > 10) tags.push('Goleador');
+                if (jugador.points > 10000 && currentMode === 'extreme') tags.push('Elite');
+                tags.forEach(tag => {
+                    const tagElement = document.createElement('span');
+                    tagElement.className = 'tag';
+                    tagElement.textContent = tag;
+                    tagsContainer.appendChild(tagElement);
+                });
 
                 playerModal.style.display = 'flex';
             }
