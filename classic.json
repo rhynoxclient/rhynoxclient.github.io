@@ -3185,6 +3185,24 @@
             "victories_dt": 0,
             "defeats_dt": 0,
             "draws_dt": 0
+        },
+        {
+            "name": "Ñ𝖔𝖖𝖚𝖎𝖘⚡​💨",
+            "goals": 0,
+            "assists": 0,
+            "points": 0,
+            "elo": 500,
+            "powershot": false,
+            "mastercontrol": false,
+            "masterspace": false,
+            "ultrapowershot": false,
+            "equipped": {},
+            "victories": 0,
+            "defeats": 0,
+            "draws": 0,
+            "victories_dt": 0,
+            "defeats_dt": 0,
+            "draws_dt": 0
         }
     ]
 }
