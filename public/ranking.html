@@ -1132,8 +1132,8 @@
             async function loadModeData(mode) {
                 try {
                     const url = mode === 'classic' 
-                        ? 'https://saturnx4.onrender.com/classic.json'
-                        : 'https://saturnx4.onrender.com/players.json';
+                        ? 'https://saturnx4.glitch.me/classic.json'
+                        : 'https://saturnx4.glitch.me/players.json';
                     const response = await fetch(url);
                     if (!response.ok) throw new Error(`Failed to load ${url}`);
                     const data = await response.json();
