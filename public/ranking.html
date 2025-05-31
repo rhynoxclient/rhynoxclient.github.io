@@ -821,6 +821,26 @@
             box-shadow: var(--shadow-primary);
         }
 
+        .error-message {
+            background: var(--gradient-surface);
+            border: 1px solid var(--danger);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            color: var(--text-secondary);
+            margin: 20px 0;
+        }
+
+        .error-message h3 {
+            color: var(--danger);
+            margin-bottom: 16px;
+            font-size: 18px;
+        }
+
+        .error-message p {
+            margin-bottom: 8px;
+        }
+
         footer {
             background: var(--darker-bg);
             border-top: 1px solid var(--border);
@@ -910,23 +930,23 @@
             <div class="logo">Saturn Client</div>
 
             <nav>
-                <a href="index.html">Home</a>
-                <a href="download.html">Download</a>
+                <a href="index.html">Inicio</a>
+                <a href="download.html">Descargar</a>
             </nav>
 
             <div class="search-container">
-                <input type="text" class="search-input" placeholder="Search professional players...">
+                <input type="text" class="search-input" placeholder="Buscar jugadores profesionales...">
                 <div class="search-results"></div>
             </div>
 
             <div class="server-status-container">
                 <div class="server-status" data-mode="classic">
                     <span class="status-indicator"></span>
-                    <span class="status-text">Classic: Checking...</span>
+                    <span class="status-text">Classic: Verificando...</span>
                 </div>
                 <div class="server-status" data-mode="extreme">
                     <span class="status-indicator"></span>
-                    <span class="status-text">Extreme: Checking...</span>
+                    <span class="status-text">Extreme: Verificando...</span>
                 </div>
             </div>
 
@@ -939,50 +959,50 @@
 
     <main class="main-content">
         <div class="page-header">
-            <h1 class="page-title">Competitive Rankings</h1>
-            <p class="page-subtitle">Professional player leaderboards and comprehensive performance analytics</p>
+            <h1 class="page-title">Rankings Competitivos</h1>
+            <p class="page-subtitle">Clasificaciones de jugadores profesionales y análisis de rendimiento</p>
         </div>
 
         <div class="competitive-stats">
             <div class="stat-card">
                 <span class="stat-icon">👥</span>
                 <div class="stat-value" id="totalPlayers">-</div>
-                <div class="stat-label">Registered Players</div>
+                <div class="stat-label">Jugadores Registrados</div>
             </div>
             <div class="stat-card">
                 <span class="stat-icon">🏆</span>
                 <div class="stat-value" id="activeMatches">-</div>
-                <div class="stat-label">Active Matches</div>
+                <div class="stat-label">Partidas Activas</div>
             </div>
             <div class="stat-card">
                 <span class="stat-icon">⚡</span>
                 <div class="stat-value" id="serverUptime">99.8%</div>
-                <div class="stat-label">Server Uptime</div>
+                <div class="stat-label">Tiempo Activo</div>
             </div>
             <div class="stat-card">
                 <span class="stat-icon">📊</span>
-                <div class="stat-value" id="seasonNumber">S1</div>
-                <div class="stat-label">Current Season</div>
+                <div class="stat-value" id="seasonNumber">T1</div>
+                <div class="stat-label">Temporada Actual</div>
             </div>
         </div>
 
         <div class="category-selector" id="categorySelectorContainer">
-            <h2>Select Ranking Category</h2>
+            <h2>Seleccionar Categoría de Ranking</h2>
             <select id="categorySelector"></select>
         </div>
 
         <!-- Classic Mode Section - ELO destacado -->
         <div class="ranking-section classic-mode active" id="classicRanking">
             <div class="elo-ranking-container">
-                <h2>💎 ELO Rankings</h2>
+                <h2>💎 Rankings ELO</h2>
                 <ul class="ranking-list" id="eloList"></ul>
             </div>
             <div class="ranking-list-container">
-                <h2>⚽ Top Goals</h2>
+                <h2>⚽ Mejores Goleadores</h2>
                 <ul class="ranking-list" id="goalsListClassic"></ul>
             </div>
             <div class="ranking-list-container">
-                <h2>🎯 Top Assists</h2>
+                <h2>🎯 Mejores Asistencias</h2>
                 <ul class="ranking-list" id="assistsListClassic"></ul>
             </div>
         </div>
@@ -990,77 +1010,77 @@
         <!-- Extreme Mode Sections -->
         <div class="ranking-section extreme-mode" id="victoriesRanking">
             <div class="ranking-list-container">
-                <h2>🏆 Top Victories</h2>
+                <h2>🏆 Mejores Victorias</h2>
                 <ul class="ranking-list" id="victoriesList"></ul>
             </div>
             <div class="chart-container">
-                <h2>📈 Performance Analytics</h2>
+                <h2>📈 Análisis de Rendimiento</h2>
                 <canvas id="victoriesChart"></canvas>
             </div>
         </div>
 
         <div class="ranking-section extreme-mode" id="defeatsRanking">
             <div class="ranking-list-container">
-                <h2>💀 Top Defeats</h2>
+                <h2>💀 Más Derrotas</h2>
                 <ul class="ranking-list" id="defeatsList"></ul>
             </div>
             <div class="chart-container">
-                <h2>📊 Defeat Analysis</h2>
+                <h2>📊 Análisis de Derrotas</h2>
                 <canvas id="defeatsChart"></canvas>
             </div>
         </div>
 
         <div class="ranking-section extreme-mode" id="pointsRanking">
             <div class="ranking-list-container">
-                <h2>⭐ Top Points</h2>
+                <h2>⭐ Mejores Puntos</h2>
                 <ul class="ranking-list" id="pointsList"></ul>
             </div>
             <div class="chart-container">
-                <h2>💯 Points Distribution</h2>
+                <h2>💯 Distribución de Puntos</h2>
                 <canvas id="pointsChart"></canvas>
             </div>
         </div>
 
         <div class="ranking-section extreme-mode" id="assistsRanking">
             <div class="ranking-list-container">
-                <h2>🎯 Top Assists</h2>
+                <h2>🎯 Mejores Asistencias</h2>
                 <ul class="ranking-list" id="assistsList"></ul>
             </div>
             <div class="chart-container">
-                <h2>🤝 Assist Trends</h2>
+                <h2>🤝 Tendencias de Asistencias</h2>
                 <canvas id="assistsChart"></canvas>
             </div>
         </div>
 
         <div class="ranking-section extreme-mode" id="goalsRanking">
             <div class="ranking-list-container">
-                <h2>⚽ Top Goals</h2>
+                <h2>⚽ Mejores Goleadores</h2>
                 <ul class="ranking-list" id="goalsList"></ul>
             </div>
             <div class="chart-container">
-                <h2>🎯 Scoring Patterns</h2>
+                <h2>🎯 Patrones de Goles</h2>
                 <canvas id="goalsChart"></canvas>
             </div>
         </div>
 
         <div class="ranking-section extreme-mode" id="victoriesDtRanking">
             <div class="ranking-list-container">
-                <h2>👑 Top DT Victories</h2>
+                <h2>👑 Mejores Victorias DT</h2>
                 <ul class="ranking-list" id="victoriesDtList"></ul>
             </div>
             <div class="chart-container">
-                <h2>🏅 DT Performance</h2>
+                <h2>🏅 Rendimiento DT</h2>
                 <canvas id="victoriesDtChart"></canvas>
             </div>
         </div>
 
         <div class="ranking-section extreme-mode" id="defeatsDtRanking">
             <div class="ranking-list-container">
-                <h2>💔 Top DT Defeats</h2>
+                <h2>💔 Más Derrotas DT</h2>
                 <ul class="ranking-list" id="defeatsDtList"></ul>
             </div>
             <div class="chart-container">
-                <h2>📉 DT Analysis</h2>
+                <h2>📉 Análisis DT</h2>
                 <canvas id="defeatsDtChart"></canvas>
             </div>
         </div>
@@ -1068,25 +1088,25 @@
 
     <footer>
         <div class="footer-content">
-            <p class="footer-text">© 2025 Saturn Client. Professional HaxBall Platform.</p>
+            <p class="footer-text">© 2025 Saturn Client. Plataforma Profesional de HaxBall.</p>
         </div>
     </footer>
 
     <!-- Player Modal -->
     <div class="player-modal">
         <div class="player-modal-content">
-            <h2>Player Profile</h2>
+            <h2>Perfil del Jugador</h2>
             <div class="player-circle"></div>
             <div class="stats-grid"></div>
             <div class="tags">
-                <h3>Achievement Tags</h3>
-                <span class="tag">Player</span>
+                <h3>Logros</h3>
+                <span class="tag">Jugador</span>
             </div>
             <div class="inventory">
-                <h3>Skills Inventory</h3>
+                <h3>Inventario de Habilidades</h3>
                 <div class="skills-list"></div>
             </div>
-            <button class="close-btn">Close Profile</button>
+            <button class="close-btn">Cerrar Perfil</button>
         </div>
     </div>
 
@@ -1094,24 +1114,10 @@
         document.addEventListener('DOMContentLoaded', () => {
             let currentJugadores = [];
             let currentMode = localStorage.getItem('selectedMode') || 'classic';
+            let dataLoadError = false;
 
             const searchInput = document.querySelector('.search-input');
             const searchResults = document.querySelector('.search-results');
-
-            // Mock data for demonstration
-            const jugadoresClassic = [
-                { name: "Player1", goals: 15, assists: 8, victories: 10, defeats: 5, draws: 2, victories_dt: 3, defeats_dt: 1, draws_dt: 0, elo: 1550 },
-                { name: "Player2", goals: 20, assists: 5, victories: 8, defeats: 7, draws: 3, victories_dt: 2, defeats_dt: 2, draws_dt: 1, elo: 1420 },
-                { name: "Player3", goals: 10, assists: 12, victories: 12, defeats: 3, draws: 1, victories_dt: 4, defeats_dt: 0, draws_dt: 0, elo: 1680 },
-                { name: "Player4", goals: 25, assists: 3, victories: 6, defeats: 8, draws: 4, victories_dt: 1, defeats_dt: 3, draws_dt: 2, elo: 1280 },
-                { name: "Player5", goals: 5, assists: 15, victories: 9, defeats: 4, draws: 2, victories_dt: 3, defeats_dt: 1, draws_dt: 1, elo: 1520 }
-            ];
-
-            const jugadoresExtreme = [
-                { name: "Rhyno 2", goals: 141, assists: 5, points: 235745, victories: 27, defeats: 24, draws: 19, victories_dt: 14, defeats_dt: 11, draws_dt: 1, powershot: true, mastercontrol: true, equipped: { voiddash: true, mastercontrol: true, ultrapowershot: true } },
-                { name: "viej0", goals: 4, assists: 5, points: 4155, victories: 0, defeats: 0, draws: 0, victories_dt: 0, defeats_dt: 0, draws_dt: 0, powershot: false, equipped: {} },
-                { name: "🦏 » Rhyno", goals: 96, assists: 2, points: 209945, victories: 0, defeats: 2, draws: 0, victories_dt: 1, defeats_dt: 0, draws_dt: 1, powershot: true, mastercontrol: true, equipped: { mastercontrol: true, ultrapowershot: true } }
-            ];
 
             function getCosmetic(jugador, mode) {
                 let value = mode === 'extreme' ? (jugador.points || 0) : (jugador.elo || 0);
@@ -1132,33 +1138,73 @@
             async function loadModeData(mode) {
                 try {
                     const url = mode === 'classic' 
-                        ? 'https://saturnx4.glitch.me/classic.json'
-                        : 'https://saturnx4.glitch.me/players.json';
+                        ? 'https://saturnx4.onrender.com/classic.json'
+                        : 'https://saturnx4.onrender.com/players.json';
                     const response = await fetch(url);
-                    if (!response.ok) throw new Error(`Failed to load ${url}`);
+                    if (!response.ok) throw new Error(`Error ${response.status}: No se pudo cargar ${url}`);
                     const data = await response.json();
+                    dataLoadError = false;
                     return data.players || [];
                 } catch (error) {
-                    console.error(`Error loading ${mode} data:`, error);
-                    return mode === 'classic' ? jugadoresClassic : jugadoresExtreme;
+                    console.error(`Error cargando datos de ${mode}:`, error);
+                    dataLoadError = true;
+                    return [];
+                }
+            }
+
+            function showErrorMessage(mode) {
+                const errorHtml = `
+                    <div class="error-message">
+                        <h3>❌ Error de Conexión</h3>
+                        <p>No se pudieron cargar los datos del modo ${mode === 'classic' ? 'Classic' : 'Extreme'}.</p>
+                        <p>Por favor, verifica tu conexión a internet o intenta más tarde.</p>
+                        <p>Si el problema persiste, visita nuestro <a href="https://discord.gg/w94yQZUqQ3" target="_blank" style="color: var(--primary-blue);">Discord</a> para reportes de estado.</p>
+                    </div>
+                `;
+
+                // Ocultar todas las secciones de ranking
+                document.querySelectorAll('.ranking-section').forEach(section => {
+                    section.classList.remove('active');
+                });
+
+                // Mostrar mensaje de error
+                const mainContent = document.querySelector('.main-content');
+                let errorContainer = document.querySelector('.error-container');
+                if (!errorContainer) {
+                    errorContainer = document.createElement('div');
+                    errorContainer.className = 'error-container';
+                    mainContent.appendChild(errorContainer);
+                }
+                errorContainer.innerHTML = errorHtml;
+            }
+
+            function hideErrorMessage() {
+                const errorContainer = document.querySelector('.error-container');
+                if (errorContainer) {
+                    errorContainer.innerHTML = '';
                 }
             }
 
             function updateCompetitiveStats(jugadores) {
-                document.getElementById('totalPlayers').textContent = jugadores.length;
-                document.getElementById('activeMatches').textContent = Math.floor(Math.random() * 15) + 5;
+                if (dataLoadError || jugadores.length === 0) {
+                    document.getElementById('totalPlayers').textContent = '0';
+                    document.getElementById('activeMatches').textContent = '0';
+                } else {
+                    document.getElementById('totalPlayers').textContent = jugadores.length;
+                    document.getElementById('activeMatches').textContent = Math.floor(Math.random() * 15) + 5;
+                }
             }
 
             function updateCategorySelector() {
                 const categorySelector = document.getElementById('categorySelector');
                 const options = [
-                    { value: 'victories', text: 'Victories Championship' },
-                    { value: 'defeats', text: 'Most Challenged' },
-                    { value: 'points', text: 'Point Masters' },
-                    { value: 'assists', text: 'Assist Legends' },
-                    { value: 'goals', text: 'Goal Scorers' },
-                    { value: 'victoriesDt', text: 'DT Champions' },
-                    { value: 'defeatsDt', text: 'DT Strugglers' }
+                    { value: 'victories', text: 'Campeonato de Victorias' },
+                    { value: 'defeats', text: 'Más Desafiados' },
+                    { value: 'points', text: 'Maestros de Puntos' },
+                    { value: 'assists', text: 'Leyendas de Asistencias' },
+                    { value: 'goals', text: 'Goleadores' },
+                    { value: 'victoriesDt', text: 'Campeones DT' },
+                    { value: 'defeatsDt', text: 'Luchadores DT' }
                 ];
                 categorySelector.innerHTML = options.map(opt => 
                     `<option value="${opt.value}">${opt.text}</option>`
@@ -1179,6 +1225,11 @@
                 const { listId, chartId, key } = config[category];
                 const list = document.getElementById(listId);
                 list.innerHTML = '';
+
+                if (jugadores.length === 0) {
+                    list.innerHTML = '<li style="text-align: center; color: var(--text-muted);">No hay datos disponibles</li>';
+                    return;
+                }
 
                 const sortedData = [...jugadores].sort((a, b) => (b[key] || 0) - (a[key] || 0));
 
@@ -1206,6 +1257,14 @@
             }
 
             function updateClassicRankings(jugadores) {
+                if (jugadores.length === 0) {
+                    ['goalsListClassic', 'assistsListClassic', 'eloList'].forEach(listId => {
+                        const list = document.getElementById(listId);
+                        list.innerHTML = '<li style="text-align: center; color: var(--text-muted);">No hay datos disponibles</li>';
+                    });
+                    return;
+                }
+
                 // Goals
                 const goalsList = document.getElementById('goalsListClassic');
                 goalsList.innerHTML = '';
@@ -1223,7 +1282,7 @@
                         </div>
                         <div class="player-points">
                             <span class="main-stat">${player.goals || 0}</span>
-                            <span class="sub-stat">${avgGoals} avg</span>
+                            <span class="sub-stat">${avgGoals} prom</span>
                         </div>
                     `;
                     li.addEventListener('click', () => showPlayerProfile(player));
@@ -1247,7 +1306,7 @@
                         </div>
                         <div class="player-points">
                             <span class="main-stat">${player.assists || 0}</span>
-                            <span class="sub-stat">${avgAssists} avg</span>
+                            <span class="sub-stat">${avgAssists} prom</span>
                         </div>
                     `;
                     li.addEventListener('click', () => showPlayerProfile(player));
@@ -1279,6 +1338,7 @@
                 });
 
                 // Show classic ranking
+                hideErrorMessage();
                 document.querySelectorAll('.ranking-section').forEach(section => {
                     section.classList.remove('active');
                 });
@@ -1286,12 +1346,18 @@
             }
 
             function updateExtremeRankings(jugadores) {
+                if (jugadores.length === 0) {
+                    showErrorMessage('extreme');
+                    return;
+                }
+
                 const categories = ['victories', 'defeats', 'points', 'assists', 'goals', 'victoriesDt', 'defeatsDt'];
                 categories.forEach(category => {
                     updateRankingCategory(jugadores, category);
                 });
 
                 const selectedCategory = document.getElementById('categorySelector').value;
+                hideErrorMessage();
                 document.querySelectorAll('.ranking-section').forEach(section => {
                     section.classList.remove('active');
                 });
@@ -1304,6 +1370,15 @@
 
                 if (ctx.chart) {
                     ctx.chart.destroy();
+                }
+
+                if (topData.length === 0) {
+                    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+                    ctx.fillStyle = '#6B7280';
+                    ctx.font = '16px Inter';
+                    ctx.textAlign = 'center';
+                    ctx.fillText('No hay datos disponibles', ctx.canvas.width / 2, ctx.canvas.height / 2);
+                    return;
                 }
 
                 ctx.chart = new Chart(ctx, {
@@ -1359,18 +1434,18 @@
                 // Stats
                 statsGrid.innerHTML = '';
                 const stats = [
-                    { label: 'Goals', value: player.goals || 0 },
-                    { label: 'Assists', value: player.assists || 0 },
-                    { label: 'Victories', value: player.victories || 0 },
-                    { label: 'Defeats', value: player.defeats || 0 },
-                    { label: 'Draws', value: player.draws || 0 },
-                    { label: 'DT Victories', value: player.victories_dt || 0 },
-                    { label: 'DT Defeats', value: player.defeats_dt || 0 },
-                    { label: 'DT Draws', value: player.draws_dt || 0 }
+                    { label: 'Goles', value: player.goals || 0 },
+                    { label: 'Asistencias', value: player.assists || 0 },
+                    { label: 'Victorias', value: player.victories || 0 },
+                    { label: 'Derrotas', value: player.defeats || 0 },
+                    { label: 'Empates', value: player.draws || 0 },
+                    { label: 'Victorias DT', value: player.victories_dt || 0 },
+                    { label: 'Derrotas DT', value: player.defeats_dt || 0 },
+                    { label: 'Empates DT', value: player.draws_dt || 0 }
                 ];
 
                 if (currentMode === 'extreme') {
-                    stats.push({ label: 'Points', value: player.points || 0 });
+                    stats.push({ label: 'Puntos', value: player.points || 0 });
                 } else {
                     stats.push({ label: 'ELO', value: player.elo || 0 });
                 }
@@ -1382,13 +1457,13 @@
                 });
 
                 // Tags
-                tagsContainer.innerHTML = '<h3>Achievement Tags</h3>';
-                const tags = ['Professional Player'];
-                if (currentMode === 'extreme' && player.points >= 100000) tags.push('Legend');
+                tagsContainer.innerHTML = '<h3>Logros</h3>';
+                const tags = ['Jugador Profesional'];
+                if (currentMode === 'extreme' && player.points >= 100000) tags.push('Leyenda');
                 else if (currentMode === 'classic' && player.elo >= 1600) tags.push('Elite');
-                if (player.victories >= 20) tags.push('Champion');
-                if (player.goals >= 50) tags.push('Goal Machine');
-                if (player.assists >= 20) tags.push('Playmaker');
+                if (player.victories >= 20) tags.push('Campeón');
+                if (player.goals >= 50) tags.push('Máquina de Goles');
+                if (player.assists >= 20) tags.push('Creador de Juego');
 
                 tags.forEach(tag => {
                     const span = document.createElement('span');
@@ -1422,7 +1497,7 @@
                     });
 
                     if (skillsList.children.length === 0) {
-                        skillsList.innerHTML = '<p style="color: #6B7280; text-align: center;">No skills unlocked.</p>';
+                        skillsList.innerHTML = '<p style="color: #6B7280; text-align: center;">No hay habilidades desbloqueadas.</p>';
                     }
                 } else {
                     inventorySection.style.display = 'none';
@@ -1448,13 +1523,19 @@
                     return;
                 }
 
+                if (currentJugadores.length === 0) {
+                    searchResults.innerHTML = '<div class="search-result" style="justify-content: center;">No hay datos disponibles.</div>';
+                    searchResults.style.display = 'block';
+                    return;
+                }
+
                 const filtered = currentJugadores.filter(j => 
                     j.name.toLowerCase().includes(term)
                 );
 
                 searchResults.innerHTML = '';
                 if (filtered.length === 0) {
-                    searchResults.innerHTML = '<div class="search-result" style="justify-content: center;">No players found.</div>';
+                    searchResults.innerHTML = '<div class="search-result" style="justify-content: center;">No se encontraron jugadores.</div>';
                 } else {
                     filtered.slice(0, 5).forEach(player => {
                         const div = document.createElement('div');
@@ -1465,7 +1546,7 @@
                             <div>
                                 <div style="font-weight: 500;">${player.name}</div>
                                 <div style="font-size: 12px; color: #6B7280;">
-                                    Goals: ${player.goals || 0} | Assists: ${player.assists || 0}
+                                    Goles: ${player.goals || 0} | Asistencias: ${player.assists || 0}
                                 </div>
                             </div>
                         `;
@@ -1501,6 +1582,12 @@
                 currentJugadores = await loadModeData(currentMode);
                 updateCompetitiveStats(currentJugadores);
 
+                if (dataLoadError) {
+                    showErrorMessage(currentMode);
+                    categorySelectorContainer.style.display = 'none';
+                    return;
+                }
+
                 if (currentMode === 'extreme') {
                     categorySelectorContainer.style.display = 'block';
                     updateCategorySelector();
@@ -1520,7 +1607,7 @@
             });
 
             document.getElementById('categorySelector').addEventListener('change', (e) => {
-                if (currentMode === 'extreme') {
+                if (currentMode === 'extreme' && !dataLoadError) {
                     updateExtremeRankings(currentJugadores);
                 }
             });
@@ -1528,7 +1615,7 @@
             // Server status update
             async function updateServerStatus() {
                 try {
-                    const response = await fetch('https://saturnx4.glitch.me/server-status');
+                    const response = await fetch('https://saturnx4.onrender.com/server-status');
                     const data = await response.json();
 
                     const classicStatus = document.querySelector('.server-status[data-mode="classic"]');
@@ -1537,10 +1624,10 @@
 
                     if (data.classic.online) {
                         classicIndicator.classList.add('online');
-                        classicText.textContent = `Classic: Online (${data.classic.playerCount}/20)`;
+                        classicText.textContent = `Classic: En línea (${data.classic.playerCount}/20)`;
                     } else {
                         classicIndicator.classList.remove('online');
-                        classicText.textContent = `Classic: Offline`;
+                        classicText.textContent = `Classic: Desconectado`;
                     }
 
                     const extremeStatus = document.querySelector('.server-status[data-mode="extreme"]');
@@ -1549,13 +1636,21 @@
 
                     if (data.extreme.online) {
                         extremeIndicator.classList.add('online');
-                        extremeText.textContent = `Extreme: Online (${data.extreme.playerCount}/18)`;
+                        extremeText.textContent = `Extreme: En línea (${data.extreme.playerCount}/18)`;
                     } else {
                         extremeIndicator.classList.remove('online');
-                        extremeText.textContent = `Extreme: Offline`;
+                        extremeText.textContent = `Extreme: Desconectado`;
                     }
                 } catch (error) {
-                    console.error('Error updating server status:', error);
+                    console.error('Error actualizando estado del servidor:', error);
+                    const statuses = document.querySelectorAll('.server-status');
+                    statuses.forEach(status => {
+                        const indicator = status.querySelector('.status-indicator');
+                        const text = status.querySelector('.status-text');
+                        indicator.classList.remove('online');
+                        const mode = status.dataset.mode === 'classic' ? 'Classic' : 'Extreme';
+                        text.textContent = `${mode}: Sin conexión`;
+                    });
                 }
             }
 
