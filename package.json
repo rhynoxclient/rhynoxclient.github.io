@@ -1,5 +1,5 @@
 {
-  "name": "mi-web",
+  "name": "haxball-status-server",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
