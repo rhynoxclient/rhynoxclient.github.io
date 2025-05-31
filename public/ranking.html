@@ -1109,8 +1109,13 @@
 
             const jugadoresExtreme = [
                 { name: "Rhyno 2", goals: 141, assists: 5, points: 235745, victories: 27, defeats: 24, draws: 19, victories_dt: 14, defeats_dt: 11, draws_dt: 1, powershot: true, mastercontrol: true, equipped: { voiddash: true, mastercontrol: true, ultrapowershot: true } },
-                { name: "viej0", goals: 4, assists: 5, points: 4155, victories: 0, defeats: 0, draws: 0, victories_dt: 0, defeats_dt: 0, draws_dt: 0, powershot: false, equipped: {} },
-                { name: "🦏 » Rhyno", goals: 96, assists: 2, points: 209945, victories: 0, defeats: 2, draws: 0, victories_dt: 1, defeats_dt: 0, draws_dt: 1, powershot: true, mastercontrol: true, equipped: { mastercontrol: true, ultrapowershot: true } }
+                { name: "viej0", goals: 4, assists: 5, points: 4155, victories: 8, defeats: 3, draws: 1, victories_dt: 2, defeats_dt: 1, draws_dt: 0, powershot: false, equipped: {} },
+                { name: "🦏 » Rhyno", goals: 96, assists: 2, points: 209945, victories: 15, defeats: 2, draws: 3, victories_dt: 8, defeats_dt: 0, draws_dt: 1, powershot: true, mastercontrol: true, equipped: { mastercontrol: true, ultrapowershot: true } },
+                { name: "Pro_Gamer", goals: 89, assists: 45, points: 180500, victories: 25, defeats: 8, draws: 2, victories_dt: 12, defeats_dt: 2, draws_dt: 1, powershot: true, mastercontrol: true, equipped: { phantomstrike: true, powershot: true } },
+                { name: "Speed_Demon", goals: 67, assists: 78, points: 156789, victories: 22, defeats: 15, draws: 8, victories_dt: 9, defeats_dt: 4, draws_dt: 2, mastercontrol: true, masterspace: true, equipped: { voiddash: true, masterspace: true } },
+                { name: "Goal_Machine", goals: 234, assists: 12, points: 298765, victories: 35, defeats: 18, draws: 5, victories_dt: 18, defeats_dt: 7, draws_dt: 1, powershot: true, ultrapowershot: true, equipped: { ultrapowershot: true, powershot: true } },
+                { name: "Assist_King", goals: 45, assists: 156, points: 187654, victories: 28, defeats: 12, draws: 7, victories_dt: 11, defeats_dt: 3, draws_dt: 2, mastercontrol: true, equipped: { mastercontrol: true, phantomstrike: true } },
+                { name: "Tactical_Mind", goals: 78, assists: 89, points: 165432, victories: 30, defeats: 10, draws: 5, victories_dt: 15, defeats_dt: 2, draws_dt: 1, mastercontrol: true, masterspace: true, equipped: { mastercontrol: true, masterspace: true } }
             ];
 
             function getCosmetic(jugador, mode) {
@@ -1130,18 +1135,8 @@
             }
 
             async function loadModeData(mode) {
-                try {
-                    const url = mode === 'classic' 
-                        ? 'https://saturnx4.glitch.me/classic.json'
-                        : 'https://saturnx4.onrender.com/players.json';
-                    const response = await fetch(url);
-                    if (!response.ok) throw new Error(`Failed to load ${url}`);
-                    const data = await response.json();
-                    return data.players || [];
-                } catch (error) {
-                    console.error(`Error loading ${mode} data:`, error);
-                    return mode === 'classic' ? jugadoresClassic : jugadoresExtreme;
-                }
+                // Use local mock data instead of external APIs
+                return mode === 'classic' ? jugadoresClassic : jugadoresExtreme;
             }
 
             function updateCompetitiveStats(jugadores) {
@@ -1525,37 +1520,42 @@
                 }
             });
 
-            // Server status update
+            // Server status update with mock data
             async function updateServerStatus() {
-                try {
-                    const response = await fetch('https://saturnx4.glitch.me/server-status');
-                    const data = await response.json();
-
-                    const classicStatus = document.querySelector('.server-status[data-mode="classic"]');
-                    const classicIndicator = classicStatus.querySelector('.status-indicator');
-                    const classicText = classicStatus.querySelector('.status-text');
-
-                    if (data.classic.online) {
-                        classicIndicator.classList.add('online');
-                        classicText.textContent = `Classic: Online (${data.classic.playerCount}/20)`;
-                    } else {
-                        classicIndicator.classList.remove('online');
-                        classicText.textContent = `Classic: Offline`;
+                // Simulate server status with mock data
+                const mockStatus = {
+                    classic: {
+                        online: Math.random() > 0.3, // 70% chance online
+                        playerCount: Math.floor(Math.random() * 20) + 1
+                    },
+                    extreme: {
+                        online: Math.random() > 0.2, // 80% chance online
+                        playerCount: Math.floor(Math.random() * 18) + 1
                     }
+                };
 
-                    const extremeStatus = document.querySelector('.server-status[data-mode="extreme"]');
-                    const extremeIndicator = extremeStatus.querySelector('.status-indicator');
-                    const extremeText = extremeStatus.querySelector('.status-text');
+                const classicStatus = document.querySelector('.server-status[data-mode="classic"]');
+                const classicIndicator = classicStatus.querySelector('.status-indicator');
+                const classicText = classicStatus.querySelector('.status-text');
 
-                    if (data.extreme.online) {
-                        extremeIndicator.classList.add('online');
-                        extremeText.textContent = `Extreme: Online (${data.extreme.playerCount}/18)`;
-                    } else {
-                        extremeIndicator.classList.remove('online');
-                        extremeText.textContent = `Extreme: Offline`;
-                    }
-                } catch (error) {
-                    console.error('Error updating server status:', error);
+                if (mockStatus.classic.online) {
+                    classicIndicator.classList.add('online');
+                    classicText.textContent = `Classic: Online (${mockStatus.classic.playerCount}/20)`;
+                } else {
+                    classicIndicator.classList.remove('online');
+                    classicText.textContent = `Classic: Offline`;
+                }
+
+                const extremeStatus = document.querySelector('.server-status[data-mode="extreme"]');
+                const extremeIndicator = extremeStatus.querySelector('.status-indicator');
+                const extremeText = extremeStatus.querySelector('.status-text');
+
+                if (mockStatus.extreme.online) {
+                    extremeIndicator.classList.add('online');
+                    extremeText.textContent = `Extreme: Online (${mockStatus.extreme.playerCount}/18)`;
+                } else {
+                    extremeIndicator.classList.remove('online');
+                    extremeText.textContent = `Extreme: Offline`;
                 }
             }
 
