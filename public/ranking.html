@@ -511,12 +511,12 @@
 
         .ranking-list {
             list-style: none;
-            max-height: 450px;
+            max-height: 400px;
             overflow-y: auto;
         }
 
         .elo-ranking-container .ranking-list {
-            max-height: 550px;
+            max-height: 500px;
         }
 
         .ranking-list::-webkit-scrollbar {
@@ -541,11 +541,11 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 16px 20px;
-            margin-bottom: 8px;
+            padding: 12px 16px;
+            margin-bottom: 6px;
             background: var(--surface);
             border: 1px solid var(--border);
-            border-radius: 12px;
+            border-radius: 10px;
             cursor: pointer;
             transition: all 0.3s ease;
             position: relative;
@@ -585,25 +585,26 @@
         .player-name {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             font-weight: 500;
+            font-size: 14px;
         }
 
         .medal {
-            font-size: 18px;
+            font-size: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 24px;
-            height: 24px;
+            width: 20px;
+            height: 20px;
         }
 
         .player-rank {
             font-weight: 600;
             color: var(--text-muted);
-            min-width: 30px;
+            min-width: 28px;
             font-family: 'JetBrains Mono', monospace;
-            font-size: 14px;
+            font-size: 12px;
         }
 
         .player-points {
@@ -613,15 +614,15 @@
             display: flex;
             flex-direction: column;
             align-items: flex-end;
-            gap: 2px;
+            gap: 1px;
         }
 
         .player-points .main-stat {
-            font-size: 16px;
+            font-size: 14px;
         }
 
         .player-points .sub-stat {
-            font-size: 12px;
+            font-size: 10px;
             color: var(--text-muted);
         }
 
